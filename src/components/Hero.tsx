@@ -27,6 +27,19 @@ const Hero = () => {
         {/* Additional decorative curved lines on the right */}
         <path d="M800,50 Q900,150 1000,250 Q1100,350 1200,450" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
         <path d="M900,80 Q1000,180 1100,280 Q1200,380 1300,480" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
+        
+        {/* Bottom section decorative lines (30% of total) */}
+        {/* Bottom wave patterns */}
+        <path d="M0,450 Q350,420 700,450 T1400,450 L1400,500 Q1050,480 700,500 T0,500 Z" fill="url(#dots2)" className="animate-pulse" style={{ animationDuration: '9s' }} />
+        <path d="M200,520 Q500,490 800,520 T1400,520 L1400,570 Q1100,550 800,570 T200,570 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '11s' }} />
+        
+        {/* Bottom curved dotted lines - left side */}
+        <path d="M50,450 Q150,500 250,550 Q350,600 450,650" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
+        <path d="M100,480 Q180,530 260,580 Q340,630 420,680" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
+        
+        {/* Bottom curved dotted lines - right side */}
+        <path d="M1200,450 Q1100,500 1000,550 Q900,600 800,650" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
+        <path d="M1150,480 Q1070,530 990,580 Q910,630 830,680" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
       </svg>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
