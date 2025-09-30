@@ -1,4 +1,4 @@
-import { TrendingUp, Building2, Badge } from "lucide-react";
+import { TrendingUp, Building2, Trophy } from "lucide-react";
 
 const stats = [
   {
@@ -12,7 +12,7 @@ const stats = [
     label: "我们的用户覆盖了超过220所学校",
   },
   {
-    icon: Badge,
+    icon: Trophy,
     value: "100+",
     label: "超过100种AI技能勋章认证",
   },
