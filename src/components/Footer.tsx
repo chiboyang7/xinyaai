@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
        
 
-        <div className="border-t pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
             © 2025 CareerForge, Inc. All rights reserved.
           </p>
