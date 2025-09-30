@@ -11,7 +11,7 @@ const Navigation = () => {
             <a href="/" className="flex items-center gap-2">
               <img src={logo} alt="CareerForge Logo" className="h-8 w-8" />
               <span className="font-bold text-xl">
-                <span className="text-foreground text-2xl">新芽</span>
+                <span className="text-foreground text-lg">新芽</span>
                 <span className="text-primary text-2xl">AI</span>
               </span>
             </a>
