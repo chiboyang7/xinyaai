@@ -49,12 +49,13 @@ const Footer = () => {
             © 2025 CareerForge, Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Twitter className="h-5 w-5" />
-            </a>
+            <Link to="/" className="flex items-center gap-2">
+              <img src={logo} alt="CareerForge Logo" className="h-8 w-8" />
+              <span className="font-bold text-xl">
+                <span className="text-foreground text-2xl">新芽</span>
+                <span className="text-primary text-2xl">AI</span>
+              </span>
+            </Link>
           </div>
         </div>
       </div>
