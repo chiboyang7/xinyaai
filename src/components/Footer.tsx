@@ -10,7 +10,7 @@ const Footer = () => {
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 CareerForge, Inc. All rights reserved.
+            © 2025 新芽AI版权所有.
           </p>
           <div className="flex items-center gap-4">
             <Link to="/" className="flex items-center gap-2">
