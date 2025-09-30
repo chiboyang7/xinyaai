@@ -39,6 +39,11 @@ const Hero = () => {
         
         {/* Bottom right corner */}
         <path d="M800,480 Q1000,460 1200,480" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.3" className="hidden md:block" />
+        
+        {/* Additional bottom empty space lines (30%) */}
+        <path d="M200,520 Q500,500 800,520 T1400,520 L1400,560 Q1100,545 800,560 T200,560 Z" fill="url(#dots1)" className="hidden sm:block animate-pulse" style={{ animationDuration: '9s' }} />
+        <path d="M0,580 Q300,600 600,580" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.25" className="hidden md:block" />
+        <path d="M400,600 Q700,620 1000,600 Q1200,590 1400,600" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.3" className="hidden lg:block" />
       </svg>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
