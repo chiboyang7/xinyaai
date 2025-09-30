@@ -5,6 +5,7 @@ import logo from "@/assets/logo2.png";
 const Footer = () => {
   return (
     <footer className="bg-muted/30 border-t">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
        
 
         <div className="border-t pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -21,6 +22,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+      </div>
     </footer>
   );
 };
