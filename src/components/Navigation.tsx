@@ -31,11 +31,11 @@ const Navigation = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button variant="ghost" className="hidden sm:inline-flex text-base">
-              登录
+            <Button variant="ghost" className="hidden sm:inline-flex text-base" asChild>
+              <Link to="/auth">登录</Link>
             </Button>
-            <Button className="text-base">
-              免费注册
+            <Button className="text-base" asChild>
+              <Link to="/auth">免费注册</Link>
             </Button>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
