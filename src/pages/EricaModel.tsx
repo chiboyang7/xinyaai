@@ -78,7 +78,7 @@ const EricaModel = () => {
       englishName: "",
       description: "批判性地看待AI信息，并利用其进行深度分析、归纳和推理的能力",
       careers: "咨询顾问 / 工程师",
-      color: "text-pink-600",
+      color: "text-blue-600",
       details: [
         {
           score: "1分",
@@ -118,7 +118,7 @@ const EricaModel = () => {
       englishName: "",
       description: "与AI共同激发灵感，从0到1创造新颖、独特、富有想象力作品的能力",
       careers: "工业设计 / 艺术家",
-      color: "text-orange-600",
+      color: "text-blue-600",
       details: [
         {
           score: "1分",
@@ -158,7 +158,7 @@ const EricaModel = () => {
       englishName: "",
       description: "与AI进行精准、高效、富有技巧的对话能力",
       careers: "记者 / 律师",
-      color: "text-purple-600",
+      color: "text-blue-600",
       details: [
         {
           score: "1分",
@@ -198,7 +198,7 @@ const EricaModel = () => {
       englishName: "",
       description: "将AI作为可赋能的伙伴，组织和驾驭它完成复杂工作",
       careers: "项目经理 / 创业者",
-      color: "text-yellow-600",
+      color: "text-blue-600",
       details: [
         {
           score: "1分",
