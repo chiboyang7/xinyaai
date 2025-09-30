@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section className="relative py-20 sm:py-32 bg-gradient-to-b from-secondary/30 to-background overflow-hidden">
-      {/* Decorative curved dotted lines */}
+      {/* Decorative curved dotted lines - positioned in empty spaces */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="dots1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -19,14 +19,17 @@ const Hero = () => {
           </pattern>
         </defs>
         
-        {/* Multiple curved wave patterns */}
-        <path d="M0,150 Q300,100 600,150 T1200,150 L1200,200 Q900,180 600,200 T0,200 Z" fill="url(#dots1)" className="animate-pulse" style={{ animationDuration: '8s' }} />
-        <path d="M0,250 Q400,200 800,250 T1600,250 L1600,300 Q1200,280 800,300 T0,300 Z" fill="url(#dots2)" className="animate-pulse" style={{ animationDuration: '10s' }} />
-        <path d="M200,350 Q600,300 1000,350 T1800,350 L1800,400 Q1400,380 1000,400 T200,400 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '12s' }} />
+        {/* Top right corner waves */}
+        <path d="M800,20 Q1000,60 1200,40 T1600,60 L1600,110 Q1400,90 1200,100 T800,80 Z" fill="url(#dots1)" className="hidden md:block animate-pulse" style={{ animationDuration: '8s' }} />
+        <path d="M900,100 Q1100,140 1300,120 T1700,140 L1700,180 Q1500,160 1300,170 T900,150 Z" fill="url(#dots2)" className="hidden lg:block animate-pulse" style={{ animationDuration: '10s' }} />
         
-        {/* Additional decorative curved lines on the right */}
-        <path d="M800,50 Q900,150 1000,250 Q1100,350 1200,450" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
-        <path d="M900,80 Q1000,180 1100,280 Q1200,380 1300,480" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
+        {/* Bottom left corner waves */}
+        <path d="M0,400 Q200,450 400,420 T800,450 L800,500 Q600,480 400,490 T0,480 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '12s' }} />
+        <path d="M0,520 Q150,560 300,540 T600,570 L600,610 Q450,590 300,600 T0,590 Z" fill="url(#dots1)" className="hidden md:block animate-pulse" style={{ animationDuration: '9s' }} />
+        
+        {/* Curved lines on sides */}
+        <path d="M50,150 Q150,200 100,300 T150,500" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
+        <path d="M1350,150 Q1400,250 1380,350 T1400,500" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden xl:block" />
       </svg>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
