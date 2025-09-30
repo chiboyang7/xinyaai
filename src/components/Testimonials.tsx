@@ -3,22 +3,19 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "You can't have a say at the table if you don't have a seat at the table. These programs and opportunities for people who look like me are an opportunity to have a seat at the table so we can have a better future for the people behind us.",
-    name: "Sarah Johnson",
-    result: "Landed a job at Goldman Sachs",
-    imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    quote: "必须给新芽AI点个赞！我家孩子做平台上的AI项目，竟然一口气专注了5个小时，这种投入状态好久没见到了。新芽AI的项目设计得真吸引人，能让孩子主动沉浸式学习，太难得了！",
+    name: "一位人大附中学员父亲",
+//    result: "Landed a job at Goldman Sachs",
   },
   {
-    quote: "I started a project at CareerForge and look at me now. If it wasn't for that one feeling to just apply… I wouldn't have all these experiences.",
-    name: "Michael Chen",
-    result: "Landed a job at JP Morgan Chase",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    quote: "新芽AI这个平台真的很不错！学生们用它学习后，逻辑思维能力提升特别明显，遇到复杂问题也懂得从多个角度去分析了。平台设计得很用心，确实能培养孩子的深度思考能力，值得推荐。",
+    name: "一位北京的初中数学教师",
+//    result: "Landed a job at JP Morgan Chase",
   },
   {
-    quote: "This program is like having binoculars - you aren't experiencing the entire environment yet, but you get to peer across and see what it's like - piecing together what you have read about.",
-    name: "Emily Rodriguez",
-    result: "Landed a job at Bank of America",
-    imageUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+    quote: "班里几个成绩普通的孩子，通过平台学习做出了非常棒的作品，看到成果后整个人都自信起来了。新芽AI真的能激发每个孩子的潜力，特别好！",
+    name: "一位杭州的小学班主任",
+//    result: "Landed a job at Bank of America",
   },
 ];
 
