@@ -33,10 +33,6 @@ const HowItWorks = () => {
             <span className="text-foreground block">新芽AI模拟工作中真实的AI应用场景</span>
             <span className="text-primary block mt-2">以项目制的形式快速呈现结果</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Our job simulations build real-life skills for real-life roles, offering a window into 
-            the company and a preview of their day-to-day. Job sims are 100% free, open access and self-paced.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
