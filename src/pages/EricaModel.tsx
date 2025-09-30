@@ -271,7 +271,11 @@ const EricaModel = () => {
                             <div className="flex items-center gap-3">
                               <dimension.icon className={`w-6 h-6 ${dimension.color}`} />
                               <div className="flex-1">
-                                <div className="font-semibold text-blue-600">{dimension.name}</div>
+                                <div className="font-semibold">
+                                  <span className="text-foreground">{dimension.name.split(' ')[0]}</span>
+                                  {' '}
+                                  <span className="text-blue-600">{dimension.name.split(' ')[1]}</span>
+                                </div>
                               </div>
                               {expandedIndex === index ? (
                                 <ChevronUp className="w-5 h-5 text-muted-foreground" />
