@@ -254,9 +254,9 @@ const EricaModel = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/30 hover:bg-muted/30">
-                      <TableHead className="w-[30%] font-semibold text-foreground">能力维度</TableHead>
+                      <TableHead className="w-[20%] md:w-[25%] font-semibold text-foreground">能力维度</TableHead>
                       <TableHead className="w-[50%] font-semibold text-foreground">解释说明</TableHead>
-                      <TableHead className="w-[20%] font-semibold text-foreground">典型职业</TableHead>
+                      <TableHead className="w-[30%] md:w-[25%] font-semibold text-foreground">典型职业</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
