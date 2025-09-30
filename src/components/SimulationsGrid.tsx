@@ -1,6 +1,7 @@
 import SimulationCard from "./SimulationCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const simulations = [
   {
@@ -56,9 +57,11 @@ const SimulationsGrid = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg" className="gap-2">
-            Explore Course Catalog
-            <ArrowRight className="h-4 w-4" />
+          <Button variant="outline" size="lg" className="gap-2" asChild>
+            <Link to="/jobs">
+              发现更多的AI职位
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>
