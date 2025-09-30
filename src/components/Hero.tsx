@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
-            游戏化学习体验.{" "}
+            游戏化学习方式.{" "}
             <span className="text-primary">体验AI新职业.</span>
           </h1>
           
