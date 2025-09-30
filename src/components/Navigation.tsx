@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo2.png";
 
 const Navigation = () => {
@@ -8,24 +9,24 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center gap-8">
-            <a href="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <img src={logo} alt="CareerForge Logo" className="h-8 w-8" />
               <span className="font-bold text-xl">
                 <span className="text-foreground text-2xl">新芽</span>
                 <span className="text-primary text-2xl">AI</span>
               </span>
-            </a>
+            </Link>
             
             <div className="hidden md:flex items-center gap-6">
-              <a href="/jobs" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/jobs" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 AI职业
-              </a>
-              <a href="/projects" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
+              </Link>
+              <Link to="/projects" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 AI项目
-              </a>
-              <a href="/erica_model" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
+              </Link>
+              <Link to="/erica_model" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 AI能力模型
-              </a>
+              </Link>
             </div>
           </div>
 

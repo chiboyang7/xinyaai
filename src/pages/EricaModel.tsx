@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -261,8 +261,8 @@ const EricaModel = () => {
                   </TableHeader>
                   <TableBody>
                     {dimensions.map((dimension, index) => (
-                      <>
-                        <TableRow 
+                      <React.Fragment key={index}>
+                        <TableRow
                           key={index} 
                           className="hover:bg-muted/20 cursor-pointer transition-colors"
                           onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
@@ -326,7 +326,7 @@ const EricaModel = () => {
                             </TableCell>
                           </TableRow>
                         )}
-                      </>
+                      </React.Fragment>
                     ))}
                   </TableBody>
                 </Table>
