@@ -27,8 +27,8 @@ const Hero = () => {
         <path d="M600,50 Q800,80 1000,50 T1400,50 L1400,90 Q1200,75 1000,90 T600,90 Z" fill="url(#dots1)" className="hidden md:block animate-pulse" style={{ animationDuration: '8s' }} />
         
         {/* Top left curved line */}
-        <path d="M0,80 Q150,120 300,80" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.3" className="hidden sm:block" />
-        <path d="M0,120 Q180,160 360,120" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.25" className="hidden sm:block" />
+        <path d="M0,80 Q100,100 200,80 T400,80" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.3" className="hidden sm:block" />
+        <path d="M0,120 Q120,145 240,120 T480,120" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.25" className="hidden sm:block" />
         
         {/* Bottom left corner */}
         <path d="M0,400 Q200,430 400,400 T800,400 L800,450 Q600,435 400,450 T0,450 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '12s' }} />
@@ -38,12 +38,12 @@ const Hero = () => {
         <path d="M1000,80 Q1100,180 1200,280 Q1250,360 1300,440" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden xl:block" />
         
         {/* Bottom right corner */}
-        <path d="M800,480 Q1000,460 1200,480" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.3" className="hidden md:block" />
+        <path d="M800,480 Q900,465 1000,480 T1200,480" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.3" className="hidden md:block" />
         
         {/* Additional bottom empty space lines (30%) */}
         <path d="M200,520 Q500,500 800,520 T1400,520 L1400,560 Q1100,545 800,560 T200,560 Z" fill="url(#dots1)" className="hidden sm:block animate-pulse" style={{ animationDuration: '9s' }} />
-        <path d="M0,580 Q300,600 600,580" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.25" className="hidden md:block" />
-        <path d="M400,600 Q700,620 1000,600 Q1200,590 1400,600" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.3" className="hidden lg:block" />
+        <path d="M0,580 Q150,600 300,580 T600,580" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.25" className="hidden md:block" />
+        <path d="M400,600 Q550,615 700,600 T1000,600 Q1150,590 1300,600" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.3" className="hidden lg:block" />
       </svg>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
