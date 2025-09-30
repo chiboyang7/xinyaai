@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock } from "lucide-react";
+import { Clock, Layers } from "lucide-react";
 
 interface SimulationCardProps {
   company: string;
@@ -56,7 +56,10 @@ const SimulationCard = ({
         </div>
         
         <div className="flex items-center justify-between text-sm">
-          <span className="text-muted-foreground">{category}</span>
+          <div className="flex items-center gap-1 text-muted-foreground">
+            <Layers className="h-4 w-4" />
+            <span>{category}</span>
+          </div>
           <div className="flex items-center gap-1 text-muted-foreground">
             <Clock className="h-4 w-4" />
             <span>{duration}</span>
