@@ -8,7 +8,7 @@ interface SimulationCardProps {
   category: string;
   duration: string;
   imageUrl: string;
-  logoUrl: string;
+  logoUrl?: string;
   hiringNow?: boolean;
 }
 
@@ -40,11 +40,13 @@ const SimulationCard = ({
       
       <CardContent className="p-6">
         <div className="flex items-start gap-3 mb-4">
-          <img
-            src={logoUrl}
-            alt={company}
-            className="h-10 w-10 object-contain"
-          />
+          {logoUrl && (
+            <img
+              src={logoUrl}
+              alt={company}
+              className="h-10 w-10 object-contain"
+            />
+          )}
           <div className="flex-1">
             <p className="text-sm font-medium text-muted-foreground mb-1">{company}</p>
             <h3 className="font-semibold text-lg text-foreground leading-tight">
