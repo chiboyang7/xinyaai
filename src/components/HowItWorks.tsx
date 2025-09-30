@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { UserPlus, BookOpen, Award, ClipboardCheck } from "lucide-react";
+import { UserPlus, BookOpen, Award, ClipboardCheck, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const steps = [
