@@ -4,23 +4,23 @@ import { UserPlus, BookOpen, Award, Briefcase } from "lucide-react";
 const steps = [
   {
     icon: UserPlus,
-    title: "Register and tell us about yourself",
-    description: "Create your free account and share your interests and career goals.",
+    title: "注册并告诉我们关于你的信息",
+    description: "创建免费账户，分享你的兴趣和职业目标。",
   },
   {
     icon: BookOpen,
-    title: "Complete real-world tasks",
-    description: "Enroll in a job simulation and complete tasks that replicate actual work.",
+    title: "完成真实工作任务",
+    description: "参加工作模拟并完成复制实际工作的任务。",
   },
   {
     icon: Award,
-    title: "Earn your certificate",
-    description: "Compare your work with model answers and receive a certificate of completion.",
+    title: "获得证书",
+    description: "将你的工作与标准答案对比，获得完成证书。",
   },
   {
     icon: Briefcase,
-    title: "Connect with recruiters",
-    description: "Access curated resources and opportunities to connect with top employers.",
+    title: "与招聘人员联系",
+    description: "访问精选资源和机会，与顶级雇主建立联系。",
   },
 ];
 
