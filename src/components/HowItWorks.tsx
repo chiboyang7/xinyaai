@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { UserPlus, BookOpen, Award, Briefcase } from "lucide-react";
+import { UserPlus, BookOpen, Award, ClipboardCheck } from "lucide-react";
 
 const steps = [
   {
@@ -13,7 +13,7 @@ const steps = [
     description: "大多数任务通常需要30分钟到6个小时",
   },
   {
-    icon: Briefcase,
+    icon: ClipboardCheck,
     title: "专业评估",
     description: "我们的AI专家会对交付的任务进行评估",
   },
