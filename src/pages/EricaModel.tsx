@@ -268,20 +268,22 @@ const EricaModel = () => {
                           onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                         >
                           <TableCell className="align-top">
-                            <div className="flex items-center gap-3">
-                              <dimension.icon className={`w-6 h-6 ${dimension.color}`} />
-                              <div className="flex-1">
-                                <div className="font-semibold">
+                            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3">
+                              <div className="flex items-center gap-2">
+                                <dimension.icon className={`w-5 h-5 md:w-6 md:h-6 ${dimension.color}`} />
+                                <div className="flex-1 font-semibold text-sm md:text-base">
                                   <span className="text-foreground">{dimension.name.split(' ')[0]}</span>
                                   {' '}
-                                  <span className="text-blue-600">{dimension.name.split(' ')[1]}</span>
+                                  <span className="text-blue-600 block md:inline">{dimension.name.split(' ')[1]}</span>
                                 </div>
                               </div>
-                              {expandedIndex === index ? (
-                                <ChevronUp className="w-5 h-5 text-muted-foreground" />
-                              ) : (
-                                <ChevronDown className="w-5 h-5 text-muted-foreground" />
-                              )}
+                              <div className="flex justify-center md:ml-auto">
+                                {expandedIndex === index ? (
+                                  <ChevronUp className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
+                                ) : (
+                                  <ChevronDown className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
+                                )}
+                              </div>
                             </div>
                           </TableCell>
                           <TableCell className="align-top text-foreground/80">
