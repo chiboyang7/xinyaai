@@ -31,8 +31,8 @@ const SimulationCard = ({
         />
         <Badge className={`absolute top-3 left-3 ${
           hiringNow 
-            ? "bg-primary text-primary-foreground" 
-            : "bg-orange-500 text-white"
+            ? "bg-primary text-primary-foreground hover:bg-primary" 
+            : "bg-orange-500 text-white hover:bg-orange-500"
         }`}>
           {hiringNow ? "正在热招" : "等待开放"}
         </Badge>
