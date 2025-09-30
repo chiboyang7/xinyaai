@@ -18,7 +18,7 @@ const steps = [
     description: "每个任务会让学员学习和掌握多个不同的AI技能",
   },
   {
-    icon: HowItWorks,
+    icon: Briefcase,
     title: "与招聘人员联系",
     description: "访问精选资源和机会，与顶级雇主建立联系。",
   },
