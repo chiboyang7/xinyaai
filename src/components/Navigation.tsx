@@ -10,7 +10,10 @@ const Navigation = () => {
           <div className="flex items-center gap-8">
             <a href="/" className="flex items-center gap-2">
               <img src={logo} alt="CareerForge Logo" className="h-8 w-8" />
-              <span className="font-bold text-xl bg-gradient-to-l from-blue-500 to-gray-700 bg-clip-text text-transparent">新芽AI</span>
+              <span className="font-bold text-xl">
+                <span className="text-foreground">新芽</span>
+                <span className="text-primary">AI</span>
+              </span>
             </a>
             
             <div className="hidden md:flex items-center gap-6">
