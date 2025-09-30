@@ -9,7 +9,7 @@ const simulations = [
     title: "主题乐园设计师",
     category: "包含6个项目",
     duration: "约16个小时",
-    imageUrl: "https://unsplash.com/photos/brown-and-blue-concrete-castle-under-blue-sky-during-daytime-BLYq8Qk8Q98",
+    imageUrl: "https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     hiringNow: true,
   },
   {
