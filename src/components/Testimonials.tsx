@@ -36,7 +36,7 @@ const Testimonials = () => {
                   {testimonial.quote}
                 </p>
                 <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="font-semibold text-primary">{testimonial.name}</p>
                 </div>
               </CardContent>
             </Card>
