@@ -7,12 +7,12 @@ const Hero = () => {
     <section className="py-20 sm:py-32 bg-gradient-to-b from-secondary/30 to-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-8">
             游戏化的学习方式 {"  "}
             <span className="text-primary">体验AI新职业</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl font-medium mb-8">
+          <p className="text-2xl sm:text-3xl font-medium mb-8">
             <span className="text-foreground">Experience Gamified Learning</span>
             {" "}
             <span className="text-primary">Explore AI Careers</span>
