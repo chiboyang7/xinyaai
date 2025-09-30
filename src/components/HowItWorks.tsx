@@ -60,7 +60,7 @@ const HowItWorks = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="gap-2" asChild>
+          <Button size="lg" className="gap-2 text-lg" asChild>
             <Link to="/auth">
               立刻加入新芽AI项目 
               <ArrowRight className="h-4 w-4" />
