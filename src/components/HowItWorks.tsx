@@ -60,7 +60,10 @@ const HowItWorks = () => {
 
         <div className="text-center">
           <Button size="lg" className="gap-2">
-            How CareerForge Works
+            <Link to="/auth">
+              立刻加入新芽计划
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>
