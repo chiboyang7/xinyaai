@@ -241,7 +241,7 @@ const EricaModel = () => {
         <div className="max-w-5xl mx-auto">
           <Card className="border bg-card/50 backdrop-blur-sm">
             <CardHeader className="text-center bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-b">
-              <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+              <CardTitle className="text-3xl font-bold text-blue-600 mb-2">
                 ERICA 能力评估标准
               </CardTitle>
               <CardDescription className="text-base text-foreground/70">
@@ -271,7 +271,7 @@ const EricaModel = () => {
                             <div className="flex items-center gap-3">
                               <dimension.icon className={`w-6 h-6 ${dimension.color}`} />
                               <div className="flex-1">
-                                <div className="font-semibold text-foreground">{dimension.name}</div>
+                                <div className="font-semibold text-blue-600">{dimension.name}</div>
                               </div>
                               {expandedIndex === index ? (
                                 <ChevronUp className="w-5 h-5 text-muted-foreground" />
