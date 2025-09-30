@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import logo from "@/assets/logo2.png";
+import logo from "@/assets/logo1.png";
 
 const Navigation = () => {
   return (
