@@ -15,9 +15,13 @@ const CompanyTicker = () => {
   return (
     <section className="py-12 border-y bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-lg font-light text-foreground mb-8">
-          我们的学员来自以下学校
-        </p>
+        <div className="flex items-center justify-center gap-4 mb-12">
+          <div className="h-px w-16 bg-border"></div>
+          <p className="text-center text-lg font-medium text-foreground whitespace-nowrap">
+            我们的学员来自以下学校
+          </p>
+          <div className="h-px w-16 bg-border"></div>
+        </div>
         
         <div className="relative overflow-hidden">
           <div className="flex animate-scroll">
