@@ -24,27 +24,19 @@ const Testimonials = () => {
     <section className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-foreground">
-          Too good to be true? Hear from real students.
+          来自老师和家长的反馈
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="border-border hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-6 flex flex-col h-full">
                 <Quote className="h-8 w-8 text-primary mb-4" />
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  "{testimonial.quote}"
+                <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
+                  {testimonial.quote}
                 </p>
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.imageUrl}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.result}</p>
-                  </div>
+                <div>
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
                 </div>
               </CardContent>
             </Card>
