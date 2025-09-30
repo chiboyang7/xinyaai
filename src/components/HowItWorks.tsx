@@ -62,7 +62,8 @@ const HowItWorks = () => {
         <div className="text-center">
           <Button size="lg" className="gap-2" asChild>
             <Link to="/auth">
-              How CareerForge Works
+              立刻加入新芽AI项目 
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>
