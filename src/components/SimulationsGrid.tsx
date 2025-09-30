@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 
 const simulations = [
   {
-    company: "J.P. Morgan",
-    title: "Software Engineering",
-    category: "Software Engineering",
-    duration: "4-5 hours",
-    imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-    logoUrl: "https://cdn.theforage.com/vinternships/companyassets/Sj7temL583QAYpHXD/X4TxXYQuNpSotbsFR/1693135171316/jpm_chase_optimised.png",
+    company: "迪士尼乐园",
+    title: "主题乐园设计师",
+    category: "包含6个项目",
+    duration: "约16个小时",
+    imageUrl: "https://unsplash.com/photos/white-and-blue-castle-under-blue-sky-and-white-clouds-during-daytime-z4ky2zXIjDM",
     hiringNow: true,
   },
   {
