@@ -12,7 +12,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            通过世界顶级企业设计的数百个免费职业模拟，探索AI职业发展，为未来就业做好准备。
+            通过顶级企业设计的数十个AI职业和项目，在AI指导下学习技能，激发潜力
           </p>
 
           <Button size="lg" className="text-base px-8 h-12 gap-2">
