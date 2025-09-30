@@ -15,12 +15,12 @@ const steps = [
   {
     icon: ClipboardCheck,
     title: "专业评估",
-    description: "我们的AI专家会对交付的任务进行评估",
+    description: "新芽AI专家会对交付的结果进行评估",
   },
   {
     icon: Award,
     title: "获得技能奖章",
-    description: "通过任务学习和掌握多个AI技能",
+    description: "通过任务学习和掌握多个AI技能认证",
   },
   
 ];
