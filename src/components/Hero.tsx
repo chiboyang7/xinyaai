@@ -12,7 +12,7 @@ const Hero = () => {
             <span className="text-primary">体验AI新职业</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl font-medium mb-8">
+          <p className="text-2xl sm:text-2xl font-medium mb-8">
             <span className="text-foreground">Experience Gamified Learning</span>
             {" "}
             <span className="text-primary">Explore AI Careers</span>
