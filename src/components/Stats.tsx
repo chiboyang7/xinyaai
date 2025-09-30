@@ -3,18 +3,18 @@ import { TrendingUp, Building2, Users } from "lucide-react";
 const stats = [
   {
     icon: TrendingUp,
-    value: "3.3x",
-    label: "more likely to land a job after participating in a job simulation",
+    value: "10x",
+    label: "利用AI以10倍的速度和思考深度完成日常任务",
   },
   {
     icon: Building2,
-    value: "300+",
-    label: "job simulations and 125+ employers across diverse industries and careers",
+    value: "220+",
+    label: "我们的用户覆盖了超过220所学校",
   },
   {
     icon: Users,
-    value: "5M+",
-    label: "students have signed up to CareerForge",
+    value: "100+",
+    label: "超过100种AI技能勋章认证",
   },
 ];
 
