@@ -17,14 +17,14 @@ const Navigation = () => {
             </a>
             
             <div className="hidden md:flex items-center gap-6">
-              <a href="#explore" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Explore
+              <a href="/jobs" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                AI职业
               </a>
-              <a href="#jobs" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Jobs
+              <a href="/projects" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                AI项目
               </a>
-              <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                About
+              <a href="/erica_model" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                AI能力模型
               </a>
             </div>
           </div>
