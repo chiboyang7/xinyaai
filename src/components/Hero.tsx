@@ -16,7 +16,7 @@ const Hero = () => {
           </p>
 
           <Button size="lg" className="text-base px-8 h-12 gap-2">
-            Get Started
+            免费注册
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>

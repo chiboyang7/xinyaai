@@ -34,7 +34,7 @@ const Navigation = () => {
               Sign In
             </Button>
             <Button>
-              Get Started
+              免费注册
             </Button>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
