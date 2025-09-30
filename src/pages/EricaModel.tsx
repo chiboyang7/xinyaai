@@ -34,8 +34,8 @@ const EricaModel = () => {
   const dimensions: Dimension[] = [
     {
       icon: "⚙️",
-      name: "工程力",
-      englishName: "Engineering",
+      name: "工程力 E-Engineering",
+      englishName: "",
       description: "对计算机技术的理解和应用能力，从基础概念到算法建模",
       careers: "软件工程师 / 算法工程师",
       color: "text-blue-600",
@@ -74,8 +74,8 @@ const EricaModel = () => {
     },
     {
       icon: "🧠",
-      name: "思辨力",
-      englishName: "Reflection",
+      name: "思辨力 R-Reflection",
+      englishName: "",
       description: "批判性地看待AI信息，并利用其进行深度分析、归纳和推理的能力",
       careers: "咨询顾问 / 工程师",
       color: "text-pink-600",
@@ -114,8 +114,8 @@ const EricaModel = () => {
     },
     {
       icon: "🎨",
-      name: "创造力",
-      englishName: "Innovation",
+      name: "创造力 I-Innovation",
+      englishName: "",
       description: "与AI共同激发灵感，从0到1创造新颖、独特、富有想象力作品的能力",
       careers: "工业设计 / 艺术家",
       color: "text-orange-600",
@@ -154,8 +154,8 @@ const EricaModel = () => {
     },
     {
       icon: "💬",
-      name: "沟通力",
-      englishName: "Communication",
+      name: "沟通力 C-Communication",
+      englishName: "",
       description: "与AI进行精准、高效、富有技巧的对话能力",
       careers: "记者 / 律师",
       color: "text-purple-600",
@@ -194,8 +194,8 @@ const EricaModel = () => {
     },
     {
       icon: "🤝",
-      name: "协作力",
-      englishName: "Application",
+      name: "协作力 A-Application",
+      englishName: "",
       description: "将AI作为可赋能的伙伴，组织和驾驭它完成复杂工作",
       careers: "项目经理 / 创业者",
       color: "text-yellow-600",
@@ -254,8 +254,8 @@ const EricaModel = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/30 hover:bg-muted/30">
-                      <TableHead className="w-[25%] font-semibold text-foreground">能力维度</TableHead>
-                      <TableHead className="w-[45%] font-semibold text-foreground">解释说明</TableHead>
+                      <TableHead className="w-[30%] font-semibold text-foreground">能力维度</TableHead>
+                      <TableHead className="w-[40%] font-semibold text-foreground">解释说明</TableHead>
                       <TableHead className="w-[30%] font-semibold text-foreground">典型职业</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -268,16 +268,15 @@ const EricaModel = () => {
                           onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                         >
                           <TableCell className="align-top">
-                            <div className="flex items-start gap-2">
+                            <div className="flex items-center gap-2">
                               <span className="text-2xl">{dimension.icon}</span>
                               <div className="flex-1">
                                 <div className="font-semibold text-foreground">{dimension.name}</div>
-                                <div className={`text-sm ${dimension.color}`}>{dimension.englishName}</div>
                               </div>
                               {expandedIndex === index ? (
-                                <ChevronUp className="w-5 h-5 text-muted-foreground mt-1" />
+                                <ChevronUp className="w-5 h-5 text-muted-foreground" />
                               ) : (
-                                <ChevronDown className="w-5 h-5 text-muted-foreground mt-1" />
+                                <ChevronDown className="w-5 h-5 text-muted-foreground" />
                               )}
                             </div>
                           </TableCell>
