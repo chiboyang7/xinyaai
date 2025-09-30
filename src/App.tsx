@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AdminSetup from "./pages/AdminSetup";
 import NotFound from "./pages/NotFound";
+import Jobs from "./pages/Jobs";
+import Projects from "./pages/Projects";
+import EricaModel from "./pages/EricaModel";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +20,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/erica_model" element={<EricaModel />} />
           <Route path="/admin-setup" element={<AdminSetup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
