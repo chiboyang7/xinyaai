@@ -4,21 +4,21 @@ import { UserPlus, BookOpen, Award, Briefcase } from "lucide-react";
 const steps = [
   {
     icon: UserPlus,
-    title: "注册并告诉我们关于你的信息",
-    description: "创建免费账户，分享你的兴趣和职业目标。",
+    title: "选择一个职位",
+    description: "注册并选择加入一个正在热招的职位",
   },
   {
     icon: BookOpen,
-    title: "完成真实工作任务",
-    description: "参加工作模拟并完成复制实际工作的任务。",
+    title: "按步骤完成任务",
+    description: "大多数任务通常需要30分钟到6个小时",
   },
   {
     icon: Award,
-    title: "获得证书",
-    description: "将你的工作与标准答案对比，获得完成证书。",
+    title: "获得技能奖章",
+    description: "每个任务会让学员学习和掌握多个不同的AI技能",
   },
   {
-    icon: Briefcase,
+    icon: HowItWorks,
     title: "与招聘人员联系",
     description: "访问精选资源和机会，与顶级雇主建立联系。",
   },
