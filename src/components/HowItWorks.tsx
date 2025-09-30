@@ -30,9 +30,8 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            <span className="text-foreground">新芽AI模拟工作中真实的AI应用场景</span>
-            <br />
-            <span className="text-primary">以项目制的形式快速呈现结果</span>
+            <span className="text-foreground block">新芽AI模拟工作中真实的AI应用场景</span>
+            <span className="text-primary block mt-2">以项目制的形式快速呈现结果</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Our job simulations build real-life skills for real-life roles, offering a window into 
