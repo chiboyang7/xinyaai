@@ -15,7 +15,7 @@ const CompanyTicker = () => {
   return (
     <section className="py-12 border-y bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm text-muted-foreground mb-8">
+        <p className="text-center text-lg font-semibold text-muted-foreground mb-8">
           我们的学员来自以下学校
         </p>
         
