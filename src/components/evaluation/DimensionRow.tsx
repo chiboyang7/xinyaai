@@ -29,7 +29,7 @@ export const DimensionRow = ({ dimension, isExpanded, onToggle }: DimensionRowPr
       </TableCell>
       <TableCell className="text-left">
         <div className="flex flex-wrap gap-1">
-          {dimension.careers.slice(0, 2).map((career, idx) => (
+          {dimension.careers.map((career, idx) => (
             <span
               key={idx}
               className="text-xs bg-primary/10 text-primary px-2 py-1 rounded"
@@ -37,11 +37,6 @@ export const DimensionRow = ({ dimension, isExpanded, onToggle }: DimensionRowPr
               {career}
             </span>
           ))}
-          {dimension.careers.length > 2 && (
-            <span className="text-xs text-muted-foreground">
-              +{dimension.careers.length - 2}
-            </span>
-          )}
         </div>
       </TableCell>
     </TableRow>

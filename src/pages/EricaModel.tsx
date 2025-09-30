@@ -45,9 +45,9 @@ const EricaModel = () => {
                 <Table className="table-fixed w-full">
                   <TableHeader>
                     <TableRow className="bg-gradient-to-r from-muted/30 via-muted/20 to-muted/30 hover:from-muted/40 hover:via-muted/30 hover:to-muted/40">
-                      <TableHead className="w-[35%] font-semibold text-foreground/90">能力维度</TableHead>
-                      <TableHead className="w-[50%] font-semibold text-foreground/90">解释说明</TableHead>
-                      <TableHead className="w-[15%] text-left font-semibold text-foreground/90">典型职业</TableHead>
+                      <TableHead className="w-[25%] font-semibold text-foreground/90">能力维度</TableHead>
+                      <TableHead className="w-[40%] font-semibold text-foreground/90">解释说明</TableHead>
+                      <TableHead className="w-[35%] text-left font-semibold text-foreground/90">典型职业</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
