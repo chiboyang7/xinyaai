@@ -15,12 +15,12 @@ const CompanyTicker = () => {
   return (
     <section className="py-12 border-y bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center mb-12">
-          <div className="bg-muted/50 backdrop-blur-sm rounded-full px-6 py-3 border border-border/50">
-            <p className="text-center text-base font-medium text-foreground">
-              我们的学员来自以下学校
-            </p>
-          </div>
+        <div className="flex items-center justify-center gap-6 mb-12">
+          <div className="h-[2px] w-24 bg-gradient-to-r from-transparent via-border to-border"></div>
+          <p className="text-center text-lg font-semibold text-foreground whitespace-nowrap">
+            我们的学员来自以下学校
+          </p>
+          <div className="h-[2px] w-24 bg-gradient-to-l from-transparent via-border to-border"></div>
         </div>
         
         <div className="relative overflow-hidden">
