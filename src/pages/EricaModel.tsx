@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Settings, Brain, Palette, MessageSquare, Users, LucideIcon } from "lucide-react";
 
 interface DetailLevel {
   score: string;
@@ -19,7 +19,7 @@ interface DetailLevel {
 }
 
 interface Dimension {
-  icon: string;
+  icon: LucideIcon;
   name: string;
   englishName: string;
   description: string;
@@ -33,7 +33,7 @@ const EricaModel = () => {
 
   const dimensions: Dimension[] = [
     {
-      icon: "⚙️",
+      icon: Settings,
       name: "工程力 E-Engineering",
       englishName: "",
       description: "对计算机技术的理解和应用能力，从基础概念到算法建模",
@@ -73,7 +73,7 @@ const EricaModel = () => {
       ]
     },
     {
-      icon: "🧠",
+      icon: Brain,
       name: "思辨力 R-Reflection",
       englishName: "",
       description: "批判性地看待AI信息，并利用其进行深度分析、归纳和推理的能力",
@@ -113,7 +113,7 @@ const EricaModel = () => {
       ]
     },
     {
-      icon: "🎨",
+      icon: Palette,
       name: "创造力 I-Innovation",
       englishName: "",
       description: "与AI共同激发灵感，从0到1创造新颖、独特、富有想象力作品的能力",
@@ -153,7 +153,7 @@ const EricaModel = () => {
       ]
     },
     {
-      icon: "💬",
+      icon: MessageSquare,
       name: "沟通力 C-Communication",
       englishName: "",
       description: "与AI进行精准、高效、富有技巧的对话能力",
@@ -193,7 +193,7 @@ const EricaModel = () => {
       ]
     },
     {
-      icon: "🤝",
+      icon: Users,
       name: "协作力 A-Application",
       englishName: "",
       description: "将AI作为可赋能的伙伴，组织和驾驭它完成复杂工作",
@@ -268,8 +268,8 @@ const EricaModel = () => {
                           onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                         >
                           <TableCell className="align-top">
-                            <div className="flex items-center gap-2">
-                              <span className="text-2xl">{dimension.icon}</span>
+                            <div className="flex items-center gap-3">
+                              <dimension.icon className={`w-6 h-6 ${dimension.color}`} />
                               <div className="flex-1">
                                 <div className="font-semibold text-foreground">{dimension.name}</div>
                               </div>
