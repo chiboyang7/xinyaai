@@ -4,7 +4,7 @@ const stats = [
   {
     icon: TrendingUp,
     value: "10x",
-    label: "利用AI以10倍的速度和思考深度完成日常任务",
+    label: "利用AI以10倍的速度和思考深度完成复杂任务",
   },
   {
     icon: Building2,
