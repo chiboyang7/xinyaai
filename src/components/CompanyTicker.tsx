@@ -31,7 +31,7 @@ const CompanyTicker = () => {
                 className="flex-shrink-0 mx-8 flex items-center justify-center"
               >
                 <span
-                  className={`text-lg font-semibold whitespace-nowrap transition-opacity hover:opacity-100 ${
+                  className={`text-lg font-semibold whitespace-nowrap transition-all duration-300 hover:opacity-100 hover:scale-110 cursor-pointer ${
                     index % 2 === 0 
                       ? "text-foreground opacity-80" 
                       : "text-primary opacity-80"
