@@ -29,11 +29,13 @@ const SimulationCard = ({
           alt={title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        {hiringNow && (
-          <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
-            正在热招
-          </Badge>
-        )}
+        <Badge className={`absolute top-3 left-3 ${
+          hiringNow 
+            ? "bg-primary text-primary-foreground" 
+            : "bg-orange-500 text-white"
+        }`}>
+          {hiringNow ? "正在热招" : "等待开放"}
+        </Badge>
       </div>
       
       <CardContent className="p-6">
