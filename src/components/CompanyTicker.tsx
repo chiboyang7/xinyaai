@@ -1,10 +1,13 @@
-const companies = [
-  { name: "JPMorgan Chase", logo: "https://cdn-assets.theforage.com/firm_logos/firm-logo-ticker-logos/v2/us_ca/jpmorganchase.svg" },
-  { name: "Walmart", logo: "https://cdn-assets.theforage.com/firm_logos/firm-logo-ticker-logos/v2/us_ca/walmart.svg" },
-  { name: "Goldman Sachs", logo: "https://cdn-assets.theforage.com/firm_logos/firm-logo-ticker-logos/v2/us_ca/goldman-sachs.svg" },
-  { name: "Bank of America", logo: "https://cdn-assets.theforage.com/firm_logos/firm-logo-ticker-logos/v2/us_ca/bank-of-america.svg" },
-  { name: "White & Case", logo: "https://cdn-assets.theforage.com/firm_logos/firm-logo-ticker-logos/v2/us_ca/whitecase.svg" },
-  { name: "Boston Consulting Group", logo: "https://cdn-assets.theforage.com/firm_logos/firm-logo-ticker-logos/v2/us_ca/bcg.svg" },
+const schools = [
+  "北京四中",
+  "人大附中",
+  "赫德学校",
+  "杭州外国语学校",
+  "上海市第三女子中学",
+  "华师大附中",
+  "东北实验中学",
+  "汇师小学",
+  "衡水中学"
 ];
 
 const CompanyTicker = () => {
@@ -17,16 +20,20 @@ const CompanyTicker = () => {
         
         <div className="relative overflow-hidden">
           <div className="flex animate-scroll">
-            {[...companies, ...companies].map((company, index) => (
+            {[...schools, ...schools, ...schools].map((school, index) => (
               <div
-                key={`${company.name}-${index}`}
-                className="flex-shrink-0 w-40 mx-8 flex items-center justify-center"
+                key={`${school}-${index}`}
+                className="flex-shrink-0 mx-8 flex items-center justify-center"
               >
-                <img
-                  src={company.logo}
-                  alt={company.name}
-                  className="h-8 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
-                />
+                <span
+                  className={`text-lg font-semibold whitespace-nowrap transition-opacity hover:opacity-100 ${
+                    index % 2 === 0 
+                      ? "text-foreground opacity-80" 
+                      : "text-primary opacity-80"
+                  }`}
+                >
+                  {school}
+                </span>
               </div>
             ))}
           </div>
