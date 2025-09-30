@@ -19,27 +19,22 @@ const Hero = () => {
           </pattern>
         </defs>
         
-        {/* Multiple curved wave patterns */}
-        <path d="M0,150 Q300,100 600,150 T1200,150 L1200,200 Q900,180 600,200 T0,200 Z" fill="url(#dots1)" className="animate-pulse" style={{ animationDuration: '8s' }} />
-        <path d="M0,250 Q400,200 800,250 T1600,250 L1600,300 Q1200,280 800,300 T0,300 Z" fill="url(#dots2)" className="animate-pulse" style={{ animationDuration: '10s' }} />
-        <path d="M200,350 Q600,300 1000,350 T1800,350 L1800,400 Q1400,380 1000,400 T200,400 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '12s' }} />
+        {/* Side decorative curved lines - balanced left and right */}
+        {/* Left side curves */}
+        <path d="M50,300 Q120,380 190,460 Q260,540 330,620" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
+        <path d="M100,320 Q160,400 220,480 Q280,560 340,640" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
         
-        {/* Additional decorative curved lines on the right */}
-        <path d="M800,50 Q900,150 1000,250 Q1100,350 1200,450" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
-        <path d="M900,80 Q1000,180 1100,280 Q1200,380 1300,480" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
+        {/* Right side curves */}
+        <path d="M1200,300 Q1130,380 1060,460 Q990,540 920,620" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
+        <path d="M1150,320 Q1090,400 1030,480 Q970,560 910,640" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
+        <path d="M1250,280 Q1180,360 1110,440 Q1040,520 970,600" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.18" className="hidden lg:block" />
         
-        {/* Bottom section decorative lines (30% of total) */}
-        {/* Bottom wave patterns */}
-        <path d="M0,450 Q350,420 700,450 T1400,450 L1400,500 Q1050,480 700,500 T0,500 Z" fill="url(#dots2)" className="animate-pulse" style={{ animationDuration: '9s' }} />
-        <path d="M200,520 Q500,490 800,520 T1400,520 L1400,570 Q1100,550 800,570 T200,570 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '11s' }} />
+        {/* Middle section wave patterns (below subtitle, above button) */}
+        <path d="M0,350 Q400,320 800,350 T1600,350 L1600,400 Q1200,380 800,400 T0,400 Z" fill="url(#dots2)" className="animate-pulse" style={{ animationDuration: '10s' }} />
         
-        {/* Bottom curved dotted lines - left side */}
-        <path d="M50,450 Q150,500 250,550 Q350,600 450,650" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
-        <path d="M100,480 Q180,530 260,580 Q340,630 420,680" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
-        
-        {/* Bottom curved dotted lines - right side */}
-        <path d="M1200,450 Q1100,500 1000,550 Q900,600 800,650" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
-        <path d="M1150,480 Q1070,530 990,580 Q910,630 830,680" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
+        {/* Bottom section decorative lines */}
+        <path d="M0,480 Q350,450 700,480 T1400,480 L1400,530 Q1050,510 700,530 T0,530 Z" fill="url(#dots2)" className="animate-pulse" style={{ animationDuration: '9s' }} />
+        <path d="M200,550 Q500,520 800,550 T1400,550 L1400,600 Q1100,580 800,600 T200,600 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '11s' }} />
       </svg>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
