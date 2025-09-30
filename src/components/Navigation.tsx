@@ -17,23 +17,23 @@ const Navigation = () => {
             </a>
             
             <div className="hidden md:flex items-center gap-6">
-              <a href="/jobs" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/jobs" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 AI职业
               </a>
-              <a href="/projects" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/projects" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 AI项目
               </a>
-              <a href="/erica_model" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/erica_model" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 AI能力模型
               </a>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <Button variant="ghost" className="hidden sm:inline-flex">
+            <Button variant="ghost" className="hidden sm:inline-flex text-base">
               登录
             </Button>
-            <Button>
+            <Button className="text-base">
               免费注册
             </Button>
             <Button variant="ghost" size="icon" className="md:hidden">
