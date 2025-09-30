@@ -13,15 +13,16 @@ const steps = [
     description: "大多数任务通常需要30分钟到6个小时",
   },
   {
-    icon: Award,
-    title: "获得技能奖章",
-    description: "每个任务会让学员学习和掌握多个不同的AI技能",
+    icon: Briefcase,
+    title: "专业评估",
+    description: "我们的AI专家会对交付的任务进行评估",
   },
   {
-    icon: Briefcase,
-    title: "与招聘人员联系",
-    description: "访问精选资源和机会，与顶级雇主建立联系。",
+    icon: Award,
+    title: "获得技能奖章",
+    description: "通过任务学习和掌握多个AI技能",
   },
+  
 ];
 
 const HowItWorks = () => {
