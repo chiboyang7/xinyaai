@@ -17,7 +17,7 @@ const CompanyTicker = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center gap-6 mb-12">
           <div className="h-[2px] w-24 bg-gradient-to-r from-transparent via-border to-border"></div>
-          <p className="text-center text-lg font-semibold whitespace-nowrap bg-gradient-to-r from-blue-500 to-black bg-clip-text text-transparent">
+          <p className="text-center text-lg font-semibold whitespace-nowrap bg-gradient-to-r from-blue-500 from-50% to-gray-500 to-50% bg-clip-text text-transparent">
             我们的学员来自以下学校
           </p>
           <div className="h-[2px] w-24 bg-gradient-to-l from-transparent via-border to-border"></div>
