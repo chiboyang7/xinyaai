@@ -9,24 +9,36 @@ const Hero = () => {
       <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="dots1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect width="4" height="4" fill="hsl(var(--primary))" opacity="0.4" />
+            <rect width="4" height="4" fill="hsl(var(--primary))" opacity="0.3" />
           </pattern>
           <pattern id="dots2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect width="4" height="4" fill="hsl(var(--primary))" opacity="0.25" />
+            <rect width="4" height="4" fill="hsl(var(--primary))" opacity="0.2" />
           </pattern>
           <pattern id="dots3" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect width="4" height="4" fill="hsl(var(--secondary))" opacity="0.3" />
+            <rect width="4" height="4" fill="hsl(var(--secondary))" opacity="0.25" />
           </pattern>
         </defs>
         
-        {/* Multiple curved wave patterns */}
-        <path d="M0,150 Q300,100 600,150 T1200,150 L1200,200 Q900,180 600,200 T0,200 Z" fill="url(#dots1)" className="animate-pulse" style={{ animationDuration: '8s' }} />
-        <path d="M0,250 Q400,200 800,250 T1600,250 L1600,300 Q1200,280 800,300 T0,300 Z" fill="url(#dots2)" className="animate-pulse" style={{ animationDuration: '10s' }} />
-        <path d="M200,350 Q600,300 1000,350 T1800,350 L1800,400 Q1400,380 1000,400 T200,400 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '12s' }} />
+        {/* Lines behind text (50%) - subtle and centered */}
+        <path d="M0,200 Q400,180 800,200 T1600,200 L1600,240 Q1200,230 800,240 T0,240 Z" fill="url(#dots2)" className="animate-pulse" style={{ animationDuration: '10s' }} />
         
-        {/* Additional decorative curved lines on the right */}
-        <path d="M800,50 Q900,150 1000,250 Q1100,350 1200,450" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden lg:block" />
-        <path d="M900,80 Q1000,180 1100,280 Q1200,380 1300,480" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.15" className="hidden lg:block" />
+        {/* Lines in empty space (50%) - more visible on sides and corners */}
+        {/* Top right corner */}
+        <path d="M600,50 Q800,80 1000,50 T1400,50 L1400,90 Q1200,75 1000,90 T600,90 Z" fill="url(#dots1)" className="hidden md:block animate-pulse" style={{ animationDuration: '8s' }} />
+        
+        {/* Top left curved line */}
+        <path d="M0,80 Q150,120 300,80" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.3" className="hidden sm:block" />
+        <path d="M0,120 Q180,160 360,120" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.25" className="hidden sm:block" />
+        
+        {/* Bottom left corner */}
+        <path d="M0,400 Q200,430 400,400 T800,400 L800,450 Q600,435 400,450 T0,450 Z" fill="url(#dots3)" className="hidden sm:block animate-pulse" style={{ animationDuration: '12s' }} />
+        
+        {/* Right side curved lines */}
+        <path d="M900,100 Q1000,200 1100,300 Q1150,380 1200,460" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.3" className="hidden lg:block" />
+        <path d="M1000,80 Q1100,180 1200,280 Q1250,360 1300,440" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="8 12" fill="none" opacity="0.2" className="hidden xl:block" />
+        
+        {/* Bottom right corner */}
+        <path d="M800,480 Q1000,460 1200,480" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="6 10" fill="none" opacity="0.3" className="hidden md:block" />
       </svg>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
