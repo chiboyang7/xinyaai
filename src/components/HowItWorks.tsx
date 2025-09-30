@@ -11,7 +11,7 @@ const steps = [
   {
     icon: BookOpen,
     title: "按步骤完成任务",
-    description: "大多数任务通常需要30分钟到6个小时",
+    description: "大多数任务需要30分钟到3个小时",
   },
   {
     icon: ClipboardCheck,
