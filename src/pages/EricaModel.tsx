@@ -254,9 +254,9 @@ const EricaModel = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/30 hover:bg-muted/30">
-                      <TableHead className="w-[20%] md:w-[25%] font-semibold text-foreground">能力维度</TableHead>
+                      <TableHead className="w-[30%] font-semibold text-foreground">能力维度</TableHead>
                       <TableHead className="w-[50%] font-semibold text-foreground">解释说明</TableHead>
-                      <TableHead className="w-[30%] md:w-[25%] font-semibold text-foreground">典型职业</TableHead>
+                      <TableHead className="w-[20%] font-semibold text-foreground">典型职业</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -268,22 +268,20 @@ const EricaModel = () => {
                           onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                         >
                           <TableCell className="align-top">
-                            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3">
-                              <div className="flex items-center gap-2">
-                                <dimension.icon className={`w-5 h-5 md:w-6 md:h-6 ${dimension.color}`} />
-                                <div className="flex-1 font-semibold text-sm md:text-base">
+                            <div className="flex items-center gap-3">
+                              <dimension.icon className={`w-6 h-6 ${dimension.color}`} />
+                              <div className="flex-1">
+                                <div className="font-semibold">
                                   <span className="text-foreground">{dimension.name.split(' ')[0]}</span>
                                   {' '}
-                                  <span className="text-blue-600 block md:inline">{dimension.name.split(' ')[1]}</span>
+                                  <span className="text-blue-600">{dimension.name.split(' ')[1]}</span>
                                 </div>
                               </div>
-                              <div className="flex justify-center md:ml-auto">
-                                {expandedIndex === index ? (
-                                  <ChevronUp className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
-                                ) : (
-                                  <ChevronDown className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
-                                )}
-                              </div>
+                              {expandedIndex === index ? (
+                                <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                              ) : (
+                                <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                              )}
                             </div>
                           </TableCell>
                           <TableCell className="align-top text-foreground/80">
