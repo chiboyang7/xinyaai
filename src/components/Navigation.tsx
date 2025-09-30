@@ -12,7 +12,7 @@ const Navigation = () => {
               <img src={logo} alt="CareerForge Logo" className="h-8 w-8" />
               <span className="font-bold text-xl">
                 <span className="text-foreground">新芽</span>
-                <span className="text-primary">AI</span>
+                <span className="text-primary text-2xl">AI</span>
               </span>
             </a>
             
