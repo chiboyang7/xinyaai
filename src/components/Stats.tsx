@@ -27,8 +27,8 @@ const Stats = () => {
             const Icon = stat.icon;
             return (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
-                  <Icon className="h-6 w-6 text-primary" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <Icon className="h-8 w-8 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-foreground mb-2">
                   {stat.value}
