@@ -33,7 +33,7 @@ const HowItWorks = () => {
         <div className="max-w-3xl mx-auto text-center mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             <span className="text-foreground block">新芽AI模拟工作中真实的AI应用场景</span>
-            <span className="text-primary block mt-2">以项目制的形式快速呈现结果</span>
+            <span className="text-primary block mt-6">以项目制的形式快速呈现结果</span>
           </h2>
         </div>
 
