@@ -8,7 +8,7 @@ const testimonials = [
 //    result: "Landed a job at Goldman Sachs",
   },
   {
-    quote: "学生们用新芽学习后，逻辑思维能力提升特别明显，遇到复杂问题也懂得从多个角度去分析了。平台设计得很用心，确实能培养孩子的深度思考能力，值得推荐",
+    quote: "学生们用新芽AI后，逻辑思维能力提升特别明显，遇到复杂问题也懂得从多个角度去分析。平台设计得很用心，能培养孩子的深度思考能力，值得推荐",
     name: "一位北京的初中数学教师",
 //    result: "Landed a job at JP Morgan Chase",
   },
