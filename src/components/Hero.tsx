@@ -12,6 +12,12 @@ const Hero = () => {
             <span className="text-primary">体验AI新职业</span>
           </h1>
           
+          <p className="text-xl sm:text-2xl font-medium mb-8">
+            <span className="text-foreground">Experience Gamified Learning</span>
+            {" "}
+            <span className="text-primary">Explore AI Careers</span>
+          </p>
+          
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
             通过顶级企业设计的数十个AI职业和项目，在AI指导下<span className="text-primary">学习技能，激发潜力</span>
           </p>
