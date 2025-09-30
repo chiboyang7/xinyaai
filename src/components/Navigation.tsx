@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import logo from "@/assets/logo2.png";
 
 const Navigation = () => {
   return (
@@ -8,9 +9,7 @@ const Navigation = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <a href="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">CF</span>
-              </div>
+              <img src={logo} alt="CareerForge Logo" className="h-8 w-8" />
               <span className="font-bold text-xl text-foreground">CareerForge</span>
             </a>
             
