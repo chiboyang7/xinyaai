@@ -60,8 +60,10 @@ const HowItWorks = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="gap-2">
-            How CareerForge Works
+          <Button size="lg" className="gap-2" asChild>
+            <Link to="/auth">
+              How CareerForge Works
+            </Link>
           </Button>
         </div>
       </div>
