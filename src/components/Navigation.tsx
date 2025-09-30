@@ -31,7 +31,7 @@ const Navigation = () => {
 
           <div className="flex items-center gap-3">
             <Button variant="ghost" className="hidden sm:inline-flex">
-              Sign In
+              登录
             </Button>
             <Button>
               免费注册
