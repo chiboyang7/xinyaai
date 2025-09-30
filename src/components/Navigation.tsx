@@ -18,13 +18,13 @@ const Navigation = () => {
             </Link>
             
             <div className="hidden md:flex items-center gap-6">
-              <Link to="/jobs" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/jobs" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
                 AI职业
               </Link>
-              <Link to="/projects" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/projects" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
                 AI项目
               </Link>
-              <Link to="/erica_model" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/erica_model" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
                 AI能力模型
               </Link>
             </div>
