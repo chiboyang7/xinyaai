@@ -31,7 +31,7 @@ const SimulationCard = ({
         />
         {hiringNow && (
           <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
-            Hiring Now
+            正在热招
           </Badge>
         )}
       </div>
