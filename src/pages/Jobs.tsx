@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const Jobs = () => {
   return (
@@ -8,6 +9,7 @@ const Jobs = () => {
         <h1 className="text-4xl font-bold text-foreground mb-6">AI职业</h1>
         <p className="text-muted-foreground">探索AI相关的职业机会</p>
       </main>
+      <Footer />
     </div>
   );
 };
