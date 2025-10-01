@@ -36,51 +36,7 @@ const JobsHero = () => {
             找到你的<span className="text-primary">AI职业起点</span>
           </h1>
           
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            从220+顶级企业的真实项目中，选择最适合你的AI职业方向
-          </p>
-
-          {/* Search Bar */}
-          <div className="relative max-w-2xl mx-auto mb-6">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="搜索职位、公司、技能..."
-              className="pl-12 h-12 text-base bg-background/80 backdrop-blur-sm border-primary/20 focus:border-primary"
-            />
-          </div>
-
-          {/* Quick Filters */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-            <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-1.5">
-              正在热招
-            </Badge>
-            <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors px-4 py-1.5">
-              实习
-            </Badge>
-            <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors px-4 py-1.5">
-              全职
-            </Badge>
-            <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors px-4 py-1.5">
-              远程
-            </Badge>
-          </div>
-
-          {/* Stats Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">🎯</span>
-              <span className="text-muted-foreground">45个职位</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">🏢</span>
-              <span className="text-muted-foreground">220+企业</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">⚡</span>
-              <span className="text-muted-foreground">10个热招</span>
-            </div>
-          </div>
+         
         </div>
       </div>
     </section>
