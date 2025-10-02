@@ -45,13 +45,13 @@ const Hero = () => {
           </h1>
           
           <p className="text-2xl sm:text-3xl font-medium mb-12">
-            <span className="text-foreground">Experience Gamified Learning{" "}</span>
-            {" "}{" "}{" "}{" "}
+            <span className="text-foreground">Experience Gamified Learning  </span>
+            {" "}
             <span className="text-primary">{" "}Build Great Products</span>
           </p>
           
           <p className="text-lg sm:text-xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed">
-            通过顶级企业设计的数十个AI职业和项目，在AI指导下<span className="text-primary">学习技能，激发潜力</span>
+           通过精心设计的数十个AI职业和项目，在AI指导下<span className="text-primary">学习技能，激发潜力</span>
           </p>
 
           <Button size="lg" className="text-lg px-8 h-12 gap-2" asChild>
