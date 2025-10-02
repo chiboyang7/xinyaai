@@ -46,7 +46,7 @@ const Hero = () => {
           
           <p className="text-2xl sm:text-3xl font-medium mb-12">
             <span className="text-foreground">Experience Gamified Learning{" "}</span>
-            {" "}
+            {" "}{" "}{" "}{" "}
             <span className="text-primary">{" "}Build Great Products</span>
           </p>
           
