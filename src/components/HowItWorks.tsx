@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const steps = [
   {
     icon: UserPlus,
-    title: "选择一个职位",
-    description: "注册并选择加入一个正在热招的职位",
+    title: "选择一个项目",
+    description: "注册并加入一个开放挑战的项目",
   },
   {
     icon: BookOpen,
