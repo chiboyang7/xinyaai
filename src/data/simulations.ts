@@ -103,11 +103,11 @@ export const simulations: Simulation[] = [
 },
 {
   company: "清华大学出版社",
-  title: "给爸爸妈妈写一本书",
-  category: "10岁+",
+  title: "撰写教科书的一个章节",
+  category: "12岁+",
   duration: "10项技能",
   imageUrl: "https://images.unsplash.com/photo-1659407930506-9813058a3c47",
-  hiringNow: true,
+  hiringNow: false,
 },
 
 {
