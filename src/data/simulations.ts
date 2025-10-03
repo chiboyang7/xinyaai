@@ -104,7 +104,7 @@ export const simulations: Simulation[] = [
   title: "成为英语演讲小达人",
   category: "11岁+",
   duration: "8项技能",
-  imageUrl: "",
+  imageUrl: "https://plus.unsplash.com/premium_photo-1683133757924-9bdece92f6bb",
   hiringNow: false,
 },
 {
