@@ -22,7 +22,7 @@ const SimulationsGrid = () => {
         <div className="text-center">
           <Button variant="outline" size="lg" className="gap-2 text-lg" asChild>
             <Link to="/jobs">
-              发现更多的AI职位
+              发现更多的AI项目
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
