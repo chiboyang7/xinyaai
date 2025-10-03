@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
@@ -339,6 +340,15 @@ const EricaModel = () => {
             <p className="text-sm text-muted-foreground">
               * Erica模型受到美国专利法和中国软件著作法保护
             </p>
+          </div>
+          
+          <div className="mt-8 grid grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <Button asChild size="lg" className="w-full">
+              <a href="/erica_model/test_young">开始测试 - 青少年版</a>
+            </Button>
+            <Button asChild size="lg" className="w-full">
+              <a href="/erica_model/test_adult">开始测试 - 成年人版</a>
+            </Button>
           </div>
         </div>
       </main>
