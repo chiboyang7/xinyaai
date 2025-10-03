@@ -18,7 +18,7 @@ const Navigation = () => {
             </Link>
             
             <div className="hidden md:flex items-center gap-6">
-              <Link to="/jobs" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/projects" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
                 AI项目列表
               </Link>
              
