@@ -335,7 +335,7 @@ const EricaModel = () => {
             </CardContent>
           </Card>
           
-          <div className="mt-6 text-center">
+          <div className="mt-6 text-left">
             <p className="text-sm text-muted-foreground">
               * Erica模型受到美国专利法和中国软件著作法保护
             </p>
