@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock, Layers } from "lucide-react";
+import { User, Award } from "lucide-react";
 
 interface SimulationCardProps {
   company: string;
   title: string;
-  age: string;
-  skills: string;
+  category: string;
+  duration: string;
   imageUrl: string;
   logoUrl?: string;
   hiringNow?: boolean;
@@ -15,8 +15,8 @@ interface SimulationCardProps {
 const SimulationCard = ({
   company,
   title,
-  age,
-  skills,
+  category,
+  duration,
   imageUrl,
   logoUrl,
   hiringNow = false,
@@ -57,12 +57,12 @@ const SimulationCard = ({
         
         <div className="flex items-center justify-between text-sm">
           <div className="flex items-center gap-1 text-muted-foreground">
-            <Layers className="h-4 w-4" />
-            <span>Age: {age}</span>
+            <User className="h-4 w-4" />
+            <span>Age: {category}</span>
           </div>
           <div className="flex items-center gap-1 text-muted-foreground">
-            <Clock className="h-4 w-4" />
-            <span>Skills: {skills}</span>
+            <Award className="h-4 w-4" />
+            <span>Skills: {duration}</span>
           </div>
         </div>
       </CardContent>
