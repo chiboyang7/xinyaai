@@ -13,6 +13,8 @@ import TestYoung from "./pages/TestYoung";
 import TestYoungPayment from "./pages/TestYoungPayment";
 import TestYoungResult from "./pages/TestYoungResult";
 import TestAdult from "./pages/TestAdult";
+import TestAdultPayment from "./pages/TestAdultPayment";
+import TestAdultResult from "./pages/TestAdultResult";
 import Auth from "./pages/Auth";
 import Case from "./pages/Case";
 
@@ -33,6 +35,8 @@ const App = () => (
           <Route path="/erica_model/test_young/payment" element={<TestYoungPayment />} />
           <Route path="/erica_model/test_young/result" element={<TestYoungResult />} />
           <Route path="/erica_model/test_adult" element={<TestAdult />} />
+          <Route path="/erica_model/test_adult/payment" element={<TestAdultPayment />} />
+          <Route path="/erica_model/test_adult/result" element={<TestAdultResult />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/case" element={<Case />} />
           <Route path="/admin-setup" element={<AdminSetup />} />
