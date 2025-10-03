@@ -5,8 +5,8 @@ import { Clock, Layers } from "lucide-react";
 interface SimulationCardProps {
   company: string;
   title: string;
-  category: string;
-  duration: string;
+  age: string;
+  skills: string;
   imageUrl: string;
   logoUrl?: string;
   hiringNow?: boolean;
@@ -15,8 +15,8 @@ interface SimulationCardProps {
 const SimulationCard = ({
   company,
   title,
-  category,
-  duration,
+  age,
+  skills,
   imageUrl,
   logoUrl,
   hiringNow = false,
@@ -58,11 +58,11 @@ const SimulationCard = ({
         <div className="flex items-center justify-between text-sm">
           <div className="flex items-center gap-1 text-muted-foreground">
             <Layers className="h-4 w-4" />
-            <span>{category}</span>
+            <span>Age: {age}</span>
           </div>
           <div className="flex items-center gap-1 text-muted-foreground">
             <Clock className="h-4 w-4" />
-            <span>{duration}</span>
+            <span>Skills: {skills}</span>
           </div>
         </div>
       </CardContent>
