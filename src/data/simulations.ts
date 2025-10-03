@@ -56,7 +56,7 @@ export const simulations: Simulation[] = [
   title: "用英语环游80个国家",
   category: "10岁+",
   duration: "12项技能",
-  imageUrl: "",
+  imageUrl: "https://images.unsplash.com/photo-1521295121783-8a321d551ad2",
   hiringNow: true,
 },
 {
