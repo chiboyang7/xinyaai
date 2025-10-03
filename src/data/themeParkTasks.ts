@@ -1,0 +1,156 @@
+export interface Task {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  estimatedTime: string;
+  difficulty: "beginner" | "intermediate" | "advanced";
+  completed?: boolean;
+}
+
+export const themeParkTasks: Task[] = [
+  {
+    id: "1",
+    title: "主题乐园概念设计",
+    description: "创建你的主题乐园的整体概念和主题方向",
+    category: "创意设计",
+    estimatedTime: "20分钟",
+    difficulty: "beginner",
+  },
+  {
+    id: "2",
+    title: "目标受众分析",
+    description: "确定你的主题乐园的目标游客群体",
+    category: "市场研究",
+    estimatedTime: "15分钟",
+    difficulty: "beginner",
+  },
+  {
+    id: "3",
+    title: "园区布局规划",
+    description: "设计主题乐园的整体布局和分区",
+    category: "空间设计",
+    estimatedTime: "30分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "4",
+    title: "游乐设施创意",
+    description: "设计5个创新的游乐设施",
+    category: "创意设计",
+    estimatedTime: "25分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "5",
+    title: "安全系统设计",
+    description: "规划游乐设施的安全措施和应急方案",
+    category: "安全管理",
+    estimatedTime: "20分钟",
+    difficulty: "advanced",
+  },
+  {
+    id: "6",
+    title: "餐饮规划",
+    description: "设计主题餐厅和小吃摊位",
+    category: "服务设计",
+    estimatedTime: "15分钟",
+    difficulty: "beginner",
+  },
+  {
+    id: "7",
+    title: "商品店铺设计",
+    description: "规划纪念品商店和主题商品",
+    category: "零售设计",
+    estimatedTime: "15分钟",
+    difficulty: "beginner",
+  },
+  {
+    id: "8",
+    title: "环保可持续方案",
+    description: "设计环保和可持续发展的运营方案",
+    category: "环境保护",
+    estimatedTime: "20分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "9",
+    title: "票价策略",
+    description: "制定门票价格和优惠政策",
+    category: "商业策略",
+    estimatedTime: "15分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "10",
+    title: "营销推广计划",
+    description: "设计开业前的营销和宣传策略",
+    category: "市场营销",
+    estimatedTime: "25分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "11",
+    title: "员工培训方案",
+    description: "规划员工招聘和培训计划",
+    category: "人力资源",
+    estimatedTime: "20分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "12",
+    title: "科技应用",
+    description: "整合VR、AR等现代科技到游乐体验中",
+    category: "技术创新",
+    estimatedTime: "30分钟",
+    difficulty: "advanced",
+  },
+  {
+    id: "13",
+    title: "无障碍设计",
+    description: "确保乐园对所有游客友好和无障碍",
+    category: "包容性设计",
+    estimatedTime: "20分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "14",
+    title: "季节性活动策划",
+    description: "设计全年的节日和特殊活动",
+    category: "活动策划",
+    estimatedTime: "25分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "15",
+    title: "预算规划",
+    description: "制定建设和运营的财务预算",
+    category: "财务管理",
+    estimatedTime: "30分钟",
+    difficulty: "advanced",
+  },
+  {
+    id: "16",
+    title: "游客体验流程",
+    description: "设计从入园到离园的完整游客旅程",
+    category: "体验设计",
+    estimatedTime: "25分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "17",
+    title: "品牌形象设计",
+    description: "创建乐园的视觉识别系统和吉祥物",
+    category: "品牌设计",
+    estimatedTime: "30分钟",
+    difficulty: "intermediate",
+  },
+  {
+    id: "18",
+    title: "最终方案展示",
+    description: "整合所有元素，制作完整的主题乐园方案展示",
+    category: "综合呈现",
+    estimatedTime: "40分钟",
+    difficulty: "advanced",
+  },
+];

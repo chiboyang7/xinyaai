@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { User, Award } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface SimulationCardProps {
   company: string;
@@ -10,6 +11,7 @@ interface SimulationCardProps {
   imageUrl: string;
   logoUrl?: string;
   hiringNow?: boolean;
+  link?: string;
 }
 
 const SimulationCard = ({
@@ -20,9 +22,21 @@ const SimulationCard = ({
   imageUrl,
   logoUrl,
   hiringNow = false,
+  link,
 }: SimulationCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (link) {
+      navigate(link);
+    }
+  };
+
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer group border-border">
+    <Card 
+      onClick={handleClick}
+      className="overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer group border-border"
+    >
       <div className="relative h-48 overflow-hidden">
         <img
           src={imageUrl}

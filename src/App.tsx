@@ -18,6 +18,8 @@ import TestAdultPayment from "./pages/TestAdultPayment";
 import TestAdultResult from "./pages/TestAdultResult";
 import Auth from "./pages/Auth";
 import Case from "./pages/Case";
+import FutureThemePark from "./pages/FutureThemePark";
+import ThemeParkTask from "./pages/ThemeParkTask";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +43,8 @@ const App = () => (
           <Route path="/erica_model/test_adult/result" element={<TestAdultResult />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/case" element={<Case />} />
+          <Route path="/future-themepark" element={<FutureThemePark />} />
+          <Route path="/future-themepark/task/:taskId" element={<ThemeParkTask />} />
           <Route path="/admin-setup" element={<AdminSetup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

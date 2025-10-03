@@ -6,6 +6,7 @@ export interface Simulation {
   imageUrl: string;
   logoUrl?: string;
   hiringNow?: boolean;
+  link?: string;
 }
 
 export const simulations: Simulation[] = [
@@ -24,6 +25,7 @@ export const simulations: Simulation[] = [
     duration: "12项技能",
     imageUrl: "https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f",
     hiringNow: true,
+    link: "/future-themepark",
   },
   {
   company: "MIT数学科技公司",
