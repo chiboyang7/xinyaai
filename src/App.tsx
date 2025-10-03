@@ -10,7 +10,6 @@ import Jobs from "./pages/Jobs";
 import Projects from "./pages/Projects";
 import EricaModel from "./pages/EricaModel";
 import Auth from "./pages/Auth";
-import Case from "./pages/Case";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +25,6 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/erica_model" element={<EricaModel />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/case" element={<Case />} />
           <Route path="/admin-setup" element={<AdminSetup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
