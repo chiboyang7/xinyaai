@@ -7,7 +7,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import AdminSetup from "./pages/AdminSetup";
 import NotFound from "./pages/NotFound";
-import Jobs from "./pages/Jobs";
+
 import Projects from "./pages/Projects";
 import EricaModel from "./pages/EricaModel";
 import TestYoung from "./pages/TestYoung";
@@ -30,7 +30,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/jobs" element={<Jobs />} />
+          
           <Route path="/projects" element={<Projects />} />
           <Route path="/erica_model" element={<EricaModel />} />
           <Route path="/erica_model/test_young" element={<TestYoung />} />
