@@ -342,11 +342,11 @@ const EricaModel = () => {
             </p>
           </div>
           
-          <div className="mt-8 grid grid-cols-2 gap-4 max-w-3xl mx-auto">
-            <Button asChild size="lg" className="w-full">
+          <div className="mt-8 grid grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <Button asChild className="w-full">
               <a href="/erica_model/test_young">开始测试 - 青少年版</a>
             </Button>
-            <Button asChild size="lg" className="w-full">
+            <Button asChild className="w-full">
               <a href="/erica_model/test_adult">开始测试 - 成年人版</a>
             </Button>
           </div>
