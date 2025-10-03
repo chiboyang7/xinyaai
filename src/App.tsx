@@ -10,6 +10,8 @@ import Jobs from "./pages/Jobs";
 import Projects from "./pages/Projects";
 import EricaModel from "./pages/EricaModel";
 import TestYoung from "./pages/TestYoung";
+import TestYoungPayment from "./pages/TestYoungPayment";
+import TestYoungResult from "./pages/TestYoungResult";
 import TestAdult from "./pages/TestAdult";
 import Auth from "./pages/Auth";
 import Case from "./pages/Case";
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/erica_model" element={<EricaModel />} />
           <Route path="/erica_model/test_young" element={<TestYoung />} />
+          <Route path="/erica_model/test_young/payment" element={<TestYoungPayment />} />
+          <Route path="/erica_model/test_young/result" element={<TestYoungResult />} />
           <Route path="/erica_model/test_adult" element={<TestAdult />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/case" element={<Case />} />
