@@ -41,7 +41,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-12">
             游戏化的学习方式 {" "}
-            <span className="text-primary">{" "}创造AI学习项目</span>
+            <span className="text-primary">{" "}学会高级AI技能</span>
           </h1>
           
           <p className="text-2xl sm:text-3xl font-medium mb-12">
@@ -51,7 +51,7 @@ const Hero = () => {
           </p>
           
           <p className="text-lg sm:text-xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed">
-           通过精心设计的数十个AI技能项目，<span className="text-primary">学习技能，激发潜力</span>
+           通过精心设计的知名企业的数十个AI技能项目，<span className="text-primary">学习技能，激发潜力</span>
           </p>
 
           <Button size="lg" className="text-lg px-8 h-12 gap-2" asChild>
