@@ -1,3 +1,4 @@
+// Authentication page with phone-based signup/login
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
