@@ -27,7 +27,7 @@ export const simulations: Simulation[] = [
   },
   {
     company: "索尼电影公司",
-    title: "科幻小说作家",
+    title: "写一篇科幻小说",
     category: "8岁+",
     duration: "6项技能",
     imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
@@ -35,10 +35,10 @@ export const simulations: Simulation[] = [
   },
   {
     company: "可口可乐公司",
-    title: "饮料销售经理",
+    title: "开一家奶茶店",
     category: "12岁+",
     duration: "15项技能",
     imageUrl: "https://images.unsplash.com/photo-1594971475674-6a97f8fe8c2b",
-    hiringNow: true,
+    hiringNow: false,
   },
 ];
