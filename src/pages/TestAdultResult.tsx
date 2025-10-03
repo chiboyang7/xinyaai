@@ -1,25 +1,99 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const TestAdultResult = () => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const { toast } = useToast();
+  
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState<any>(null);
+  const [sessionData, setSessionData] = useState<any>(null);
 
   useEffect(() => {
-    // 获取AI评估结果的逻辑将在这里实现
-    // 包括：
-    // 1. 从数据库获取用户答案
-    // 2. 发送到大模型进行评估
-    // 3. 接收并显示评分结果
+    const token = searchParams.get("session");
     
-    setTimeout(() => {
-      setLoading(false);
-      // 模拟数据
-      setResult({});
-    }, 1000);
+    if (!token) {
+      toast({
+        title: "无效访问",
+        description: "请先完成测试和支付",
+        variant: "destructive",
+      });
+      navigate("/erica_model/test_adult");
+      return;
+    }
+    
+    const loadResult = async () => {
+      // 1. 从数据库获取session数据
+      const { data: session, error } = await supabase
+        .from("test_sessions")
+        .select("*")
+        .eq("session_token", token)
+        .eq("test_type", "adult")
+        .single();
+      
+      if (error || !session) {
+        toast({
+          title: "会话无效",
+          description: "请重新开始测试",
+          variant: "destructive",
+        });
+        navigate("/erica_model/test_adult");
+        return;
+      }
+      
+      // 2. 检查支付状态
+      if (session.payment_status !== "completed") {
+        toast({
+          title: "请先完成支付",
+          description: "支付后即可查看测评结果",
+          variant: "destructive",
+        });
+        navigate(`/erica_model/test_adult/payment?session=${token}`);
+        return;
+      }
+      
+      setSessionData(session);
+      
+      // 3. 检查是否已有AI结果
+      if (session.ai_result) {
+        setResult(session.ai_result);
+        setLoading(false);
+      } else {
+        // 4. 调用AI生成结果（这里将在后续实现）
+        // TODO: 调用edge function发送答案到AI
+        setTimeout(() => {
+          // 模拟AI处理
+          const mockResult = {
+            overall_score: 85,
+            dimensions: {
+              creativity: 90,
+              logic: 80,
+              communication: 85,
+            },
+            suggestions: "基于您的答案，我们建议..."
+          };
+          
+          // 保存AI结果到数据库
+          supabase
+            .from("test_sessions")
+            .update({ ai_result: mockResult })
+            .eq("session_token", token)
+            .then(() => {
+              setResult(mockResult);
+              setLoading(false);
+            });
+        }, 2000);
+      }
+    };
+    
+    loadResult();
   }, []);
 
   if (loading) {
