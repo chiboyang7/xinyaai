@@ -12,15 +12,15 @@ export const simulations: Simulation[] = [
   {
     company: "迪士尼乐园",
     title: "主题乐园设计师",
-    category: "包含6个项目",
+    category: "9岁+",
     duration: "约16个小时",
     imageUrl: "https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f",
     hiringNow: true,
   },
   {
     company: "美国花旗银行",
-    title: "初级数据分析师",
-    category: "包含3个项目",
+    title: "数学和数据分析项目",
+    category: "12岁+",
     duration: "约3个小时",
     imageUrl: "https://images.unsplash.com/photo-1588600878108-578307a3cc9d",
     hiringNow: false,
