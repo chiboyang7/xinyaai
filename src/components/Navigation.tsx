@@ -25,6 +25,10 @@ const Navigation = () => {
               <Link to="/erica_model" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
                 AI能力模型
               </Link>
+              
+              <a href="https://case.xinyaai.com" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
+                学生作品
+              </a>
             </div>
           </div>
 
