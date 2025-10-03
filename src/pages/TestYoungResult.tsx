@@ -174,7 +174,8 @@ const TestYoungResult = () => {
             <h2 className="text-2xl font-semibold mb-6">能力维度详解</h2>
             <div className="space-y-6">
               {result && Object.entries(result.dimensions).map(([key, score]) => {
-                const level = getLevel(score);
+                const scoreValue = score as number;
+                const level = getLevel(scoreValue);
                 return (
                   <div key={key} className="border-l-4 border-primary pl-4">
                     <div className="flex justify-between items-start mb-2">
@@ -183,7 +184,7 @@ const TestYoungResult = () => {
                       </h3>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-primary">
-                          {score.toFixed(1)} / 20
+                          {scoreValue.toFixed(1)} / 20
                         </div>
                         <div className="text-sm text-muted-foreground">
                           Level {level.level} - {level.label}
@@ -203,7 +204,7 @@ const TestYoungResult = () => {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               {result && (() => {
                 const dims = result.dimensions;
-                const sortedDims = Object.entries(dims).sort((a, b) => a[1] - b[1]);
+                const sortedDims = Object.entries(dims).sort((a, b) => (a[1] as number) - (b[1] as number));
                 const weakest = sortedDims[0];
                 const strongest = sortedDims[sortedDims.length - 1];
                 
@@ -212,12 +213,12 @@ const TestYoungResult = () => {
                     <p>
                       <strong className="text-foreground">优势能力：</strong>
                       您在{dimensionNames[strongest[0] as keyof typeof dimensionNames]}方面表现优秀
-                      （{strongest[1].toFixed(1)}分），继续保持并深化这方面的能力。
+                      （{(strongest[1] as number).toFixed(1)}分），继续保持并深化这方面的能力。
                     </p>
                     <p>
                       <strong className="text-foreground">提升空间：</strong>
                       建议重点关注{dimensionNames[weakest[0] as keyof typeof dimensionNames]}
-                      （{weakest[1].toFixed(1)}分），通过针对性练习提升该维度能力。
+                      （{(weakest[1] as number).toFixed(1)}分），通过针对性练习提升该维度能力。
                     </p>
                     <p>
                       <strong className="text-foreground">学习建议：</strong>
