@@ -34,7 +34,7 @@ const SimulationCard = ({
             ? "bg-primary text-primary-foreground hover:bg-primary" 
             : "bg-orange-500 text-white hover:bg-orange-500"
         }`}>
-          {hiringNow ? "正在热招" : "等待开放"}
+          {hiringNow ? "正在热招" : "等待解锁"}
         </Badge>
       </div>
       
