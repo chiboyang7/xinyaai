@@ -35,7 +35,7 @@ export const simulations: Simulation[] = [
   },
   {
     company: "可口可乐公司",
-    title: "开一家奶茶店",
+    title: "开一家冷饮店",
     category: "12岁+",
     duration: "15项技能",
     imageUrl: "https://images.unsplash.com/photo-1594971475674-6a97f8fe8c2b",
