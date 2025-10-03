@@ -38,12 +38,57 @@ export type Database = {
         }
         Relationships: []
       }
+      test_sessions: {
+        Row: {
+          ai_result: Json | null
+          answers: Json | null
+          created_at: string
+          email: string | null
+          expires_at: string
+          id: string
+          payment_amount: number | null
+          payment_status: string
+          session_token: string
+          test_type: string
+          updated_at: string
+        }
+        Insert: {
+          ai_result?: Json | null
+          answers?: Json | null
+          created_at?: string
+          email?: string | null
+          expires_at?: string
+          id?: string
+          payment_amount?: number | null
+          payment_status?: string
+          session_token: string
+          test_type: string
+          updated_at?: string
+        }
+        Update: {
+          ai_result?: Json | null
+          answers?: Json | null
+          created_at?: string
+          email?: string | null
+          expires_at?: string
+          id?: string
+          payment_amount?: number | null
+          payment_status?: string
+          session_token?: string
+          test_type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      generate_session_token: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never
