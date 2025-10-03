@@ -96,7 +96,7 @@ export const simulations: Simulation[] = [
   title: "数学闯关大冒险",
   category: "9岁+",
   duration: "11项技能",
-  imageUrl: "",
+  imageUrl: "https://plus.unsplash.com/premium_photo-1661964115368-6011b5c9e0e8",
   hiringNow: true,
 },
 {
@@ -108,12 +108,12 @@ export const simulations: Simulation[] = [
   hiringNow: false,
 },
 {
-  company: "清华大学AI实验室",
+  company: "故宫博物院",
   title: "教AI读懂语文课本",
   category: "12岁+",
   duration: "10项技能",
-  imageUrl: "",
-  hiringNow: true,
+  imageUrl: "https://images.unsplash.com/photo-1720702214634-c1ece3a7d364",
+  hiringNow: false,
 },
   {
     company: "美国花旗银行",
