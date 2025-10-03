@@ -1,88 +1,13 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Upload, CheckCircle, LogOut } from "lucide-react";
-import type { User } from '@supabase/supabase-js';
+import { Upload, CheckCircle } from "lucide-react";
 
 const AdminSetup = () => {
   const [uploading, setUploading] = useState(false);
   const [uploaded, setUploaded] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [loading, setLoading] = useState(true);
   const { toast } = useToast();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const { data: { session } } = await supabase.auth.getSession();
-        
-        if (!session) {
-          toast({
-            title: "Authentication required",
-            description: "Please sign in to access admin features",
-            variant: "destructive",
-          });
-          navigate("/auth");
-          return;
-        }
-
-        setUser(session.user);
-
-        // Check if user is admin
-        const { data: adminCheck, error } = await supabase.rpc('is_admin');
-        
-        if (error) {
-          console.error('Error checking admin status:', error);
-          toast({
-            title: "Error",
-            description: "Failed to verify admin status",
-            variant: "destructive",
-          });
-          navigate("/");
-          return;
-        }
-
-        if (!adminCheck) {
-          toast({
-            title: "Access denied",
-            description: "You don't have admin privileges",
-            variant: "destructive",
-          });
-          navigate("/");
-          return;
-        }
-
-        setIsAdmin(true);
-      } catch (error) {
-        console.error('Auth check error:', error);
-        navigate("/auth");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    checkAuth();
-
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        if (event === 'SIGNED_OUT') {
-          navigate("/auth");
-        }
-      }
-    );
-
-    return () => subscription.unsubscribe();
-  }, [navigate, toast]);
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    navigate("/auth");
-  };
 
   const uploadFavicon = async () => {
     setUploading(true);
@@ -144,29 +69,8 @@ const AdminSetup = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <p className="text-muted-foreground">Verifying access...</p>
-      </div>
-    );
-  }
-
-  if (!isAdmin) {
-    return null;
-  }
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <Button
-        onClick={handleSignOut}
-        variant="outline"
-        size="sm"
-        className="absolute top-4 right-4"
-      >
-        <LogOut className="mr-2 h-4 w-4" />
-        Sign Out
-      </Button>
       <div className="max-w-md w-full space-y-8 text-center">
         <div>
           <img src="/favicon.png" alt="Logo" className="mx-auto h-24 w-auto mb-6" />
