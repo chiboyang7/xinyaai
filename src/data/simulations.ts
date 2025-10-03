@@ -26,7 +26,7 @@ export const simulations: Simulation[] = [
     hiringNow: true,
   },
   {
-  company: "奥数冠军训练营",
+  company: "MIT数学科技公司",
   title: "设计一个数学游戏",
   category: "10岁+",
   duration: "11项技能",
@@ -53,7 +53,7 @@ export const simulations: Simulation[] = [
   {
     company: "可口可乐公司",
     title: "咖啡店的商业计划书",
-    category: "12岁+",
+    category: "14岁+",
     duration: "15项技能",
     imageUrl: "https://images.unsplash.com/photo-1594971475674-6a97f8fe8c2b",
     hiringNow: false,
@@ -62,15 +62,23 @@ export const simulations: Simulation[] = [
 {
   company: "ABC环球旅行社",
   title: "用英语环游80个国家",
-  category: "10岁+",
+  category: "15岁+",
   duration: "12项技能",
   imageUrl: "https://images.unsplash.com/photo-1521295121783-8a321d551ad2",
   hiringNow: false,
 },
-{
+  {
+  company: "剑桥大学",
+  title: "AI逻辑思维与编程训练",
+  category: "13岁+",
+  duration: "11项技能",
+  imageUrl: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+  hiringNow: false,
+},
+  {
   company: "贝尔实验室",
   title: "成为科学小侦探",
-  category: "9岁+",
+  category: "12岁+",
   duration: "9项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1663011256706-72d0b535b1ee",
   hiringNow: false,
@@ -86,7 +94,7 @@ export const simulations: Simulation[] = [
 {
   company: "多啦A梦公司",
   title: "穿越历史当小记者",
-  category: "11岁+",
+  category: "10岁+",
   duration: "9项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1683121496115-f2e22066dcf4",
   hiringNow: false,
@@ -124,4 +132,5 @@ export const simulations: Simulation[] = [
     imageUrl: "https://images.unsplash.com/photo-1588600878108-578307a3cc9d",
     hiringNow: false,
   },
+
 ];
