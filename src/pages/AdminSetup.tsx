@@ -3,7 +3,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Upload, CheckCircle } from "lucide-react";
-import logo from "@/assets/logo2.png";
 
 const AdminSetup = () => {
   const [uploading, setUploading] = useState(false);
@@ -13,8 +12,8 @@ const AdminSetup = () => {
   const uploadFavicon = async () => {
     setUploading(true);
     try {
-      // Fetch the logo image
-      const response = await fetch(logo);
+      // Fetch the favicon image
+      const response = await fetch('/favicon.png');
       const blob = await response.blob();
       
       const fileName = `favicon-${Date.now()}.png`;
@@ -74,7 +73,7 @@ const AdminSetup = () => {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="max-w-md w-full space-y-8 text-center">
         <div>
-          <img src={logo} alt="Logo" className="mx-auto h-24 w-auto mb-6" />
+          <img src="/favicon.png" alt="Logo" className="mx-auto h-24 w-auto mb-6" />
           <h1 className="text-3xl font-bold">Admin Setup</h1>
           <p className="mt-2 text-muted-foreground">
             Upload your site icon to cloud storage
@@ -85,7 +84,7 @@ const AdminSetup = () => {
           {!uploaded ? (
             <>
               <p className="text-sm text-muted-foreground mb-6">
-                Click the button below to upload logo2.png to cloud storage
+                Click the button below to upload your favicon to cloud storage
               </p>
               <Button
                 onClick={uploadFavicon}
