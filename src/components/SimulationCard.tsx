@@ -58,11 +58,11 @@ const SimulationCard = ({
         <div className="flex items-center justify-between text-sm">
           <div className="flex items-center gap-1 text-muted-foreground">
             <User className="h-4 w-4" />
-            <span>Age: {category}</span>
+            <span>{category}</span>
           </div>
           <div className="flex items-center gap-1 text-muted-foreground">
             <Award className="h-4 w-4" />
-            <span>Skills: {duration}</span>
+            <span>{duration}</span>
           </div>
         </div>
       </CardContent>
