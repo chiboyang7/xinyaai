@@ -25,15 +25,14 @@ export const simulations: Simulation[] = [
     imageUrl: "https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f",
     hiringNow: true,
   },
-  
   {
-    company: "索尼电影公司",
-    title: "写一篇科幻小说",
-    category: "8岁+",
-    duration: "6项技能",
-    imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
-    hiringNow: true,
-  },
+  company: "奥数冠军训练营",
+  title: "设计一个数学游戏",
+  category: "10岁+",
+  duration: "11项技能",
+  imageUrl: "https://plus.unsplash.com/premium_photo-1661964115368-6011b5c9e0e8",
+  hiringNow: true,
+},
 {
   company: "唐朝文学院",
   title: "和李白对话学古诗",
@@ -43,8 +42,17 @@ export const simulations: Simulation[] = [
   hiringNow: true,
 },
   {
+    company: "索尼电影公司",
+    title: "写一篇科幻小说",
+    category: "8岁+",
+    duration: "6项技能",
+    imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
+    hiringNow: true,
+  },
+
+  {
     company: "可口可乐公司",
-    title: "开一家冷饮店",
+    title: "咖啡店的商业计划书",
     category: "12岁+",
     duration: "15项技能",
     imageUrl: "https://images.unsplash.com/photo-1594971475674-6a97f8fe8c2b",
@@ -57,7 +65,7 @@ export const simulations: Simulation[] = [
   category: "10岁+",
   duration: "12项技能",
   imageUrl: "https://images.unsplash.com/photo-1521295121783-8a321d551ad2",
-  hiringNow: true,
+  hiringNow: false,
 },
 {
   company: "贝尔实验室",
@@ -91,14 +99,7 @@ export const simulations: Simulation[] = [
   imageUrl: "https://images.unsplash.com/photo-1659407930506-9813058a3c47",
   hiringNow: true,
 },
-{
-  company: "奥数冠军训练营",
-  title: "数学闯关大冒险",
-  category: "9岁+",
-  duration: "11项技能",
-  imageUrl: "https://plus.unsplash.com/premium_photo-1661964115368-6011b5c9e0e8",
-  hiringNow: true,
-},
+
 {
   company: "牛津演讲俱乐部",
   title: "成为英语演讲小达人",
