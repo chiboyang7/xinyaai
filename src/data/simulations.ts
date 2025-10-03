@@ -52,7 +52,7 @@ export const simulations: Simulation[] = [
   },
 
 {
-  company: "环球旅行社",
+  company: "ABC环球旅行社",
   title: "用英语环游80个国家",
   category: "10岁+",
   duration: "12项技能",
@@ -60,11 +60,11 @@ export const simulations: Simulation[] = [
   hiringNow: true,
 },
 {
-  company: "爱因斯坦实验室",
+  company: "贝尔实验室",
   title: "成为科学小侦探",
   category: "9岁+",
   duration: "9项技能",
-  imageUrl: "",
+  imageUrl: "https://plus.unsplash.com/premium_photo-1663011256706-72d0b535b1ee",
   hiringNow: false,
 },
 {
@@ -72,23 +72,23 @@ export const simulations: Simulation[] = [
   title: "用数学解开魔法密码",
   category: "10岁+",
   duration: "11项技能",
-  imageUrl: "",
-  hiringNow: true,
-},
-{
-  company: "时光穿梭机公司",
-  title: "穿越历史当小记者",
-  category: "11岁+",
-  duration: "9项技能",
-  imageUrl: "",
+  imageUrl: "https://images.unsplash.com/photo-1618944913480-b67ee16d7b77",
   hiringNow: false,
 },
 {
-  company: "畅销书作家工作室",
-  title: "写一本自己的小说",
+  company: "多啦A梦公司",
+  title: "穿越历史当小记者",
+  category: "11岁+",
+  duration: "9项技能",
+  imageUrl: "https://plus.unsplash.com/premium_photo-1683121496115-f2e22066dcf4",
+  hiringNow: false,
+},
+{
+  company: "清华大学出版社",
+  title: "给爸爸妈妈写一本书",
   category: "10岁+",
   duration: "10项技能",
-  imageUrl: "",
+  imageUrl: "https://images.unsplash.com/photo-1659407930506-9813058a3c47",
   hiringNow: true,
 },
 {
