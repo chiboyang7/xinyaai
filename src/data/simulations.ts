@@ -19,7 +19,7 @@ export const simulations: Simulation[] = [
 }, 
   {
     company: "迪士尼乐园",
-    title: "设计一个动漫乐园",
+    title: "设计未来主题乐园",
     category: "9岁+",
     duration: "12项技能",
     imageUrl: "https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f",
