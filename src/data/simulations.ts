@@ -14,7 +14,7 @@ export const simulations: Simulation[] = [
   title: "创造你的数学星球",
   category: "9岁+",
   duration: "10项技能",
-  imageUrl: "",
+  imageUrl: "https://images.unsplash.com/photo-1664854953181-b12e6dda8b7c",
   hiringNow: true,
 }, 
   {
@@ -34,6 +34,14 @@ export const simulations: Simulation[] = [
     imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
     hiringNow: true,
   },
+{
+  company: "唐朝文学院",
+  title: "和李白对话学古诗",
+  category: "8岁+",
+  duration: "8项技能",
+  imageUrl: "https://plus.unsplash.com/premium_photo-1697729890503-bcb24e606a2c",
+  hiringNow: true,
+},
   {
     company: "可口可乐公司",
     title: "开一家冷饮店",
@@ -43,14 +51,6 @@ export const simulations: Simulation[] = [
     hiringNow: false,
   },
 
-{
-  company: "唐朝文学院",
-  title: "和李白对话学古诗",
-  category: "8岁+",
-  duration: "8项技能",
-  imageUrl: "",
-  hiringNow: true,
-},
 {
   company: "环球旅行社",
   title: "用英语环游80个国家",
