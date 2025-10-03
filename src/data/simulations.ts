@@ -20,14 +20,14 @@ export const simulations: Simulation[] = [
   {
     company: "迪士尼乐园",
     title: "设计未来主题乐园",
-    category: "9岁+",
+    category: "10岁+",
     duration: "12项技能",
     imageUrl: "https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f",
     hiringNow: true,
   },
   {
   company: "MIT数学科技公司",
-  title: "设计一个数学游戏",
+  title: "用数学模型设计游戏",
   category: "10岁+",
   duration: "11项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1661964115368-6011b5c9e0e8",
