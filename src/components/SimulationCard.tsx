@@ -66,6 +66,9 @@ const SimulationCard = ({
         }`}>
           {hiringNow ? "开放挑战" : "等待解锁"}
         </Badge>
+        <Badge className="absolute top-3 right-3 bg-background/90 backdrop-blur-sm text-foreground border-border hover:bg-background/90">
+          {difficulty}
+        </Badge>
       </div>
       
       <CardContent className="p-6">
@@ -93,12 +96,6 @@ const SimulationCard = ({
           <div className="flex items-center gap-1 text-muted-foreground">
             <Award className="h-4 w-4" />
             <span>{duration}</span>
-          </div>
-        </div>
-        
-        <div className="mt-3 pt-3 border-t border-border">
-          <div className="text-sm text-muted-foreground">
-            难度: <span className="font-medium text-foreground">{difficulty}</span>
           </div>
         </div>
       </CardContent>
