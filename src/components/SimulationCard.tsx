@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { User, Award } from "lucide-react";
+import { User, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -28,6 +28,13 @@ const SimulationCard = ({
   link,
 }: SimulationCardProps) => {
   const navigate = useNavigate();
+
+  const getStarCount = () => {
+    if (difficulty === "容易") return 1;
+    if (difficulty === "中等") return 2;
+    if (difficulty === "困难") return 3;
+    return 1;
+  };
 
   const handleClick = async () => {
     if (!hiringNow) {
@@ -66,9 +73,6 @@ const SimulationCard = ({
         }`}>
           {hiringNow ? "开放挑战" : "等待解锁"}
         </Badge>
-        <Badge className="absolute top-3 right-3 bg-background/90 backdrop-blur-sm text-foreground border-border hover:bg-background/90">
-          {difficulty}
-        </Badge>
       </div>
       
       <CardContent className="p-6">
@@ -93,9 +97,13 @@ const SimulationCard = ({
             <User className="h-4 w-4" />
             <span>{category}</span>
           </div>
-          <div className="flex items-center gap-1 text-muted-foreground">
-            <Award className="h-4 w-4" />
-            <span>{duration}</span>
+          <div className="flex items-center gap-1.5 text-muted-foreground">
+            <span>16项技能</span>
+            <div className="flex items-center gap-0.5">
+              {Array.from({ length: getStarCount() }).map((_, i) => (
+                <Star key={i} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+              ))}
+            </div>
           </div>
         </div>
       </CardContent>
