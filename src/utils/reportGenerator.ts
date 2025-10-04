@@ -326,18 +326,18 @@ function identifyAbilityPattern(scores: DimensionScores): AbilityPatternAnalysis
   // 遍历所有模式，找到第一个匹配的
   for (const [patternKey, pattern] of Object.entries(abilityPatternLibrary)) {
     if (pattern.condition(scores)) {
-      const analysis = pattern.analysis;
+      const analysis = pattern.analysis as any;
       
       return {
         patternType: patternKey,
         title: analysis.title,
         icon: analysis.icon,
         description: analysis.description,
-        strengths: analysis.strengths,
-        weaknesses: analysis.weaknesses || analysis.weakPoints,
-        suggestions: analysis.suggestions,
-        practicalSteps: analysis.practicalSteps,
-        careerAdvice: analysis.careerAdvice
+        strengths: analysis.strengths || analysis.characteristics || [],
+        weaknesses: analysis.weaknesses || analysis.weakPoints || [],
+        suggestions: analysis.suggestions || analysis.improvements || [],
+        practicalSteps: analysis.practicalSteps || [],
+        careerAdvice: analysis.careerAdvice || analysis.encouragement || ''
       };
     }
   }
@@ -401,7 +401,7 @@ function analyzeThinkingStyle(answers: Record<number, string>): ThinkingStyleAna
     };
   }
   
-  const characteristics = styleData.characteristics || {};
+  const characteristics = (styleData.characteristics || {}) as any;
   
   return {
     primaryStyle: primaryStyleKey,

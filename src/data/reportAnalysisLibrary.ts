@@ -316,7 +316,7 @@ export const dimensionAnalysisLibrary = {
         ]
       },
       1: {
-        title: 'AI批判性思维待建立',
+        title: '信息验证意识薄弱',
         summary: '您对AI的输出缺乏批判性思维,容易完全相信AI的回答。',
         characteristics: [
           '认为AI的回答都是正确的',
@@ -338,7 +338,7 @@ export const dimensionAnalysisLibrary = {
         practicalSteps: [
           '**认知建立**：观看3个AI出错案例视频，了解AI不是完美的',
           '**实践体验**：向AI提10个你知道答案的问题，看它有没有说错',
-          '**建立习惯**：承诺做作业前必查课本，不能只看AI回答’,
+          '**建立习惯**：承诺做作业前必查课本，不能只看AI回答',
           '**学习方法**：掌握3个验证信息的方法'
         ],
         resources: [
