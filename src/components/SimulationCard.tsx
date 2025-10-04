@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { User, Star } from "lucide-react";
+import { User, Star, StarHalf, StarOff, Sparkles, Sparkle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -100,9 +100,19 @@ const SimulationCard = ({
           </div>
           <div className="flex items-center gap-1.5 text-muted-foreground">
             <div className="flex items-center gap-0.5">
-              {Array.from({ length: getStarCount() }).map((_, i) => (
-                <Star key={i} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
-              ))}
+              {difficulty === "大师" ? (
+                <>
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <StarHalf className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <StarOff className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <Sparkles className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <Sparkle className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                </>
+              ) : (
+                Array.from({ length: getStarCount() }).map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                ))
+              )}
             </div>
           </div>
         </div>
