@@ -13,7 +13,7 @@ export const simulations: Simulation[] = [
   {
   company: "NASA太空中心",
   title: "创造你的数学星球",
-  category: "9岁+",
+  category: "10岁+",
   duration: "16项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1663127162950-23812ec8bdad",
   hiringNow: false,
@@ -21,7 +21,7 @@ export const simulations: Simulation[] = [
   {
     company: "迪士尼乐园",
     title: "设计未来主题乐园",
-    category: "10岁+",
+    category: "9岁+",
     duration: "12项技能",
     imageUrl: "https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f",
     hiringNow: true,
