@@ -17,6 +17,7 @@ import TestAdult from "./pages/TestAdult";
 import TestAdultPayment from "./pages/TestAdultPayment";
 import TestAdultResult from "./pages/TestAdultResult";
 import Auth from "./pages/Auth";
+import Profile from "./pages/Profile";
 import Case from "./pages/Case";
 import FutureThemePark from "./pages/FutureThemePark";
 import ThemeParkTask from "./pages/ThemeParkTask";
@@ -47,7 +48,8 @@ const App = () => (
           <Route path="/erica_model/test_adult" element={<TestAdult />} />
           <Route path="/erica_model/test_adult/payment" element={<TestAdultPayment />} />
           <Route path="/erica_model/test_adult/result" element={<TestAdultResult />} />
-          <Route path="/auth" element={<Auth />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/profile" element={<Profile />} />
           <Route path="/case" element={<Case />} />
           <Route path="/future-themepark" element={<FutureThemePark />} />
           <Route path="/future-themepark/task/:taskId" element={<ThemeParkTask />} />
