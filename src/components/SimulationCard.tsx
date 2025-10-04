@@ -27,7 +27,7 @@ const SimulationCard = ({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (link) {
+    if (hiringNow && link) {
       navigate(link);
     }
   };
