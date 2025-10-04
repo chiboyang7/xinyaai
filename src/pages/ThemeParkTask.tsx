@@ -159,18 +159,12 @@ const ThemeParkTask = () => {
         <Card className="mb-6 border-border">
           <CardHeader>
             <div className="flex items-center justify-between mb-2">
-              <Badge variant="secondary">{task.category}</Badge>
-              <div className="flex items-center gap-2">
-                <Badge className={getDifficultyColor(task.difficulty)}>
-                  {getDifficultyText(task.difficulty)}
-                </Badge>
-                {isCompleted && (
-                  <Badge className="bg-green-500">
-                    <CheckCircle2 className="mr-1 h-3 w-3" />
-                    已完成
-                  </Badge>
-                )}
-              </div>
+              <Badge className={isCompleted ? "bg-green-500 hover:bg-green-600" : "bg-muted hover:bg-muted"}>
+                {isCompleted ? "已完成" : "未完成"}
+              </Badge>
+              <Badge className={getDifficultyColor(task.difficulty)}>
+                {getDifficultyText(task.difficulty)}
+              </Badge>
             </div>
             <CardTitle className="text-2xl">{task.title}</CardTitle>
             <CardDescription className="text-base">{task.description}</CardDescription>

@@ -134,7 +134,9 @@ const PerfectWritingTask = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between mb-4">
-                <Badge variant="secondary">{task.category}</Badge>
+                <Badge className={isCompleted ? "bg-green-500 hover:bg-green-600" : "bg-muted hover:bg-muted"}>
+                  {isCompleted ? "已完成" : "未完成"}
+                </Badge>
                 <Badge className={getDifficultyColor(task.difficulty)}>
                   {getDifficultyText(task.difficulty)}
                 </Badge>
