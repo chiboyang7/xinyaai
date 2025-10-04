@@ -1,3 +1,9 @@
+export interface TaskStep {
+  stepNumber: number;
+  instruction: string;
+  prompt: string;
+}
+
 export interface Task {
   id: string;
   title: string;
@@ -6,6 +12,10 @@ export interface Task {
   estimatedTime: string;
   difficulty: "beginner" | "intermediate" | "advanced";
   completed?: boolean;
+  learningObjectives?: string[];
+  knowledgePoints?: string[];
+  steps?: TaskStep[];
+  exampleImage?: string;
 }
 
 export const themeParkTasks: Task[] = [
@@ -16,6 +26,34 @@ export const themeParkTasks: Task[] = [
     category: "基础知识",
     estimatedTime: "20分钟",
     difficulty: "beginner",
+    learningObjectives: [
+      "理解如何将IP角色特点转化为乐园设计元素",
+      "学会用AI进行创意构思和概念设计",
+      "掌握主题乐园的基本规划思路"
+    ],
+    knowledgePoints: [
+      "Labubu是POPMART旗下的经典IP形象，以神秘可爱的精灵造型著称",
+      "主题乐园设计需要围绕IP的核心特征展开，包括外观、性格、故事背景",
+      "好的乐园设计要考虑游客体验的完整性和沉浸感",
+      "AI可以帮助我们快速生成创意方案并进行多次迭代优化"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        instruction: "分析Labubu的核心特征，列出3-5个最显著的特点（如尖耳朵、大牙齿、神秘森林背景等）",
+        prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点"
+      },
+      {
+        stepNumber: 2,
+        instruction: "构思3个以Labubu为主题的游乐设施创意，每个设施要体现Labubu的不同特点",
+        prompt: "基于Labubu的特征，请帮我设计3个创意游乐设施，每个设施要有名称、玩法描述和它体现了Labubu的哪个特点"
+      },
+      {
+        stepNumber: 3,
+        instruction: "设计乐园的整体布局和氛围，包括入口、核心区域和装饰风格",
+        prompt: "请帮我设计一个Labubu主题乐园的整体布局方案，包括入口设计、3-4个主题区域的规划，以及如何营造神秘森林的沉浸式氛围"
+      }
+    ]
   },
   {
     id: "2",
