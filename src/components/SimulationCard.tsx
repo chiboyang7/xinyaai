@@ -98,7 +98,6 @@ const SimulationCard = ({
             <span>{category}</span>
           </div>
           <div className="flex items-center gap-1.5 text-muted-foreground">
-            <span>16项技能</span>
             <div className="flex items-center gap-0.5">
               {Array.from({ length: getStarCount() }).map((_, i) => (
                 <Star key={i} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
