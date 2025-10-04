@@ -22,20 +22,19 @@ export const themeParkTasks: Task[] = [
   {
     id: "1",
     title: "设计一个Labubu专属乐园",
-    description: "创建你的主题乐园的整体概念和主题方向",
+    description: "理解豆包和小红书的区别",
     category: "基础知识",
     estimatedTime: "20分钟",
     difficulty: "beginner",
     learningObjectives: [
-      "理解如何将IP角色特点转化为乐园设计元素",
-      "学会用AI进行创意构思和概念设计",
-      "掌握主题乐园的基本规划思路"
+      "理解豆包APP和小红书APP的区别",
+      "理解什么是集成了AI功能的APP",
+      "小红书是一个图书馆，豆包是一个印刷厂"
     ],
     knowledgePoints: [
-      "Labubu是POPMART旗下的经典IP形象，以神秘可爱的精灵造型著称",
-      "主题乐园设计需要围绕IP的核心特征展开，包括外观、性格、故事背景",
-      "好的乐园设计要考虑游客体验的完整性和沉浸感",
-      "AI可以帮助我们快速生成创意方案并进行多次迭代优化"
+      "理解豆包APP和小红书APP的区别",
+      "理解什么是集成了AI功能的APP",
+      "小红书是一个图书馆，豆包是一个印刷厂"
     ],
     steps: [
       {
