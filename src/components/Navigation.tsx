@@ -90,14 +90,14 @@ const Navigation = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            {user ? (
+            {user && profile ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" className="rounded-full">
                     <Avatar className="h-9 w-9">
-                      <AvatarImage src={profile?.avatar_url || undefined} />
+                      <AvatarImage src={profile.avatar_url || undefined} />
                       <AvatarFallback className="bg-primary text-primary-foreground">
-                        {getAvatarFallback()}
+                        {profile.username.charAt(0).toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
                   </Button>
@@ -113,7 +113,7 @@ const Navigation = () => {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-            ) : (
+            ) : !user ? (
               <>
                 <Button variant="ghost" className="hidden sm:inline-flex text-base" asChild>
                   <Link to="/auth">登录</Link>
@@ -122,7 +122,7 @@ const Navigation = () => {
                   <Link to="/auth">免费注册</Link>
                 </Button>
               </>
-            )}
+            ) : null}
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
             </Button>
