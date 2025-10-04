@@ -83,12 +83,9 @@ const PerfectWriting = () => {
             >
               <CardHeader>
                 <div className="flex items-start justify-between mb-2">
-                  <Badge variant="secondary" className="text-xs">
-                    {task.category}
+                  <Badge className={task.completed ? "bg-green-500 hover:bg-green-600 text-xs" : "bg-muted hover:bg-muted text-xs"}>
+                    {task.completed ? "已完成" : "未完成"}
                   </Badge>
-                  {task.completed && (
-                    <CheckCircle2 className="h-5 w-5 text-green-500" />
-                  )}
                 </div>
                 <CardTitle className="text-lg group-hover:text-primary transition-colors">
                   {task.title}

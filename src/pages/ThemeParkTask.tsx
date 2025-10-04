@@ -162,9 +162,6 @@ const ThemeParkTask = () => {
               <Badge className={isCompleted ? "bg-green-500 hover:bg-green-600" : "bg-muted hover:bg-muted"}>
                 {isCompleted ? "已完成" : "未完成"}
               </Badge>
-              <Badge className={getDifficultyColor(task.difficulty)}>
-                {getDifficultyText(task.difficulty)}
-              </Badge>
             </div>
             <CardTitle className="text-2xl">{task.title}</CardTitle>
             <CardDescription className="text-base">{task.description}</CardDescription>
