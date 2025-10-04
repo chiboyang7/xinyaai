@@ -45,7 +45,7 @@ export const simulations: Simulation[] = [
 },
   {
     company: "索尼电影公司",
-    title: "写一篇科幻小说",
+    title: "改写一篇完美的文章",
     category: "8岁+",
     duration: "6项技能",
     imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
