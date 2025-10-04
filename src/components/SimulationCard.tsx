@@ -9,6 +9,7 @@ interface SimulationCardProps {
   title: string;
   category: string;
   duration: string;
+  difficulty: string;
   imageUrl: string;
   logoUrl?: string;
   hiringNow?: boolean;
@@ -20,6 +21,7 @@ const SimulationCard = ({
   title,
   category,
   duration,
+  difficulty,
   imageUrl,
   logoUrl,
   hiringNow = false,
@@ -91,6 +93,12 @@ const SimulationCard = ({
           <div className="flex items-center gap-1 text-muted-foreground">
             <Award className="h-4 w-4" />
             <span>{duration}</span>
+          </div>
+        </div>
+        
+        <div className="mt-3 pt-3 border-t border-border">
+          <div className="text-sm text-muted-foreground">
+            难度: <span className="font-medium text-foreground">{difficulty}</span>
           </div>
         </div>
       </CardContent>
