@@ -14,9 +14,9 @@ export const simulations: Simulation[] = [
   company: "NASA太空中心",
   title: "创造你的数学星球",
   category: "9岁+",
-  duration: "10项技能",
+  duration: "16项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1663127162950-23812ec8bdad",
-  hiringNow: true,
+  hiringNow: false,
 }, 
   {
     company: "迪士尼乐园",
