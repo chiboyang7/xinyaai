@@ -20,6 +20,12 @@ import Auth from "./pages/Auth";
 import Case from "./pages/Case";
 import FutureThemePark from "./pages/FutureThemePark";
 import ThemeParkTask from "./pages/ThemeParkTask";
+import MathGameDesign from "./pages/MathGameDesign";
+import MathGameTask from "./pages/MathGameTask";
+import PerfectWriting from "./pages/PerfectWriting";
+import PerfectWritingTask from "./pages/PerfectWritingTask";
+import PoetryWithLibai from "./pages/PoetryWithLibai";
+import PoetryTask from "./pages/PoetryTask";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +51,12 @@ const App = () => (
           <Route path="/case" element={<Case />} />
           <Route path="/future-themepark" element={<FutureThemePark />} />
           <Route path="/future-themepark/task/:taskId" element={<ThemeParkTask />} />
+          <Route path="/math-game-design" element={<MathGameDesign />} />
+          <Route path="/math-game-design/task/:taskId" element={<MathGameTask />} />
+          <Route path="/perfect-writing" element={<PerfectWriting />} />
+          <Route path="/perfect-writing/task/:taskId" element={<PerfectWritingTask />} />
+          <Route path="/poetry-with-libai" element={<PoetryWithLibai />} />
+          <Route path="/poetry-with-libai/task/:taskId" element={<PoetryTask />} />
           <Route path="/admin-setup" element={<AdminSetup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -34,6 +34,7 @@ export const simulations: Simulation[] = [
   duration: "11项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1661964115368-6011b5c9e0e8",
   hiringNow: true,
+  link: "/math-game-design",
 },
 
   {
@@ -43,6 +44,7 @@ export const simulations: Simulation[] = [
     duration: "6项技能",
     imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
     hiringNow: true,
+    link: "/perfect-writing",
   },
 {
   company: "唐朝文学院",
@@ -51,6 +53,7 @@ export const simulations: Simulation[] = [
   duration: "8项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1697729890503-bcb24e606a2c",
   hiringNow: true,
+  link: "/poetry-with-libai",
 },
   {
     company: "可口可乐公司",
