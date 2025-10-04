@@ -105,12 +105,9 @@ const FutureThemePark = () => {
                     <Clock className="h-4 w-4 text-muted-foreground" />
                     <span className="text-sm text-muted-foreground">{task.estimatedTime}</span>
                   </div>
-                  <Badge className={getDifficultyColor(task.difficulty)}>
-                    {getDifficultyText(task.difficulty)}
-                  </Badge>
-                </div>
-                <div className="mt-4 flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                  开始任务 <ArrowRight className="ml-2 h-4 w-4" />
+                  <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
+                    开始任务 <ArrowRight className="ml-2 h-4 w-4" />
+                  </div>
                 </div>
               </CardContent>
             </Card>
