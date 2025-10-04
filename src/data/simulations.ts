@@ -30,7 +30,7 @@ export const simulations: Simulation[] = [
   {
   company: "MIT数学科技公司",
   title: "用数学模型设计游戏",
-  category: "10岁+",
+  category: "11岁+",
   duration: "11项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1661964115368-6011b5c9e0e8",
   hiringNow: true,
@@ -40,7 +40,7 @@ export const simulations: Simulation[] = [
   {
     company: "索尼电影公司",
     title: "改写一篇完美的文章",
-    category: "8岁+",
+    category: "9岁+",
     duration: "6项技能",
     imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
     hiringNow: true,
@@ -49,7 +49,7 @@ export const simulations: Simulation[] = [
 {
   company: "唐朝文学院",
   title: "和李白对话学古诗",
-  category: "8岁+",
+  category: "9岁+",
   duration: "8项技能",
   imageUrl: "https://plus.unsplash.com/premium_photo-1697729890503-bcb24e606a2c",
   hiringNow: true,
