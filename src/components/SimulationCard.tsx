@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { User, Award } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 interface SimulationCardProps {
   company: string;
@@ -26,9 +27,22 @@ const SimulationCard = ({
 }: SimulationCardProps) => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    if (hiringNow && link) {
-      navigate(link);
+  const handleClick = async () => {
+    if (!hiringNow) {
+      return; // Do nothing if not hiring
+    }
+    
+    if (link) {
+      // Check if user is authenticated
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        // Not logged in, redirect to auth page
+        navigate('/auth');
+      } else {
+        // Logged in, navigate to the project page
+        navigate(link);
+      }
     }
   };
 
