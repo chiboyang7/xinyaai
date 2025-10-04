@@ -35,7 +35,7 @@ export const simulations: Simulation[] = [
   title: "用数学模型设计游戏",
   category: "11岁+",
   duration: "11项技能",
-  difficulty: "容易",
+  difficulty: "中等",
   imageUrl: "https://plus.unsplash.com/premium_photo-1661964115368-6011b5c9e0e8",
   hiringNow: true,
   link: "/math-game-design",
