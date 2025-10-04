@@ -100,7 +100,13 @@ const SimulationCard = ({
           </div>
           <div className="flex items-center gap-1.5 text-muted-foreground">
             <div className="flex items-center gap-0.5">
-              {difficulty === "大师" ? (
+              {difficulty === "容易" ? (
+                <>
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <Star className="h-3.5 w-3.5 text-amber-500" />
+                  <Star className="h-3.5 w-3.5 text-amber-500" />
+                </>
+              ) : difficulty === "大师" ? (
                 <>
                   <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
                   <StarHalf className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />

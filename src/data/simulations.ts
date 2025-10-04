@@ -16,7 +16,7 @@ export const simulations: Simulation[] = [
   title: "创造你的数学星球",
   category: "10岁+",
   duration: "16项技能",
-  difficulty: "大师",
+  difficulty: "容易",
   imageUrl: "https://plus.unsplash.com/premium_photo-1663127162950-23812ec8bdad",
   hiringNow: false,
 },
