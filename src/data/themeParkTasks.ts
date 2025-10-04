@@ -61,6 +61,7 @@ export const themeParkTasks: Task[] = [
     category: "基础技能",
     estimatedTime: "15分钟",
     difficulty: "beginner",
+    learningObjectives: ["学会和AI说话，了解主题乐园"],
   },
   {
     id: "3",
@@ -69,6 +70,7 @@ export const themeParkTasks: Task[] = [
     category: "基础技能",
     estimatedTime: "30分钟",
     difficulty: "intermediate",
+    learningObjectives: ["学会和AI沟通，把大问题变成小问题"],
   },
   {
     id: "4",
@@ -77,6 +79,7 @@ export const themeParkTasks: Task[] = [
     category: "创作应用",
     estimatedTime: "25分钟",
     difficulty: "intermediate",
+    learningObjectives: ["利用想象力创作的第一个乐园作品"],
   },
   {
     id: "5",
@@ -85,6 +88,7 @@ export const themeParkTasks: Task[] = [
     category: "基础知识",
     estimatedTime: "20分钟",
     difficulty: "advanced",
+    learningObjectives: ["学会P和T，2个最重要要素"],
   },
   {
     id: "6",
@@ -93,6 +97,7 @@ export const themeParkTasks: Task[] = [
     category: "基础知识",
     estimatedTime: "15分钟",
     difficulty: "beginner",
+    learningObjectives: ["学会FCR这3个深度思考要素"],
   },
   {
     id: "7",
@@ -101,6 +106,7 @@ export const themeParkTasks: Task[] = [
     category: "创作应用",
     estimatedTime: "15分钟",
     difficulty: "beginner",
+    learningObjectives: ["创作自己第一个完整的主题乐园"],
   },
   {
     id: "8",
@@ -109,6 +115,7 @@ export const themeParkTasks: Task[] = [
     category: "基础技能",
     estimatedTime: "20分钟",
     difficulty: "intermediate",
+    learningObjectives: ["将现实中的作品用AI完成升级迭代"],
   },
   {
     id: "9",
@@ -117,6 +124,7 @@ export const themeParkTasks: Task[] = [
     category: "商业策略",
     estimatedTime: "15分钟",
     difficulty: "intermediate",
+    learningObjectives: ["制定门票价格和优惠政策"],
   },
   {
     id: "10",
@@ -125,6 +133,7 @@ export const themeParkTasks: Task[] = [
     category: "市场营销",
     estimatedTime: "25分钟",
     difficulty: "intermediate",
+    learningObjectives: ["设计开业前的营销和宣传策略"],
   },
   {
     id: "11",
@@ -133,6 +142,7 @@ export const themeParkTasks: Task[] = [
     category: "人力资源",
     estimatedTime: "20分钟",
     difficulty: "intermediate",
+    learningObjectives: ["规划员工招聘和培训计划"],
   },
   {
     id: "12",
@@ -141,6 +151,7 @@ export const themeParkTasks: Task[] = [
     category: "技术创新",
     estimatedTime: "30分钟",
     difficulty: "advanced",
+    learningObjectives: ["整合VR、AR等现代科技到游乐体验中"],
   },
   {
     id: "13",
@@ -149,6 +160,7 @@ export const themeParkTasks: Task[] = [
     category: "包容性设计",
     estimatedTime: "20分钟",
     difficulty: "intermediate",
+    learningObjectives: ["确保乐园对所有游客友好和无障碍"],
   },
   {
     id: "14",
@@ -157,6 +169,7 @@ export const themeParkTasks: Task[] = [
     category: "活动策划",
     estimatedTime: "25分钟",
     difficulty: "intermediate",
+    learningObjectives: ["设计全年的节日和特殊活动"],
   },
   {
     id: "15",
@@ -165,6 +178,7 @@ export const themeParkTasks: Task[] = [
     category: "财务管理",
     estimatedTime: "30分钟",
     difficulty: "advanced",
+    learningObjectives: ["制定建设和运营的财务预算"],
   },
   {
     id: "16",
@@ -173,6 +187,7 @@ export const themeParkTasks: Task[] = [
     category: "体验设计",
     estimatedTime: "25分钟",
     difficulty: "intermediate",
+    learningObjectives: ["设计从入园到离园的完整游客旅程"],
   },
   {
     id: "17",
@@ -181,6 +196,7 @@ export const themeParkTasks: Task[] = [
     category: "品牌设计",
     estimatedTime: "30分钟",
     difficulty: "intermediate",
+    learningObjectives: ["创建乐园的视觉识别系统和吉祥物"],
   },
   {
     id: "18",
@@ -189,5 +205,6 @@ export const themeParkTasks: Task[] = [
     category: "综合呈现",
     estimatedTime: "40分钟",
     difficulty: "advanced",
+    learningObjectives: ["整合所有元素，制作完整的主题乐园方案展示"],
   },
 ];

@@ -65,10 +65,9 @@ const ThemeParkTask = () => {
           返回任务列表
         </Button>
 
-        {/* Part 1: Title & Description */}
+        {/* Part 1: Title */}
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-primary mb-4">{task.title}</h1>
-          <p className="text-lg text-muted-foreground">{task.description}</p>
         </div>
 
         {/* Part 2: Knowledge Section */}
