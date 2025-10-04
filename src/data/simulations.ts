@@ -116,7 +116,7 @@ export const simulations: Simulation[] = [
   difficulty: "中等",
   imageUrl: "https://images.unsplash.com/photo-1659407930506-9813058a3c47",
   hiringNow: false,
-  badgeType: "综合素质",
+  badgeType: "科学竞赛",
 },
 {
   company: "哈利波特魔法学院",
