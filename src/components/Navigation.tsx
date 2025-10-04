@@ -83,9 +83,7 @@ const Navigation = () => {
                 AI能力模型
               </Link>
               
-              <a href="https://case.xinyaai.com" className="text-base font-medium text-muted-foreground hover:text-primary transition-colors">
-                学生作品
-              </a>
+              
             </div>
           </div>
 
