@@ -78,7 +78,7 @@ const ThemeParkTask = () => {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Lightbulb className="h-5 w-5 text-primary" />
-                  <h2 className="text-2xl font-semibold">学习目标</h2>
+                  <h2 className="text-2xl font-semibold text-primary">学习目标</h2>
                 </div>
                 <ul className="space-y-2 ml-7">
                   {task.learningObjectives.map((objective, index) => (
@@ -92,7 +92,7 @@ const ThemeParkTask = () => {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <BookOpen className="h-5 w-5 text-primary" />
-                  <h2 className="text-2xl font-semibold">知识点</h2>
+                  <h2 className="text-2xl font-semibold text-primary">知识点</h2>
                 </div>
                 <div className="space-y-3 ml-7">
                   {task.knowledgePoints.map((point, index) => (
@@ -109,7 +109,7 @@ const ThemeParkTask = () => {
           <div className="mb-12">
             <div className="flex items-center gap-2 mb-6">
               <ListChecks className="h-5 w-5 text-primary" />
-              <h2 className="text-2xl font-semibold">任务步骤</h2>
+              <h2 className="text-2xl font-semibold text-primary">任务步骤</h2>
             </div>
             <div className="space-y-6">
               {task.steps.map((step) => (
@@ -144,7 +144,7 @@ const ThemeParkTask = () => {
         {/* Part 4: Chat Interface */}
         <Card className="border-2">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex items-center gap-2 text-primary">
               <Send className="h-5 w-5" />
               与AI对话
             </CardTitle>
