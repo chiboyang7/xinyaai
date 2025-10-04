@@ -222,7 +222,7 @@ export const dimensionAnalysisLibrary = {
         characteristics: [
           '能够识别AI输出中的明显错误',
           '会对重要信息进行核实',
-          '理解AI可能产生'幻觉'',
+          '理解AI可能产生幻觉‘,
           '知道查阅权威资料的重要性',
           '对AI的能力边界有基本认知'
         ],
