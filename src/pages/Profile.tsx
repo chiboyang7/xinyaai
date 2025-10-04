@@ -22,6 +22,17 @@ const Profile = () => {
   } | null>(null);
   const [newUsername, setNewUsername] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [showPresetAvatars, setShowPresetAvatars] = useState(false);
+
+  const presetAvatars = [
+    { id: 1, name: "鲨鱼熊", url: "/avatars/bear-shark.jpg" },
+    { id: 2, name: "皇冠熊", url: "/avatars/bear-crown.jpg" },
+    { id: 3, name: "发型熊", url: "/avatars/bear-poop.jpg" },
+    { id: 4, name: "清朝熊", url: "/avatars/bear-qing.jpg" },
+    { id: 5, name: "奶牛熊", url: "/avatars/bear-cow.jpg" },
+    { id: 6, name: "小猫熊", url: "/avatars/bear-cat.jpg" },
+    { id: 7, name: "小狗熊", url: "/avatars/bear-dog.jpg" },
+  ];
 
   useEffect(() => {
     checkUser();
@@ -84,6 +95,38 @@ const Profile = () => {
     fetchProfile(user.id);
   };
 
+  const handlePresetAvatarSelect = async (avatarUrl: string) => {
+    if (!user) return;
+
+    setUploading(true);
+
+    try {
+      // Update profile with preset avatar URL
+      const { error: updateError } = await supabase
+        .from("profiles")
+        .update({ avatar_url: avatarUrl })
+        .eq("id", user.id);
+
+      if (updateError) throw updateError;
+
+      toast({
+        title: "成功",
+        description: "头像已更新",
+      });
+
+      fetchProfile(user.id);
+      setShowPresetAvatars(false);
+    } catch (error) {
+      toast({
+        title: "错误",
+        description: "更新头像失败",
+        variant: "destructive",
+      });
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const handleAvatarUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!user || !event.target.files || event.target.files.length === 0) return;
 
@@ -102,8 +145,8 @@ const Profile = () => {
     setUploading(true);
 
     try {
-      // Delete old avatar if exists
-      if (profile?.avatar_url) {
+      // Delete old avatar if exists (only if it's a custom upload, not preset)
+      if (profile?.avatar_url && profile.avatar_url.includes("/avatars/") && profile.avatar_url.includes(user.id)) {
         const oldPath = profile.avatar_url.split("/").pop();
         if (oldPath) {
           await supabase.storage
@@ -187,7 +230,14 @@ const Profile = () => {
                     {getAvatarFallback()}
                   </AvatarFallback>
                 </Avatar>
-                <div>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowPresetAvatars(!showPresetAvatars)}
+                    disabled={uploading}
+                  >
+                    {showPresetAvatars ? "收起预设头像" : "选择预设头像"}
+                  </Button>
                   <Input
                     id="avatar-upload"
                     type="file"
@@ -204,11 +254,31 @@ const Profile = () => {
                     <Upload className="h-4 w-4 mr-2" />
                     {uploading ? "上传中..." : "上传头像"}
                   </Button>
-                  <p className="text-xs text-muted-foreground mt-2 text-center">
-                    支持 JPG、PNG、WEBP 格式，最大 2MB
-                  </p>
                 </div>
+                <p className="text-xs text-muted-foreground text-center">
+                  选择预设头像或上传自定义头像（JPG、PNG、WEBP，最大 2MB）
+                </p>
               </div>
+
+              {/* Preset Avatars Grid */}
+              {showPresetAvatars && (
+                <div className="grid grid-cols-4 gap-4 p-4 bg-muted/50 rounded-lg">
+                  {presetAvatars.map((avatar) => (
+                    <button
+                      key={avatar.id}
+                      onClick={() => handlePresetAvatarSelect(avatar.url)}
+                      disabled={uploading}
+                      className="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      title={avatar.name}
+                    >
+                      <Avatar className="h-16 w-16 border-2 border-transparent hover:border-primary">
+                        <AvatarImage src={avatar.url} alt={avatar.name} />
+                      </Avatar>
+                      <span className="text-xs text-muted-foreground">{avatar.name}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Username */}
               <div className="space-y-2">
