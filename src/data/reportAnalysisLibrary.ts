@@ -279,7 +279,7 @@ export const dimensionAnalysisLibrary = {
         resources: [
           '阅读《中学生信息素养指南》',
           '学习使用学术搜索引擎（Google Scholar、百度学术）',
-          '练习'三问法'：这是事实还是观点？有什么证据？还有其他说法吗？'
+          '练习三问法：这是事实还是观点？有什么证据？还有其他说法吗？'
         ]
       },
       2: {
@@ -289,7 +289,7 @@ export const dimensionAnalysisLibrary = {
           '较少质疑AI的回答',
           '不了解AI幻觉现象',
           '缺乏系统的验证方法',
-          '可能认为AI很聪明，应该不会错‘,
+          '可能认为AI很聪明，应该不会错',
           '不清楚哪些信息需要重点验证'
         ],
         weakPoints: [
