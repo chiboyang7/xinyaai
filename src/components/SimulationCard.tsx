@@ -106,6 +106,18 @@ const SimulationCard = ({
                   <Star className="h-3.5 w-3.5 text-amber-500" />
                   <Star className="h-3.5 w-3.5 text-amber-500" />
                 </>
+              ) : difficulty === "中等" ? (
+                <>
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <Star className="h-3.5 w-3.5 text-amber-500" />
+                </>
+              ) : difficulty === "困难" ? (
+                <>
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                </>
               ) : difficulty === "大师" ? (
                 <>
                   <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
