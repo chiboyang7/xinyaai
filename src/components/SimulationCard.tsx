@@ -14,6 +14,7 @@ interface SimulationCardProps {
   logoUrl?: string;
   hiringNow?: boolean;
   link?: string;
+  badgeType: "科学竞赛" | "AI智能体" | "艺术创作" | "综合素质";
 }
 
 const SimulationCard = ({
@@ -26,6 +27,7 @@ const SimulationCard = ({
   logoUrl,
   hiringNow = false,
   link,
+  badgeType,
 }: SimulationCardProps) => {
   const navigate = useNavigate();
 
@@ -72,6 +74,9 @@ const SimulationCard = ({
             : "bg-orange-500 text-white hover:bg-orange-500"
         }`}>
           {hiringNow ? "开放挑战" : "等待解锁"}
+        </Badge>
+        <Badge className="absolute top-3 right-3 bg-secondary text-secondary-foreground hover:bg-secondary">
+          {badgeType}
         </Badge>
       </div>
       

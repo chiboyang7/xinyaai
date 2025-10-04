@@ -8,6 +8,7 @@ export interface Simulation {
   logoUrl?: string;
   hiringNow?: boolean;
   link?: string;
+  badgeType: "科学竞赛" | "AI智能体" | "艺术创作" | "综合素质";
 }
 
 export const simulations: Simulation[] = [
@@ -19,6 +20,7 @@ export const simulations: Simulation[] = [
   difficulty: "容易",
   imageUrl: "https://plus.unsplash.com/premium_photo-1663127162950-23812ec8bdad",
   hiringNow: false,
+  badgeType: "科学竞赛",
 },
   {
     company: "迪士尼乐园",
@@ -29,6 +31,7 @@ export const simulations: Simulation[] = [
     imageUrl: "https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f",
     hiringNow: true,
     link: "/future-themepark",
+    badgeType: "艺术创作",
   },
   {
   company: "MIT数学科技公司",
@@ -39,6 +42,7 @@ export const simulations: Simulation[] = [
   imageUrl: "https://plus.unsplash.com/premium_photo-1661964115368-6011b5c9e0e8",
   hiringNow: true,
   link: "/math-game-design",
+  badgeType: "科学竞赛",
 },
 {
   company: "唐朝文学院",
@@ -49,6 +53,7 @@ export const simulations: Simulation[] = [
   imageUrl: "https://plus.unsplash.com/premium_photo-1697729890503-bcb24e606a2c",
   hiringNow: true,
   link: "/poetry-with-libai",
+  badgeType: "AI智能体",
 },
   {
     company: "索尼电影公司",
@@ -59,6 +64,7 @@ export const simulations: Simulation[] = [
     imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
     hiringNow: true,
     link: "/perfect-writing",
+    badgeType: "艺术创作",
   },
 
   {
@@ -69,6 +75,7 @@ export const simulations: Simulation[] = [
     difficulty: "困难",
     imageUrl: "https://images.unsplash.com/photo-1594971475674-6a97f8fe8c2b",
     hiringNow: false,
+    badgeType: "综合素质",
   },
 
 {
@@ -79,6 +86,7 @@ export const simulations: Simulation[] = [
   difficulty: "中等",
   imageUrl: "https://images.unsplash.com/photo-1521295121783-8a321d551ad2",
   hiringNow: false,
+  badgeType: "综合素质",
 },
   {
   company: "剑桥大学",
@@ -88,6 +96,7 @@ export const simulations: Simulation[] = [
   difficulty: "困难",
   imageUrl: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
   hiringNow: false,
+  badgeType: "AI智能体",
 },
   {
   company: "贝尔实验室",
@@ -97,6 +106,7 @@ export const simulations: Simulation[] = [
   difficulty: "困难",
   imageUrl: "https://plus.unsplash.com/premium_photo-1663011256706-72d0b535b1ee",
   hiringNow: false,
+  badgeType: "AI智能体",
 },
 {
   company: "哈利波特魔法学院",
@@ -106,6 +116,7 @@ export const simulations: Simulation[] = [
   difficulty: "容易",
   imageUrl: "https://images.unsplash.com/photo-1618944913480-b67ee16d7b77",
   hiringNow: false,
+  badgeType: "科学竞赛",
 },
 {
   company: "多啦A梦公司",
@@ -115,6 +126,7 @@ export const simulations: Simulation[] = [
   difficulty: "容易",
   imageUrl: "https://plus.unsplash.com/premium_photo-1683121496115-f2e22066dcf4",
   hiringNow: false,
+  badgeType: "综合素质",
 },
 {
   company: "清华大学出版社",
@@ -124,6 +136,7 @@ export const simulations: Simulation[] = [
   difficulty: "中等",
   imageUrl: "https://images.unsplash.com/photo-1659407930506-9813058a3c47",
   hiringNow: false,
+  badgeType: "综合素质",
 },
 
 {
@@ -134,6 +147,7 @@ export const simulations: Simulation[] = [
   difficulty: "容易",
   imageUrl: "https://plus.unsplash.com/premium_photo-1683133757924-9bdece92f6bb",
   hiringNow: false,
+  badgeType: "综合素质",
 },
 {
   company: "故宫博物院",
@@ -143,6 +157,7 @@ export const simulations: Simulation[] = [
   difficulty: "中等",
   imageUrl: "https://images.unsplash.com/photo-1720702214634-c1ece3a7d364",
   hiringNow: false,
+  badgeType: "AI智能体",
 },
   {
     company: "美国花旗银行",
@@ -152,6 +167,7 @@ export const simulations: Simulation[] = [
     difficulty: "困难",
     imageUrl: "https://images.unsplash.com/photo-1588600878108-578307a3cc9d",
     hiringNow: false,
+    badgeType: "科学竞赛",
   },
 
 ];
