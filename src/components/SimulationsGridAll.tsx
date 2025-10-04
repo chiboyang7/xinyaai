@@ -17,10 +17,10 @@ const SimulationsGridAll = () => {
   };
 
   return (
-    <section className="py-12">
+    <section className="pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Tabs defaultValue="all" className="w-full">
-          <div className="mb-12 flex justify-center">
+          <div className="mb-8 flex justify-center">
             <TabsList className="inline-flex h-auto p-2 gap-2 bg-gradient-to-r from-secondary/50 to-secondary/30 backdrop-blur-sm rounded-xl border border-primary/10">
               {categories.map((category) => (
                 <TabsTrigger 

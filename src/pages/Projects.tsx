@@ -9,10 +9,7 @@ const Projects = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <ProjectsHero />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <Separator className="my-12" />
-      </div>
-      <main className="py-12">
+      <main className="pt-8">
         <SimulationsGridAll />
       </main>
       <Footer />
