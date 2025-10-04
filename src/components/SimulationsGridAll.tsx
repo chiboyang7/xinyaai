@@ -20,13 +20,19 @@ const SimulationsGridAll = () => {
     <section className="py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="mb-8 w-full justify-start">
-            {categories.map((category) => (
-              <TabsTrigger key={category.value} value={category.value}>
-                {category.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          <div className="mb-12 flex justify-center">
+            <TabsList className="inline-flex h-auto p-2 gap-2 bg-gradient-to-r from-secondary/50 to-secondary/30 backdrop-blur-sm rounded-xl border border-primary/10">
+              {categories.map((category) => (
+                <TabsTrigger 
+                  key={category.value} 
+                  value={category.value}
+                  className="px-6 py-3 rounded-lg text-base font-medium transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=active]:shadow-primary/20"
+                >
+                  {category.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
 
           {categories.map((category) => (
             <TabsContent key={category.value} value={category.value}>
