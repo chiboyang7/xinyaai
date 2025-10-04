@@ -27,7 +27,7 @@ const SimulationCard = ({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (link) {
+    if (hiringNow && link) {
       navigate(link);
     }
   };
@@ -35,13 +35,19 @@ const SimulationCard = ({
   return (
     <Card 
       onClick={handleClick}
-      className="overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer group border-border"
+      className={`overflow-hidden transition-all duration-300 border-border ${
+        hiringNow 
+          ? "hover:shadow-lg cursor-pointer group" 
+          : "cursor-not-allowed opacity-70"
+      }`}
     >
       <div className="relative h-48 overflow-hidden">
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className={`w-full h-full object-cover transition-transform duration-300 ${
+            hiringNow ? "group-hover:scale-105" : ""
+          }`}
         />
         <Badge className={`absolute top-3 left-3 ${
           hiringNow 
