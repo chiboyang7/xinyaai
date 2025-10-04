@@ -75,7 +75,7 @@ const SimulationCard = ({
         }`}>
           {hiringNow ? "开放挑战" : "等待解锁"}
         </Badge>
-        <Badge className="absolute top-3 right-3 bg-secondary text-secondary-foreground hover:bg-secondary">
+        <Badge className="absolute top-3 right-3 bg-black/50 text-white hover:bg-black/50">
           {badgeType}
         </Badge>
       </div>
