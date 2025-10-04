@@ -33,6 +33,7 @@ const SimulationCard = ({
     if (difficulty === "容易") return 1;
     if (difficulty === "中等") return 2;
     if (difficulty === "困难") return 3;
+    if (difficulty === "大师") return 5;
     return 1;
   };
 
