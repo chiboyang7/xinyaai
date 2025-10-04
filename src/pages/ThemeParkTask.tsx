@@ -67,7 +67,7 @@ const ThemeParkTask = () => {
 
         {/* Part 1: Title & Description */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">{task.title}</h1>
+          <h1 className="text-4xl font-bold text-primary mb-4">{task.title}</h1>
           <p className="text-lg text-muted-foreground">{task.description}</p>
         </div>
 
