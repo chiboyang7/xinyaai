@@ -29,7 +29,7 @@ export const themeParkTasks: Task[] = [
     title: "设计一个Labubu专属乐园",
     description: "理解传统APP和AI智能体(AI APP)的区别",
     category: "基础知识",
-    estimatedTime: "30分钟",
+    estimatedTime: "40分钟",
     difficulty: "beginner",
     learningObjectives: [
       "理解传统APP和AI智能体(AI APP)的区别"
@@ -76,7 +76,7 @@ export const themeParkTasks: Task[] = [
     title: "体验AI的创作能力",
     description: "使用AI强大的创作能力做出几个作品",
     category: "基础技能",
-    estimatedTime: "15分钟",
+    estimatedTime: "40分钟",
     difficulty: "beginner",
     learningObjectives: ["开始了解AI强大的创作能力"],
     knowledgePoints: [
@@ -90,7 +90,7 @@ export const themeParkTasks: Task[] = [
         stepName: "创作一个我自己的AI形象",
         instruction: "每个人小时候都梦想做一个英雄或者公主，如果另一个世界有一个你，ta是什么形象呢？",
         prompts: [
-          "画一个超级英雄版的我：我是一个10岁的男孩；我最喜欢的颜色是蓝色；我的超能力是飞行和控制闪电；背景是城市上空的星空，卡通风格，像宫崎骏漫画",
+          "画一个超级英雄版的我：我是一个10岁的男孩；我最喜欢的颜色是蓝色；我的超能力是飞行和控制闪电；背景是城市上空的星空，像宫崎骏漫画风格",
           "画一个公主版的我：我是一个10岁的女孩，我最喜欢的颜色是蓝色，我的超能力是让树飞起来和变出宝石，背景是花园，像宫崎骏漫画风格",
          ],
         //thinking: "深度思考的价值是什么？对于简单问题区别不大，但对于复杂问题，深度思考模式回答质量更高。"
@@ -103,15 +103,16 @@ export const themeParkTasks: Task[] = [
           "按照真实的社会物价和成本，请帮我设计一个迪士尼乐园，预算100万元",
           "按照真实的社会物价和成本，请帮我设计一个迪士尼乐园，预算100亿元",
         ],
-        thinking: "每个主题乐园都有什么独特之处？"
+        thinking: "每个主题乐园都有什么独特之处？你最喜欢哪个？"
       },
       {
         stepNumber: 3,
         stepName: "创建一个贫穷版的未来主题乐园",
-        instruction: "让我们挑战用1元和100元能做成什么样的乐园",
+        instruction: "让我们挑战用1元和100元能做成什么样的乐园，初步了解AI的限制条件",
         prompts: [
           "按照真实的社会物价和成本，请帮我设计一个迪士尼乐园，预算100元",
           "按照真实的社会物价和成本，请帮我设计一个迪士尼乐园，预算1元",
+          "按照真实的社会物价和成本，请帮我设计一个火影忍者乐园，预算1元",
         ],
         thinking: "让AI发挥更大的潜力，变得更好玩，需要你的创意：设计一个预算100元的火影忍者乐园？和身边的朋友比较一下看谁做的更有趣"
       },
@@ -133,7 +134,7 @@ export const themeParkTasks: Task[] = [
     title: "AI的核心技巧 - AI人设",
     description: "AI人设为什么重要",
     category: "基础技能",
-    estimatedTime: "30分钟",
+    estimatedTime: "40分钟",
     difficulty: "intermediate",
     learningObjectives: ["学会如何给AI人设"],
     knowledgePoints: [
@@ -223,41 +224,42 @@ export const themeParkTasks: Task[] = [
   {
     id: "5",
     title: "设计我的第一个乐园游乐设施",
-    description: "利用想象力创作的第一个乐园作品",
+    description: "以图片为语言和沟通基础和AI进行讨论",
     category: "创作应用",
-    estimatedTime: "25分钟",
+    estimatedTime: "30分钟",
     difficulty: "intermediate",
-    learningObjectives: ["利用想象力创作的第一个乐园作品"],
+    learningObjectives: ["学会和AI讨论激发想象力"],
     knowledgePoints: [
-      "了解游乐设施的基本类型",
-      "掌握创意设施设计的要素",
-      "学会用AI辅助创意实现"
+      "和AI进行多维度的讨论：如图片、文字",
+      "学会使用AI的图生文功能",
+      "学会使用AI的图生图功能"
     ],
     steps: [
       {
         stepNumber: 1,
-        stepName: "选择设施类型",
-        instruction: "思考你想设计什么类型的游乐设施",
-        prompt: "请介绍5种不同类型的游乐设施，包括过山车、旋转类、水上项目等",
-        thinking: "哪种类型的设施最吸引你？为什么？"
+        stepName: "找一找现实的参照物",
+        instruction: "可以上小红书或者百度找一找你喜欢的游乐设备，下载图片",
+        //prompt: "我最喜欢环球影城的过山车，还可以更好玩一点，如何设计下一代的过山车？",
+        thinking: "在过去，我们通常是以文字的形式进行讨论和头脑风暴，在A时代，以图片为基础的讨论会更加高效，一图胜千言。"
       },
       {
         stepNumber: 2,
-        stepName: "构思创意概念",
-        instruction: "为你的设施想一个独特的主题和故事",
-        prompt: "帮我设计一个太空主题的过山车，要有独特的故事背景和视觉效果",
-        thinking: "好的主题故事如何让游乐设施更有吸引力？"
+        stepName: "和AI头脑风暴",
+        instruction: "将你找到的图片作为基础，上传给豆包，让豆包给你描述一下这个图片",
+        prompt: "你是一个游戏专家，给我讲一讲这张图片中的游戏设备",
+        thinking: "在A时代，以图片，视频，为讨论基础会更加高效，我们甚至可以做一个网页或者一本电子书，直接表达我们的观点。"
       },
       {
         stepNumber: 3,
-        stepName: "细化设计方案",
-        instruction: "描述设施的具体细节，包括外观、体验过程等",
-        thinking: "完整的设计需要考虑哪些方面？安全性、趣味性、故事性？"
+        stepName: "学会使用图生图",
+        instruction: "基于参考图，利用AI进行优化，变成自己的游乐设施",
+        prompt: "把这个游乐设施变成哈利波特风格的游乐设施，有魔法，火焰，女巫，扫把",
+        thinking: "你对你设计的游乐设备满意么？把你的游乐设施图片上传给我们吧"
       }
     ]
   },
   {
-    id: "6",
+    id: "7",
     title: "认识谷歌PTFCR框架（上）",
     description: "学会P和T，2个最重要要素",
     category: "基础知识",
@@ -294,7 +296,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "7",
+    id: "8",
     title: "认识谷歌PTFCR框架（下）",
     description: "学会FCR这3个深度思考要素",
     category: "基础知识",
@@ -331,7 +333,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "8",
+    id: "9",
     title: "谷歌PTFCR进阶练习",
     description: "创作自己第一个完整的主题乐园",
     category: "创作应用",
@@ -366,7 +368,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "9",
+    id: "10",
     title: "把魔法图片变成魔法视频",
     description: "将现实中的作品用AI完成升级迭代",
     category: "基础技能",
@@ -397,42 +399,6 @@ export const themeParkTasks: Task[] = [
         stepName: "优化和迭代",
         instruction: "根据生成结果，调整参数重新生成",
         thinking: "如何通过多次迭代，让视频效果越来越好？"
-      }
-    ]
-  },
-  {
-    id: "10",
-    title: "票价策略",
-    description: "制定门票价格和优惠政策",
-    category: "商业策略",
-    estimatedTime: "15分钟",
-    difficulty: "intermediate",
-    learningObjectives: ["制定门票价格和优惠政策"],
-    knowledgePoints: [
-      "了解主题乐园的定价策略",
-      "掌握不同客户群体的票价设计",
-      "学会制定有吸引力的优惠政策"
-    ],
-    steps: [
-      {
-        stepNumber: 1,
-        stepName: "市场调研",
-        instruction: "了解同类主题乐园的票价水平",
-        prompt: "请分析国内中型主题乐园的票价范围，包括成人票、儿童票和家庭套票",
-        thinking: "合理的定价需要参考哪些因素？"
-      },
-      {
-        stepNumber: 2,
-        stepName: "设计票种",
-        instruction: "为你的主题乐园设计多种票务产品",
-        prompt: "帮我设计一套完整的票务体系，包括单日票、年卡、季卡，以及不同人群的优惠票种",
-        thinking: "多样化的票种如何满足不同游客的需求？"
-      },
-      {
-        stepNumber: 3,
-        stepName: "制定优惠策略",
-        instruction: "设计促销和优惠活动方案",
-        thinking: "什么样的优惠活动既能吸引游客，又能保证盈利？"
       }
     ]
   },
