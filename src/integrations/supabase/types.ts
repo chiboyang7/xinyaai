@@ -141,6 +141,39 @@ export type Database = {
         }
         Relationships: []
       }
+      task_images: {
+        Row: {
+          created_at: string | null
+          id: string
+          image_name: string
+          image_url: string
+          step_number: number
+          storage_path: string
+          task_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          image_name: string
+          image_url: string
+          step_number: number
+          storage_path: string
+          task_id: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          image_name?: string
+          image_url?: string
+          step_number?: number
+          storage_path?: string
+          task_id?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       test_sessions: {
         Row: {
           ai_result: Json | null
