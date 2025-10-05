@@ -9,20 +9,19 @@ export const useThemeParkTasks = () => {
       // Get current user
       const { data: { user } } = await supabase.auth.getUser();
       
-      // Get all conversations with message count in a single query
+      // Get all conversations with user messages (role='user') to determine completion
       const { data: conversations } = await supabase
         .from('conversations')
         .select(`
           task_id,
-          messages(count)
+          messages!inner(role)
         `)
-        .eq('user_id', user?.id || null);
+        .eq('user_id', user?.id || null)
+        .eq('messages.role', 'user');
 
-      // Build set of completed task IDs (tasks with messages)
+      // Build set of completed task IDs (tasks with at least one user message)
       const completedTaskIds = new Set<string>(
-        conversations
-          ?.filter(conv => conv.messages && conv.messages.length > 0)
-          .map(conv => conv.task_id) || []
+        conversations?.map(conv => conv.task_id) || []
       );
 
       // Update tasks with completion status
