@@ -1,7 +1,9 @@
 export interface TaskStep {
   stepNumber: number;
+  stepName: string;
   instruction: string;
-  prompt: string;
+  prompt?: string;
+  thinking?: string;
 }
 
 export interface Task {
@@ -37,18 +39,24 @@ export const themeParkTasks: Task[] = [
     steps: [
       {
         stepNumber: 1,
+        stepName: "我们要做Labubu",
         instruction: "在小红书搜索：Labubu主题乐园",
-        prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点"
+        prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点",
+        thinking: "思考：为什么要先了解IP形象的核心特征？这些特征如何影响主题乐园的设计？"
       },
       {
         stepNumber: 2,
+        stepName: "设计游乐设施",
         instruction: "构思3个以Labubu为主题的游乐设施创意，每个设施要体现Labubu的不同特点",
-        prompt: "基于Labubu的特征，请帮我设计3个创意游乐设施，每个设施要有名称、玩法描述和它体现了Labubu的哪个特点"
+        prompt: "基于Labubu的特征，请帮我设计3个创意游乐设施，每个设施要有名称、玩法描述和它体现了Labubu的哪个特点",
+        thinking: "思考：如何将IP特征转化为实际的游乐体验？不同年龄段的游客需求有何不同？"
       },
       {
         stepNumber: 3,
+        stepName: "规划整体布局",
         instruction: "设计乐园的整体布局和氛围，包括入口、核心区域和装饰风格",
-        prompt: "请帮我设计一个Labubu主题乐园的整体布局方案，包括入口设计、3-4个主题区域的规划，以及如何营造神秘森林的沉浸式氛围"
+        prompt: "请帮我设计一个Labubu主题乐园的整体布局方案，包括入口设计、3-4个主题区域的规划，以及如何营造神秘森林的沉浸式氛围",
+        thinking: "思考：如何通过空间布局营造沉浸式体验？游客动线设计的原则是什么？"
       }
     ]
   },

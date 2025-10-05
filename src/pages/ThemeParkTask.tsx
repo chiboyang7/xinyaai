@@ -114,25 +114,35 @@ const ThemeParkTask = () => {
               {task.steps.map((step) => (
                 <Card key={step.stepNumber} className="border-l-4 border-l-primary">
                   <CardHeader>
-                    <CardTitle className="text-lg">步骤 {step.stepNumber}</CardTitle>
+                    <CardTitle className="text-lg">步骤 {step.stepNumber}：{step.stepName}</CardTitle>
                     <CardDescription className="text-base">{step.instruction}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="bg-muted/50 p-4 rounded-lg">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1">
-                          <p className="text-sm text-muted-foreground mb-2">提示词示例：</p>
-                          <p className="text-foreground font-medium">{step.prompt}</p>
+                  <CardContent className="space-y-4">
+                    {step.prompt && (
+                      <div className="bg-blue-50 dark:bg-blue-950/30 p-4 rounded-lg">
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            <p className="text-sm text-muted-foreground mb-2">提示词示例：</p>
+                            <p className="text-foreground font-medium">{step.prompt}</p>
+                          </div>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => copyPrompt(step.prompt!)}
+                          >
+                            复制
+                          </Button>
                         </div>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => copyPrompt(step.prompt)}
-                        >
-                          复制
-                        </Button>
                       </div>
-                    </div>
+                    )}
+                    {step.thinking && (
+                      <div className="bg-muted/50 p-4 rounded-lg">
+                        <div className="flex-1">
+                          <p className="text-sm text-muted-foreground mb-2">思考问题：</p>
+                          <p className="text-foreground font-medium">{step.thinking}</p>
+                        </div>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
