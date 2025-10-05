@@ -195,14 +195,8 @@ export const themeParkTasks: Task[] = [
         stepNumber: 1,
         stepName: "提出大问题",
         instruction: "先向AI提出一个复杂的大问题，会发现回答的比较差，很难获得有效信息",
-        prompts: [
-          "我想建一个未来主题乐园，应该怎么做？",
-          "画一个超级英雄版的我：我是一个10岁的男孩；我最喜欢的颜色是蓝色；我的超能力是飞行和控制闪电；背景是城市上空的星空，像宫崎骏漫画风格"
-        ],
-        images: [
-          "/task-images/superhero-design.png",
-          "/task-images/princess-design.png"
-        ],
+        prompt: "我想建一个未来主题乐园，应该怎么做？",
+        image: "/task-images/theme-park-steps.png",
         thinking: "AI给出的答案是不是太笼统了？"
       },
       {
