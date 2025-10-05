@@ -138,7 +138,7 @@ const ThemeParkTask = () => {
                     {step.thinking && (
                       <div className="bg-muted/50 p-4 rounded-lg">
                         <div className="flex-1">
-                          <p className="text-sm text-muted-foreground mb-2">思考问题：</p>
+                          <p className="text-sm text-muted-foreground mb-2">思考问题与答案：</p>
                           <p className="text-foreground font-medium">{step.thinking}</p>
                         </div>
                       </div>

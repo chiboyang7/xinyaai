@@ -39,10 +39,10 @@ export const themeParkTasks: Task[] = [
     steps: [
       {
         stepNumber: 1,
-        stepName: "我们要做Labubu",
-        instruction: "在小红书搜索：Labubu主题乐园",
-        prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点",
-        thinking: "思考：为什么要先了解IP形象的核心特征？这些特征如何影响主题乐园的设计？"
+        stepName: "在小红书搜索：Labubu主题乐园",
+        instruction: "我们所有人看到的内容应该是类似的,如果是不一样，那是由于搜索结果的排列顺序不同。",
+        //prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点",
+        thinking: "为什么我们会看到一样或者相似的内容？因为小红书是一个图书馆，里面的内容都是已经做好的。"
       },
       {
         stepNumber: 2,
