@@ -165,7 +165,11 @@ export const themeParkTasks: Task[] = [
           "你是诗人李白，我是一个10岁的小学生，告诉我什么是主题乐园",
           "你是主题乐园专家，我是一个10岁的小学生，告诉我什么是主题乐园",
         ],
-        
+        images: [
+          "/task-images/professions-1.jpg",
+          "/task-images/professions-2.jpg",
+          "/task-images/professions-3.jpg"
+        ],
         thinking: "你最喜欢谁的回答？你还有其他人设的建议么？"
       },
       {

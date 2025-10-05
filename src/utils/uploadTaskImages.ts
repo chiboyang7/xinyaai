@@ -3,7 +3,10 @@ import { supabase } from "@/integrations/supabase/client";
 export async function uploadTaskImagesToStorage() {
   const images = [
     { path: "/task-images/superhero-design-2.png", name: "superhero-design-2.png" },
-    { path: "/task-images/princess-design-2.png", name: "princess-design-2.png" }
+    { path: "/task-images/princess-design-2.png", name: "princess-design-2.png" },
+    { path: "/task-images/professions-1.jpg", name: "professions-1.jpg" },
+    { path: "/task-images/professions-2.jpg", name: "professions-2.jpg" },
+    { path: "/task-images/professions-3.jpg", name: "professions-3.jpg" }
   ];
 
   for (const image of images) {
