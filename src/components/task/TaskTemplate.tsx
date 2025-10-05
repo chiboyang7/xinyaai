@@ -192,6 +192,31 @@ export const TaskTemplate: React.FC<TaskTemplateProps> = ({
                         </div>
                       </div>
                     )}
+                    {step.prompts && step.prompts.length > 0 && (
+                      <div className="space-y-3">
+                        {step.prompts.map((prompt, idx) => (
+                          <div key={idx} className="bg-blue-50 dark:bg-blue-950/30 p-4 rounded-lg">
+                            <div className="flex items-start justify-between gap-4">
+                              <div className="flex-1">
+                                <p className="text-sm text-muted-foreground mb-2">
+                                  提示词示例 {step.prompts!.length > 1 ? `${idx + 1}` : ''}：
+                                </p>
+                                <p className="text-foreground">{prompt}</p>
+                              </div>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => {
+                                  navigator.clipboard.writeText(prompt);
+                                }}
+                              >
+                                复制
+                              </Button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     {step.thinking && (
                       <div className="bg-muted/50 p-4 rounded-lg">
                         <div className="flex-1">

@@ -3,6 +3,7 @@ export interface TaskStep {
   stepName: string;
   instruction: string;
   prompt?: string;
+  prompts?: string[];
   thinking?: string;
   image?: string;
   images?: string[];
