@@ -63,8 +63,8 @@ export const themeParkTasks: Task[] = [
         stepName: "理解豆包和小红书的不同",
         instruction: "小红书是一个传统的APP，里面的内容都是别人创作好之后存在数据库中的，因此我们不同的用户可以看到同样的内容,就像我们去图书馆找书，里面的书有什么，我们就能看到什么，比如故事书，动漫和视频光盘。但豆包是一个AI智能体，更像一个作家或者印刷厂，没有存储任何做好的内容，所有的内容都是按照我们的要求新生成的。",
         images: [
-          "/task-images/xhs-comparison.png",
-          "/task-images/doubao-comparison.png"
+          "/task-images/xhs-comparison-new.jpg",
+          "/task-images/doubao-comparison-new.jpg"
         ],
         thinking: "我们3次给豆包一样的提示词，为什么豆包不把原来做好的内容发给我呢？这是因为豆包的存储机制中，不会存储之前做好的作品，用户也希望看到不同的作品。"
       }

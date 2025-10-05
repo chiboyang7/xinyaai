@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Lightbulb, BookOpen, ListChecks, FileText } from "lucide-react";
+import { ArrowLeft, Lightbulb, BookOpen, ListChecks, FileText, CheckCircle } from "lucide-react";
 import { themeParkTasks, Task } from "@/data/themeParkTasks";
 import { ChatTemplate2 } from "@/components/chat/ChatTemplate2";
 import { supabase } from "@/integrations/supabase/client";
@@ -205,8 +205,16 @@ const ThemeParkTask = () => {
           </div>
         )}
 
-        {/* Part 4: Chat Interface */}
+        {/* Part 4: Submit Task Section */}
         <div className="mb-12">
+          <div className="flex items-center gap-2 mb-4">
+            <CheckCircle className="h-5 w-5 text-primary" />
+            <h2 className="text-2xl font-semibold text-primary">提交你的任务</h2>
+          </div>
+          <p className="text-foreground/90 leading-relaxed mb-6">
+            完成上述步骤后，请在下方输入框中提交你的想法和创作。你可以添加文字描述和图片来展示你的作品。
+          </p>
+          
           <ChatTemplate2 taskId={taskId || ''} />
         </div>
 
