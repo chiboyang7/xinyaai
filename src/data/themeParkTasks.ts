@@ -38,8 +38,7 @@ export const themeParkTasks: Task[] = [
       {
         stepNumber: 1,
         instruction: "在小红书搜索：Labubu主题乐园",
-       // prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点"
-        
+        prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点"
       },
       {
         stepNumber: 2,
