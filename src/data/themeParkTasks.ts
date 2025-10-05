@@ -5,6 +5,7 @@ export interface TaskStep {
   prompt?: string;
   thinking?: string;
   image?: string;
+  images?: string[];
 }
 
 export interface Task {
@@ -51,7 +52,11 @@ export const themeParkTasks: Task[] = [
         stepName: "利用豆包设计一个Labubu主题乐园",
         instruction: "我们对小红书上的LLabubu主题乐园不满意，让我们自己设计一个漂亮的Labubu乐园",
         prompt: "请帮我设计一个Labubu主题乐园，有大钻石和金币",
-        thinking: "我们3次给豆包一样的提示词，得到的图片为什么是不一样的？因为豆包是一个创作新作品的印刷厂，每次作品都是有不同特点的"
+        thinking: "我们3次给豆包一样的提示词，得到的图片为什么是不一样的？因为豆包是一个创作新作品的印刷厂，每次作品都是有不同特点的",
+        images: [
+          "/task-images/labubu-design-1.png",
+          "/task-images/labubu-design-2.png"
+        ]
       },
       {
         stepNumber: 3,
