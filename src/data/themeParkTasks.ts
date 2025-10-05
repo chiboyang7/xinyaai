@@ -78,6 +78,34 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "15分钟",
     difficulty: "beginner",
     learningObjectives: ["学会和AI说话，了解主题乐园"],
+    knowledgePoints: [
+      "理解AI助手的基本工作原理",
+      "掌握与AI进行有效对话的技巧",
+      "了解主题乐园的基本构成要素"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "第一次对话",
+        instruction: "试着和AI打个招呼，问问它能帮你做什么",
+        prompt: "你好，你能帮我做什么？",
+        thinking: "AI是如何理解我们的问题并给出回答的？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "了解主题乐园",
+        instruction: "让AI介绍一下世界著名的主题乐园",
+        prompt: "请介绍3个世界著名的主题乐园，包括它们的特色",
+        thinking: "每个主题乐园都有什么独特之处？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "提问技巧",
+        instruction: "尝试用更具体的问题，让AI给出更详细的答案",
+        prompt: "迪士尼乐园有哪些经典的游乐设施？每个设施的特点是什么？",
+        thinking: "问题越具体，AI的回答是不是越详细？"
+      }
+    ]
   },
   {
     id: "3",
@@ -87,6 +115,34 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "30分钟",
     difficulty: "intermediate",
     learningObjectives: ["学会和AI沟通，把大问题变成小问题"],
+    knowledgePoints: [
+      "理解问题拆解的重要性",
+      "掌握将复杂问题分解为简单步骤的方法",
+      "学会循序渐进地与AI协作"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "提出大问题",
+        instruction: "先向AI提出一个复杂的大问题",
+        prompt: "我想建一个主题乐园，应该怎么做？",
+        thinking: "AI给出的答案是不是太笼统了？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "拆解为小步骤",
+        instruction: "将大问题拆解成具体的小问题",
+        prompt: "建设主题乐园的第一步是什么？需要考虑哪些因素？",
+        thinking: "具体的小问题是不是更容易得到有用的答案？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "深入细节",
+        instruction: "针对其中一个小问题继续深入",
+        prompt: "在选择主题乐园位置时，需要考虑哪些具体条件？每个条件为什么重要？",
+        thinking: "一步步深入，是不是能得到更实用的建议？"
+      }
+    ]
   },
   {
     id: "4",
@@ -96,6 +152,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "25分钟",
     difficulty: "intermediate",
     learningObjectives: ["利用想象力创作的第一个乐园作品"],
+    knowledgePoints: [
+      "了解游乐设施的基本类型",
+      "掌握创意设施设计的要素",
+      "学会用AI辅助创意实现"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "选择设施类型",
+        instruction: "思考你想设计什么类型的游乐设施",
+        prompt: "请介绍5种不同类型的游乐设施，包括过山车、旋转类、水上项目等",
+        thinking: "哪种类型的设施最吸引你？为什么？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "构思创意概念",
+        instruction: "为你的设施想一个独特的主题和故事",
+        prompt: "帮我设计一个太空主题的过山车，要有独特的故事背景和视觉效果",
+        thinking: "好的主题故事如何让游乐设施更有吸引力？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "细化设计方案",
+        instruction: "描述设施的具体细节，包括外观、体验过程等",
+        thinking: "完整的设计需要考虑哪些方面？安全性、趣味性、故事性？"
+      }
+    ]
   },
   {
     id: "5",
@@ -105,6 +188,34 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "20分钟",
     difficulty: "advanced",
     learningObjectives: ["学会P和T，2个最重要要素"],
+    knowledgePoints: [
+      "理解Persona（角色）的定义和作用",
+      "掌握Task（任务）的明确表达方式",
+      "学会结合角色和任务提升AI回答质量"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "理解Persona（角色）",
+        instruction: "了解什么是Persona，为什么给AI设定角色很重要",
+        prompt: "什么是Persona？为AI设定不同角色会有什么不同的效果？",
+        thinking: "同样的问题，不同角色的AI会给出什么不同的答案？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "尝试不同角色",
+        instruction: "体验给AI设定不同角色带来的变化",
+        prompt: "请以一位资深主题乐园设计师的身份，分析迪士尼乐园成功的关键因素",
+        thinking: "专业角色是不是能提供更专业的见解？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "明确Task（任务）",
+        instruction: "学会清晰地描述你希望AI完成的任务",
+        prompt: "作为主题乐园设计师，请为我设计一个适合5-12岁儿童的游乐区域，包括3个游乐设施、安全措施和主题装饰",
+        thinking: "任务描述越具体，AI的输出是不是越符合需求？"
+      }
+    ]
   },
   {
     id: "6",
@@ -114,6 +225,34 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "15分钟",
     difficulty: "beginner",
     learningObjectives: ["学会FCR这3个深度思考要素"],
+    knowledgePoints: [
+      "理解Format（格式）对输出的影响",
+      "掌握Context（上下文）的提供方法",
+      "学会使用Reference（参考）提升质量"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "Format（格式）",
+        instruction: "学会指定AI输出的格式",
+        prompt: "请以表格形式对比3个著名主题乐园的特色、目标人群和代表性设施",
+        thinking: "指定格式后，信息是不是更容易理解和比较？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "Context（上下文）",
+        instruction: "提供背景信息让AI更好理解需求",
+        prompt: "我正在为一个中等城市设计家庭主题乐园，预算有限，目标客户是本地居民。请建议3个性价比高的核心游乐设施",
+        thinking: "提供上下文信息后，AI的建议是不是更贴合实际？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "Reference（参考）",
+        instruction: "给出参考示例，让AI理解你想要的风格",
+        prompt: "参考环球影城的哈利波特园区那种沉浸式体验设计，帮我设计一个西游记主题区域",
+        thinking: "有了参考示例，AI是不是更能理解你想要的感觉？"
+      }
+    ]
   },
   {
     id: "7",
@@ -123,6 +262,32 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "15分钟",
     difficulty: "beginner",
     learningObjectives: ["创作自己第一个完整的主题乐园"],
+    knowledgePoints: [
+      "综合运用PTFCR框架的所有要素",
+      "掌握从概念到细节的完整设计流程",
+      "学会系统性地与AI协作完成复杂项目"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "应用完整PTFCR",
+        instruction: "使用PTFCR框架设计你的主题乐园",
+        prompt: "【Persona】作为一位创意主题乐园设计师\n【Task】帮我设计一个完整的海洋探险主题乐园\n【Format】请以分区规划的形式呈现，包括各区域名称、特色设施、餐饮和商店\n【Context】面向家庭游客，占地约50亩，预算中等\n【Reference】参考长隆海洋王国的布局风格",
+        thinking: "完整使用PTFCR框架，AI的回答是不是更全面、更专业？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "深化设计细节",
+        instruction: "选择一个区域，要求AI提供更详细的设计",
+        thinking: "如何进一步完善你的主题乐园设计？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "生成视觉概念",
+        instruction: "让AI帮你生成乐园的视觉设计概念",
+        thinking: "图像和文字结合，是不是能更好地展示你的创意？"
+      }
+    ]
   },
   {
     id: "8",
@@ -132,6 +297,32 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "20分钟",
     difficulty: "intermediate",
     learningObjectives: ["将现实中的作品用AI完成升级迭代"],
+    knowledgePoints: [
+      "理解AI图像到视频转换技术",
+      "掌握优化视频生成效果的技巧",
+      "学会迭代改进创作作品"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "准备图片素材",
+        instruction: "选择或创作一张你想转换成视频的图片",
+        thinking: "什么样的图片更适合转换成动态视频？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "图片转视频",
+        instruction: "使用AI工具将静态图片转换为动态视频",
+        prompt: "将这张主题乐园设计图转换为视频，添加游客走动、设施运转的动态效果",
+        thinking: "静态图片变成动态视频后，是不是更有吸引力？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "优化和迭代",
+        instruction: "根据生成结果，调整参数重新生成",
+        thinking: "如何通过多次迭代，让视频效果越来越好？"
+      }
+    ]
   },
   {
     id: "9",
@@ -141,6 +332,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "15分钟",
     difficulty: "intermediate",
     learningObjectives: ["制定门票价格和优惠政策"],
+    knowledgePoints: [
+      "了解主题乐园的定价策略",
+      "掌握不同客户群体的票价设计",
+      "学会制定有吸引力的优惠政策"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "市场调研",
+        instruction: "了解同类主题乐园的票价水平",
+        prompt: "请分析国内中型主题乐园的票价范围，包括成人票、儿童票和家庭套票",
+        thinking: "合理的定价需要参考哪些因素？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "设计票种",
+        instruction: "为你的主题乐园设计多种票务产品",
+        prompt: "帮我设计一套完整的票务体系，包括单日票、年卡、季卡，以及不同人群的优惠票种",
+        thinking: "多样化的票种如何满足不同游客的需求？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "制定优惠策略",
+        instruction: "设计促销和优惠活动方案",
+        thinking: "什么样的优惠活动既能吸引游客，又能保证盈利？"
+      }
+    ]
   },
   {
     id: "10",
@@ -150,6 +368,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "25分钟",
     difficulty: "intermediate",
     learningObjectives: ["设计开业前的营销和宣传策略"],
+    knowledgePoints: [
+      "了解主题乐园的营销渠道",
+      "掌握开业前预热的方法",
+      "学会设计吸引人的宣传内容"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "确定目标受众",
+        instruction: "明确你的主题乐园要吸引哪些人群",
+        prompt: "帮我分析家庭主题乐园的目标客户群体，包括年龄、兴趣、消费能力等特征",
+        thinking: "了解目标客户，才能设计有针对性的营销方案"
+      },
+      {
+        stepNumber: 2,
+        stepName: "选择营销渠道",
+        instruction: "规划线上线下的宣传渠道",
+        prompt: "为新开业的主题乐园设计一套全方位的营销渠道组合，包括社交媒体、短视频平台、本地广告等",
+        thinking: "不同渠道如何互相配合，形成营销合力？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "创意内容策划",
+        instruction: "设计吸引眼球的宣传创意",
+        thinking: "什么样的内容能在社交媒体上引发传播？"
+      }
+    ]
   },
   {
     id: "11",
@@ -159,6 +404,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "20分钟",
     difficulty: "intermediate",
     learningObjectives: ["规划员工招聘和培训计划"],
+    knowledgePoints: [
+      "了解主题乐园的岗位需求",
+      "掌握员工培训的重点内容",
+      "学会设计员工服务标准"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "确定岗位需求",
+        instruction: "列出主题乐园需要的各类员工",
+        prompt: "请列出一个中型主题乐园所需的各类员工岗位，包括数量、职责和要求",
+        thinking: "一个主题乐园需要哪些不同类型的员工？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "设计培训计划",
+        instruction: "制定新员工的培训方案",
+        prompt: "为主题乐园设计一套完整的新员工培训计划，包括服务礼仪、安全规范、应急处理等内容",
+        thinking: "如何通过培训，让员工提供优质服务？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "制定服务标准",
+        instruction: "建立统一的服务规范和标准",
+        thinking: "什么样的服务标准能提升游客满意度？"
+      }
+    ]
   },
   {
     id: "12",
@@ -168,6 +440,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "30分钟",
     difficulty: "advanced",
     learningObjectives: ["整合VR、AR等现代科技到游乐体验中"],
+    knowledgePoints: [
+      "了解VR、AR等技术在主题乐园的应用",
+      "掌握科技与传统游乐设施的结合方式",
+      "学会设计科技感十足的互动体验"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "了解科技应用",
+        instruction: "学习现代科技在主题乐园中的实际应用",
+        prompt: "请介绍VR、AR、全息投影等技术在主题乐园中的应用案例，以及它们带来的体验提升",
+        thinking: "科技如何让游乐体验变得更加震撼和有趣？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "设计科技项目",
+        instruction: "为你的主题乐园设计一个科技互动项目",
+        prompt: "帮我设计一个结合VR技术的飞行体验项目，包括故事情节、场景设计和互动环节",
+        thinking: "如何平衡科技感和游乐性？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "智能管理系统",
+        instruction: "规划乐园的智能化管理和服务系统",
+        thinking: "智能技术如何提升运营效率和游客体验？"
+      }
+    ]
   },
   {
     id: "13",
@@ -177,6 +476,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "20分钟",
     difficulty: "intermediate",
     learningObjectives: ["确保乐园对所有游客友好和无障碍"],
+    knowledgePoints: [
+      "理解无障碍设计的重要性",
+      "掌握不同人群的特殊需求",
+      "学会设计包容性的游乐体验"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "了解无障碍需求",
+        instruction: "学习不同人群在主题乐园中的特殊需求",
+        prompt: "请介绍主题乐园中的无障碍设计要点，包括行动不便、视听障碍等人群的需求",
+        thinking: "一个对所有人友好的乐园需要考虑哪些细节？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "设计无障碍设施",
+        instruction: "为你的乐园规划无障碍通道和设施",
+        prompt: "帮我设计主题乐园的无障碍设施方案，包括无障碍通道、专用卫生间、轮椅租赁等",
+        thinking: "如何让所有游客都能享受乐园的乐趣？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "包容性体验设计",
+        instruction: "设计适合不同能力游客的游乐项目",
+        thinking: "怎样的设计能让每个人都有参与感？"
+      }
+    ]
   },
   {
     id: "14",
@@ -186,6 +512,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "25分钟",
     difficulty: "intermediate",
     learningObjectives: ["设计全年的节日和特殊活动"],
+    knowledgePoints: [
+      "了解季节性活动对乐园运营的重要性",
+      "掌握节日主题活动的策划方法",
+      "学会设计吸引回头客的特色活动"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "规划活动日历",
+        instruction: "制定全年的活动时间表",
+        prompt: "帮我规划主题乐园一年中的重要活动，包括春节、儿童节、万圣节、圣诞节等节日活动",
+        thinking: "如何通过活动吸引游客在不同季节都来游玩？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "设计特色活动",
+        instruction: "为一个节日设计详细的活动方案",
+        prompt: "帮我设计一个万圣节主题活动方案，包括场景布置、特殊表演、限定商品等内容",
+        thinking: "什么样的活动能让游客印象深刻并愿意再次光临？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "夜间活动设计",
+        instruction: "策划夜间特色活动提升体验",
+        thinking: "夜间活动如何创造与白天不同的独特魅力？"
+      }
+    ]
   },
   {
     id: "15",
@@ -195,6 +548,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "30分钟",
     difficulty: "advanced",
     learningObjectives: ["制定建设和运营的财务预算"],
+    knowledgePoints: [
+      "了解主题乐园的成本构成",
+      "掌握预算编制的方法",
+      "学会平衡投资与收益"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "建设成本估算",
+        instruction: "估算主题乐园的初期建设投资",
+        prompt: "请帮我估算一个中型主题乐园的建设成本，包括土地、游乐设施、建筑、景观等各项开支",
+        thinking: "主题乐园建设需要在哪些方面投入资金？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "运营成本规划",
+        instruction: "计算日常运营所需费用",
+        prompt: "帮我规划主题乐园的年度运营预算，包括人员工资、维护费用、营销支出等",
+        thinking: "如何控制成本，保证乐园持续盈利？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "收益预测",
+        instruction: "预测乐园的收入来源和盈利情况",
+        thinking: "除了门票，还有哪些收入来源？多久能收回投资？"
+      }
+    ]
   },
   {
     id: "16",
@@ -204,6 +584,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "25分钟",
     difficulty: "intermediate",
     learningObjectives: ["设计从入园到离园的完整游客旅程"],
+    knowledgePoints: [
+      "理解游客旅程的各个接触点",
+      "掌握优化游客体验的方法",
+      "学会设计流畅的游览动线"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "绘制游客旅程图",
+        instruction: "梳理游客从到达到离开的完整流程",
+        prompt: "帮我设计一个主题乐园游客的完整旅程图，从停车入园、检票安检、游玩、用餐到购物离园",
+        thinking: "游客在每个环节都会有什么需求和痛点？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "优化关键环节",
+        instruction: "针对重要环节提出改善方案",
+        prompt: "分析主题乐园排队等候问题，提供减少等待时间、提升等候体验的解决方案",
+        thinking: "如何消除游客旅程中的不愉快体验？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "创造惊喜时刻",
+        instruction: "设计超出预期的体验亮点",
+        thinking: "什么样的惊喜能让游客留下难忘的回忆？"
+      }
+    ]
   },
   {
     id: "17",
@@ -213,6 +620,33 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "30分钟",
     difficulty: "intermediate",
     learningObjectives: ["创建乐园的视觉识别系统和吉祥物"],
+    knowledgePoints: [
+      "理解品牌形象对主题乐园的重要性",
+      "掌握视觉识别系统的设计要素",
+      "学会创作有亲和力的吉祥物"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "定位品牌个性",
+        instruction: "确定你的主题乐园的品牌调性",
+        prompt: "帮我为海洋主题乐园定义品牌个性，包括核心价值观、品牌故事和情感诉求",
+        thinking: "什么样的品牌形象能让游客产生情感连接？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "设计吉祥物",
+        instruction: "创作主题乐园的代表性吉祥物",
+        prompt: "为海洋主题乐园设计一个可爱的吉祥物，要有独特的性格和背景故事",
+        thinking: "成功的吉祥物需要具备什么特质？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "视觉系统设计",
+        instruction: "建立统一的视觉识别规范",
+        thinking: "如何通过视觉元素传达乐园的主题和氛围？"
+      }
+    ]
   },
   {
     id: "18",
@@ -222,5 +656,32 @@ export const themeParkTasks: Task[] = [
     estimatedTime: "40分钟",
     difficulty: "advanced",
     learningObjectives: ["整合所有元素，制作完整的主题乐园方案展示"],
+    knowledgePoints: [
+      "掌握方案整合的方法",
+      "学会制作专业的展示材料",
+      "理解如何有效呈现创意"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "整合前期成果",
+        instruction: "回顾并整理前面所有任务的成果",
+        prompt: "帮我设计一个主题乐园方案展示的框架，包含哪些关键部分？如何有逻辑地组织内容？",
+        thinking: "如何把分散的创意整合成完整的方案？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "制作展示材料",
+        instruction: "创作吸引人的视觉展示内容",
+        prompt: "帮我制作主题乐园的展示PPT大纲，包括封面、核心亮点、分区规划、商业模式等",
+        thinking: "什么样的呈现方式最能打动观众？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "准备演讲内容",
+        instruction: "撰写方案介绍和演讲稿",
+        thinking: "如何在有限时间内清晰地传达你的创意和价值？"
+      }
+    ]
   },
 ];
