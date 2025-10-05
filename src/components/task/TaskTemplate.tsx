@@ -152,27 +152,6 @@ export const TaskTemplate: React.FC<TaskTemplateProps> = ({
                     <CardDescription className="text-base">{step.instruction}</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    {step.image && (
-                      <div className="mb-4">
-                        <img 
-                          src={step.image} 
-                          alt={`步骤 ${step.stepNumber} 参考图`}
-                          className="w-full rounded-lg border shadow-sm"
-                        />
-                      </div>
-                    )}
-                    {step.images && step.images.length > 0 && (
-                      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {step.images.map((img, idx) => (
-                          <img 
-                            key={idx}
-                            src={img} 
-                            alt={`步骤 ${step.stepNumber} 参考图 ${idx + 1}`}
-                            className="w-full rounded-lg border shadow-sm"
-                          />
-                        ))}
-                      </div>
-                    )}
                     {step.prompt && (
                       <div className="bg-blue-50 dark:bg-blue-950/30 p-4 rounded-lg">
                         <div className="flex items-start justify-between gap-4">
@@ -214,6 +193,27 @@ export const TaskTemplate: React.FC<TaskTemplateProps> = ({
                               </Button>
                             </div>
                           </div>
+                        ))}
+                      </div>
+                    )}
+                    {step.image && (
+                      <div className="mb-4">
+                        <img 
+                          src={step.image} 
+                          alt={`步骤 ${step.stepNumber} 参考图`}
+                          className="w-full rounded-lg border shadow-sm"
+                        />
+                      </div>
+                    )}
+                    {step.images && step.images.length > 0 && (
+                      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {step.images.map((img, idx) => (
+                          <img 
+                            key={idx}
+                            src={img} 
+                            alt={`步骤 ${step.stepNumber} 参考图 ${idx + 1}`}
+                            className="w-full rounded-lg border shadow-sm"
+                          />
                         ))}
                       </div>
                     )}
