@@ -89,6 +89,8 @@ export const themeParkTasks: Task[] = [
         stepName: "第一次对话",
         instruction: "试着和AI打个招呼，问问它能帮你做什么",
         prompt: "你好，你能帮我做什么？",
+        prompt: "你好，你能帮我做什么？",
+        prompt: "你好，你能帮我做什么？",
         thinking: "AI是如何理解我们的问题并给出回答的？"
       },
       {
