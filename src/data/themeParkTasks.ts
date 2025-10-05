@@ -87,15 +87,15 @@ export const themeParkTasks: Task[] = [
     steps: [
       {
         stepNumber: 1,
-        stepName: "第一次对话",
-        instruction: "试着和AI打个招呼，问问它能帮你做什么",
-        prompt: "你好，你能帮我做什么？",
-        thinking: "AI是如何理解我们的问题并给出回答的？"
+        stepName: "理解AI的深度思考模式",
+        instruction: "尝试用深度思考模式和普通模式分别和AI对话，是否有差别？",
+        prompt: "请问什么是一个主题乐园？",
+        thinking: "深度思考的价值是什么？对于简单问题区别不大，但对于复杂问题，深度思考模式回答质量更高。"
       },
       {
         stepNumber: 2,
-        stepName: "了解主题乐园",
-        instruction: "让AI介绍一下世界著名的主题乐园",
+        stepName: "深度思考模式的价值",
+        instruction: "深度思考模式最大的价值是体现思考的逻辑：比如老师问你的问题不知道如何思考和回答，可以查看AI的深度思考过程",
         prompts: [
           "请介绍迪士尼乐园的历史、特色和最受欢迎的游乐设施",
           "请介绍环球影城的主题特色、经典IP和代表性体验项目",
