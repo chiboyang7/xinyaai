@@ -1,59 +1,18 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Clock, ArrowRight } from "lucide-react";
-import { themeParkTasks, Task } from "@/data/themeParkTasks";
-import { supabase } from "@/integrations/supabase/client";
+import { Clock, ArrowRight, Loader2 } from "lucide-react";
+import { useThemeParkTasks } from "@/hooks/useThemeParkTasks";
 
 const FutureThemePark = () => {
   const navigate = useNavigate();
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [completedCount, setCompletedCount] = useState(0);
-
-  useEffect(() => {
-    const loadTasksWithCompletion = async () => {
-      // Get current user
-      const { data: { user } } = await supabase.auth.getUser();
-      
-      // Get all conversations with their messages for the user
-      const { data: conversations } = await supabase
-        .from('conversations')
-        .select('id, task_id')
-        .eq('user_id', user?.id || null);
-
-      const completedTaskIds = new Set<string>();
-
-      if (conversations) {
-        // For each conversation, check if it has messages
-        for (const conv of conversations) {
-          const { data: messages } = await supabase
-            .from('messages')
-            .select('id')
-            .eq('conversation_id', conv.id)
-            .limit(1);
-
-          if (messages && messages.length > 0) {
-            completedTaskIds.add(conv.task_id);
-          }
-        }
-      }
-
-      // Update tasks with completion status
-      const updatedTasks = themeParkTasks.map(task => ({
-        ...task,
-        completed: completedTaskIds.has(task.id)
-      }));
-
-      setTasks(updatedTasks);
-      setCompletedCount(completedTaskIds.size);
-    };
-
-    loadTasksWithCompletion();
-  }, []);
+  const { data, isLoading } = useThemeParkTasks();
+  
+  const tasks = data?.tasks || [];
+  const completedCount = data?.completedCount || 0;
 
   const progress = (completedCount / 18) * 100;
 
@@ -82,6 +41,18 @@ const FutureThemePark = () => {
         return difficulty;
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <main className="container mx-auto px-4 py-8 mt-20 flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
