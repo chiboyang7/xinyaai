@@ -123,7 +123,7 @@ const ThemeParkTask = () => {
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
                             <p className="text-sm text-muted-foreground mb-2">提示词示例：</p>
-                            <p className="text-foreground font-medium">{step.prompt}</p>
+                            <p className="text-foreground">{step.prompt}</p>
                           </div>
                           <Button
                             variant="outline"
@@ -139,7 +139,7 @@ const ThemeParkTask = () => {
                       <div className="bg-muted/50 p-4 rounded-lg">
                         <div className="flex-1">
                           <p className="text-sm text-muted-foreground mb-2">思考问题与答案：</p>
-                          <p className="text-foreground font-medium">{step.thinking}</p>
+                          <p className="text-foreground">{step.thinking}</p>
                         </div>
                       </div>
                     )}
