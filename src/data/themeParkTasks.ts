@@ -22,14 +22,12 @@ export const themeParkTasks: Task[] = [
   {
     id: "1",
     title: "设计一个Labubu专属乐园",
-    description: "理解豆包和小红书的区别",
+    description: "理解传统APP和AI智能体(AI APP)的区别",
     category: "基础知识",
-    estimatedTime: "20分钟",
+    estimatedTime: "30分钟",
     difficulty: "beginner",
     learningObjectives: [
-      "理解豆包APP和小红书APP的区别",
-      "理解什么是集成了AI功能的APP",
-      "小红书是一个图书馆，豆包是一个印刷厂"
+      "理解传统APP和AI智能体(AI APP)的区别"
     ],
     knowledgePoints: [
       "理解豆包APP和小红书APP的区别",
@@ -39,8 +37,9 @@ export const themeParkTasks: Task[] = [
     steps: [
       {
         stepNumber: 1,
-        instruction: "分析Labubu的核心特征，列出3-5个最显著的特点（如尖耳朵、大牙齿、神秘森林背景等）",
-        prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点"
+        instruction: "在小红书搜索：Labubu主题乐园",
+       // prompt: "请帮我分析Labubu这个IP形象的核心特征，包括外观、性格和故事背景，用简单易懂的方式列出5个最重要的特点"
+        
       },
       {
         stepNumber: 2,
