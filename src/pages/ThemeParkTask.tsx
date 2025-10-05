@@ -4,20 +4,80 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Lightbulb, BookOpen, ListChecks } from "lucide-react";
+import { ArrowLeft, Lightbulb, BookOpen, ListChecks, FileText } from "lucide-react";
 import { themeParkTasks, Task } from "@/data/themeParkTasks";
-import { ChatTemplate1 } from "@/components/chat/ChatTemplate1";
+import { ChatTemplate2 } from "@/components/chat/ChatTemplate2";
+import { supabase } from "@/integrations/supabase/client";
+
+interface Message {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  image_urls?: string[];
+  created_at: string;
+}
 
 const ThemeParkTask = () => {
   const { taskId } = useParams();
   const navigate = useNavigate();
   const [task, setTask] = useState<Task | null>(null);
+  const [userAnswers, setUserAnswers] = useState<Message[]>([]);
 
   useEffect(() => {
     const currentTask = themeParkTasks.find((t) => t.id === taskId);
     if (currentTask) {
       setTask(currentTask);
     }
+  }, [taskId]);
+
+  // Load user answers
+  useEffect(() => {
+    const loadUserAnswers = async () => {
+      const { data: conversations } = await supabase
+        .from('conversations')
+        .select('id')
+        .eq('task_id', taskId || '')
+        .order('created_at', { ascending: false })
+        .limit(1);
+
+      if (conversations && conversations.length > 0) {
+        const { data: messages } = await supabase
+          .from('messages')
+          .select('*')
+          .eq('conversation_id', conversations[0].id)
+          .eq('role', 'user')
+          .order('created_at', { ascending: true });
+
+        if (messages) {
+          setUserAnswers(messages as Message[]);
+        }
+      }
+    };
+
+    loadUserAnswers();
+
+    // Subscribe to realtime updates
+    const channel = supabase
+      .channel('user-answers-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'messages',
+        },
+        (payload) => {
+          const newMessage = payload.new as Message;
+          if (newMessage.role === 'user') {
+            setUserAnswers((prev) => [...prev, newMessage]);
+          }
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [taskId]);
 
   if (!task) {
@@ -148,8 +208,48 @@ const ThemeParkTask = () => {
 
         {/* Part 4: Chat Interface */}
         <div className="mb-12">
-          <ChatTemplate1 taskId={taskId || ''} />
+          <ChatTemplate2 taskId={taskId || ''} />
         </div>
+
+        {/* Part 5: User's Answers Display */}
+        {userAnswers.length > 0 && (
+          <Card className="border-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-primary">
+                <FileText className="h-5 w-5" />
+                我的回答
+              </CardTitle>
+              <CardDescription>这里显示你提交的所有回答和笔记</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                {userAnswers.map((answer, index) => (
+                  <div key={answer.id} className="border-l-4 border-l-primary pl-4 py-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-sm font-semibold text-primary">回答 #{index + 1}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {new Date(answer.created_at).toLocaleString('zh-CN')}
+                      </span>
+                    </div>
+                    <p className="text-foreground whitespace-pre-wrap mb-3">{answer.content}</p>
+                    {answer.image_urls && answer.image_urls.length > 0 && (
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
+                        {answer.image_urls.map((url, idx) => (
+                          <img
+                            key={idx}
+                            src={url}
+                            alt={`回答图片 ${idx + 1}`}
+                            className="w-full rounded-lg border shadow-sm hover:shadow-md transition-shadow"
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
       </main>
 
       <Footer />

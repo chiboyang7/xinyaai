@@ -10,9 +10,16 @@ Two reusable chat templates for task pages, supporting image uploads and databas
 - ✅ Connected to Doubao LLM (model: doubao-seed-1-6-250615)
 - ✅ User input: text + multiple image uploads
 - ✅ Real-time message updates
-- ✅ Automatic message saving to database
+- ✅ Automatic message saving to database (both user input AND AI response)
 - ✅ Image storage in Supabase storage bucket
 - ✅ AI-powered responses
+
+### Display Behavior:
+When using ChatTemplate1, display AI responses in a summary section:
+```tsx
+// Filter for AI responses
+const aiResponses = messages.filter(m => m.role === 'assistant');
+```
 
 ### Usage:
 ```tsx
@@ -33,15 +40,39 @@ import { ChatTemplate1 } from '@/components/chat/ChatTemplate1';
 - ✅ Simple note-taking interface
 - ✅ User input: text + multiple image uploads
 - ✅ Real-time updates
-- ✅ Automatic saving to database
+- ✅ Automatic saving to database (user input only)
 - ✅ Image storage in Supabase storage bucket
 - ❌ No AI responses (just storage)
+
+### Display Behavior:
+When using ChatTemplate2, display user's original input in a summary section:
+```tsx
+// Filter for user messages
+const userAnswers = messages.filter(m => m.role === 'user');
+```
 
 ### Usage:
 ```tsx
 import { ChatTemplate2 } from '@/components/chat/ChatTemplate2';
 
 <ChatTemplate2 taskId="task-1" />
+
+{/* Display user answers below */}
+{userAnswers.length > 0 && (
+  <Card>
+    <CardHeader>
+      <CardTitle>我的回答</CardTitle>
+    </CardHeader>
+    <CardContent>
+      {userAnswers.map(answer => (
+        <div key={answer.id}>
+          <p>{answer.content}</p>
+          {answer.image_urls?.map(url => <img src={url} />)}
+        </div>
+      ))}
+    </CardContent>
+  </Card>
+)}
 ```
 
 ## Database Structure
@@ -68,4 +99,8 @@ import { ChatTemplate2 } from '@/components/chat/ChatTemplate2';
 - **File naming**: `{timestamp}-{filename}`
 
 ## Current Implementation
-The ThemeParkTask page now uses **ChatTemplate1** by default.
+
+### Task 1 (ThemeParkTask)
+- Uses **ChatTemplate2** (note-taking mode)
+- Displays user's original input below the chat interface
+- Shows all submitted answers with images and timestamps
