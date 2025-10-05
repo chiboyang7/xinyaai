@@ -73,12 +73,12 @@ export const themeParkTasks: Task[] = [
   },
   {
     id: "2",
-    title: "认识AI小助手",
-    description: "学会和AI说话，了解主题乐园",
+    title: "体验AI的创作能力",
+    description: "使用AI强大的创作能力做出几个作品",
     category: "基础技能",
     estimatedTime: "15分钟",
     difficulty: "beginner",
-    learningObjectives: ["学会和AI说话，了解主题乐园"],
+    learningObjectives: ["开始了解AI强大的创作能力"],
     knowledgePoints: [
       "理解AI助手的基本工作原理",
       "掌握与AI进行有效对话的技巧",
@@ -87,28 +87,44 @@ export const themeParkTasks: Task[] = [
     steps: [
       {
         stepNumber: 1,
-        stepName: "理解AI的深度思考模式",
-        instruction: "尝试用深度思考模式和普通模式分别和AI对话，是否有差别？",
-        prompt: "请问什么是一个主题乐园？",
-        thinking: "深度思考的价值是什么？对于简单问题区别不大，但对于复杂问题，深度思考模式回答质量更高。"
+        stepName: "创作一个我自己的AI形象",
+        instruction: "每个人小时候都梦想做一个英雄或者公主，如果另一个世界有一个你，ta是什么形象呢？",
+        prompts: [
+          "画一个超级英雄版的我：我是一个10岁的男孩；我最喜欢的颜色是蓝色；我的超能力是飞行和控制闪电；背景是城市上空的星空，卡通风格，像宫崎骏漫画",
+          "画一个公主版的我：我是一个10岁的女孩，我最喜欢的颜色是蓝色，我的超能力是让树飞起来和变出宝石，背景是花园，像宫崎骏漫画风格",
+         ],
+        //thinking: "深度思考的价值是什么？对于简单问题区别不大，但对于复杂问题，深度思考模式回答质量更高。"
       },
       {
         stepNumber: 2,
-        stepName: "深度思考模式的价值",
-        instruction: "深度思考模式最大的价值是体现思考的逻辑：比如老师问你的问题不知道如何思考和回答，可以查看AI的深度思考过程",
+        stepName: "创建一个未来主题乐园",
+        instruction: "我们想用AI做一版主题乐园，发现预算才是乐园的关键",
         prompts: [
-          "请介绍迪士尼乐园的历史、特色和最受欢迎的游乐设施",
-          "请介绍环球影城的主题特色、经典IP和代表性体验项目",
-          "请介绍侏罗纪公园主题乐园的设计理念和独特的恐龙体验"
+          "按照真实的社会物价和成本，请帮我设计一个迪士尼乐园，预算100万元",
+          "按照真实的社会物价和成本，请帮我设计一个迪士尼乐园，预算100亿元",
         ],
         thinking: "每个主题乐园都有什么独特之处？"
       },
       {
         stepNumber: 3,
-        stepName: "提问技巧",
-        instruction: "尝试用更具体的问题，让AI给出更详细的答案",
-        prompt: "迪士尼乐园有哪些经典的游乐设施？每个设施的特点是什么？",
-        thinking: "问题越具体，AI的回答是不是越详细？"
+        stepName: "创建一个贫穷版的未来主题乐园",
+        instruction: "让我们挑战用1元和100元能做成什么样的乐园",
+        prompts: [
+          "按照真实的社会物价和成本，请帮我设计一个迪士尼乐园，预算100元",
+          "按照真实的社会物价和成本，请帮我设计一个迪士尼乐园，预算1元",
+        ],
+        thinking: "让AI发挥更大的潜力，变得更好玩，需要你的创意：设计一个预算100元的火影忍者乐园？和身边的朋友比较一下看谁做的更有趣"
+      }
+      {
+        stepNumber: 4,
+        stepName: "让图片动起来，变成视频",
+        instruction: "选一张你最喜欢的乐园图片，把他变成一个视频",
+        prompts: [
+          "变成视频",
+          "一只飞龙在天上向这个乐园喷火",
+          "两只罗小黑在乐园战斗",
+        ],
+        thinking: "AI能做很多事情，但AI不是万能的，AI也会做错"
       }
     ]
   },
@@ -119,9 +135,9 @@ export const themeParkTasks: Task[] = [
     category: "基础技能",
     estimatedTime: "30分钟",
     difficulty: "intermediate",
-    learningObjectives: ["学会和AI沟通，把大问题变成小问题"],
+    learningObjectives: ["学会和AI进行一步步的沟通"],
     knowledgePoints: [
-      "理解问题拆解的重要性",
+      
       "掌握将复杂问题分解为简单步骤的方法",
       "学会循序渐进地与AI协作"
     ],
