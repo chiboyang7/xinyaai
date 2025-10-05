@@ -4,19 +4,14 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Send, Lightbulb, BookOpen, ListChecks } from "lucide-react";
+import { ArrowLeft, Lightbulb, BookOpen, ListChecks } from "lucide-react";
 import { themeParkTasks, Task } from "@/data/themeParkTasks";
-import { useToast } from "@/hooks/use-toast";
+import { ChatTemplate1 } from "@/components/chat/ChatTemplate1";
 
 const ThemeParkTask = () => {
   const { taskId } = useParams();
   const navigate = useNavigate();
-  const { toast } = useToast();
   const [task, setTask] = useState<Task | null>(null);
-  const [chatInput, setChatInput] = useState("");
-  const [chatMessages, setChatMessages] = useState<Array<{ role: 'user' | 'ai', content: string }>>([]);
 
   useEffect(() => {
     const currentTask = themeParkTasks.find((t) => t.id === taskId);
@@ -24,28 +19,6 @@ const ThemeParkTask = () => {
       setTask(currentTask);
     }
   }, [taskId]);
-
-  const handleSendMessage = () => {
-    if (!chatInput.trim()) return;
-    
-    // Add user message
-    setChatMessages([...chatMessages, { role: 'user', content: chatInput }]);
-    setChatInput("");
-    
-    // TODO: Connect to LLM later
-    toast({
-      title: "暂未连接AI",
-      description: "此功能将在后续版本中开放",
-    });
-  };
-
-  const copyPrompt = (prompt: string) => {
-    navigator.clipboard.writeText(prompt);
-    toast({
-      title: "已复制",
-      description: "提示词已复制到剪贴板",
-    });
-  };
 
   if (!task) {
     return <div>任务未找到</div>;
@@ -149,7 +122,9 @@ const ThemeParkTask = () => {
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => copyPrompt(step.prompt!)}
+                            onClick={() => {
+                              navigator.clipboard.writeText(step.prompt!);
+                            }}
                           >
                             复制
                           </Button>
@@ -172,57 +147,9 @@ const ThemeParkTask = () => {
         )}
 
         {/* Part 4: Chat Interface */}
-        <Card className="border-2">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-primary">
-              <Send className="h-5 w-5" />
-              与AI对话
-            </CardTitle>
-            <CardDescription>输入你的问题或想法，AI助手会帮助你完成任务</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {chatMessages.length > 0 && (
-              <div className="space-y-3 max-h-96 overflow-y-auto mb-4">
-                {chatMessages.map((msg, index) => (
-                  <div
-                    key={index}
-                    className={`p-4 rounded-lg ${
-                      msg.role === 'user' 
-                        ? 'bg-primary/10 ml-8' 
-                        : 'bg-muted/50 mr-8'
-                    }`}
-                  >
-                    <p className="text-sm text-muted-foreground mb-1">
-                      {msg.role === 'user' ? '你' : 'AI助手'}
-                    </p>
-                    <p className="text-foreground">{msg.content}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-            
-            <div className="flex gap-3">
-              <Textarea
-                placeholder="在这里输入你的问题或想法..."
-                className="min-h-24 resize-none"
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    handleSendMessage();
-                  }
-                }}
-              />
-              <Button 
-                onClick={handleSendMessage}
-                className="self-end"
-              >
-                <Send className="h-4 w-4" />
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="mb-12">
+          <ChatTemplate1 taskId={taskId || ''} />
+        </div>
       </main>
 
       <Footer />
