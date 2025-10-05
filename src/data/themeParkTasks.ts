@@ -96,7 +96,11 @@ export const themeParkTasks: Task[] = [
         stepNumber: 2,
         stepName: "了解主题乐园",
         instruction: "让AI介绍一下世界著名的主题乐园",
-        prompt: "请介绍3个世界著名的主题乐园，包括它们的特色",
+        prompts: [
+          "请介绍迪士尼乐园的历史、特色和最受欢迎的游乐设施",
+          "请介绍环球影城的主题特色、经典IP和代表性体验项目",
+          "请介绍侏罗纪公园主题乐园的设计理念和独特的恐龙体验"
+        ],
         thinking: "每个主题乐园都有什么独特之处？"
       },
       {
