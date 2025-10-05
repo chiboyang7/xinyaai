@@ -19,12 +19,11 @@ interface ChatTemplate2Props {
 }
 
 export const ChatTemplate2: React.FC<ChatTemplate2Props> = ({ taskId }) => {
-  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
   // Initialize conversation
@@ -32,6 +31,22 @@ export const ChatTemplate2: React.FC<ChatTemplate2Props> = ({ taskId }) => {
     const initConversation = async () => {
       const { data: { user } } = await supabase.auth.getUser();
       
+      // Check if conversation already exists
+      const { data: existingConv } = await supabase
+        .from('conversations')
+        .select('id')
+        .eq('task_id', taskId)
+        .eq('user_id', user?.id || null)
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .single();
+
+      if (existingConv) {
+        setConversationId(existingConv.id);
+        return;
+      }
+
+      // Create new conversation
       const { data, error } = await supabase
         .from('conversations')
         .insert({
@@ -49,57 +64,10 @@ export const ChatTemplate2: React.FC<ChatTemplate2Props> = ({ taskId }) => {
       }
 
       setConversationId(data.id);
-      loadMessages(data.id);
     };
 
     initConversation();
   }, [taskId]);
-
-  // Load messages
-  const loadMessages = async (convId: string) => {
-    const { data, error } = await supabase
-      .from('messages')
-      .select('*')
-      .eq('conversation_id', convId)
-      .order('created_at', { ascending: true });
-
-    if (error) {
-      console.error('Error loading messages:', error);
-      return;
-    }
-
-    setMessages((data || []) as Message[]);
-  };
-
-  // Subscribe to realtime updates
-  useEffect(() => {
-    if (!conversationId) return;
-
-    const channel = supabase
-      .channel('messages-changes')
-      .on(
-        'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'messages',
-          filter: `conversation_id=eq.${conversationId}`
-        },
-        (payload) => {
-          setMessages((prev) => [...prev, payload.new as Message]);
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [conversationId]);
-
-  // Scroll to bottom
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
 
   // Handle image upload
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -135,8 +103,13 @@ export const ChatTemplate2: React.FC<ChatTemplate2Props> = ({ taskId }) => {
 
   // Save note
   const handleSaveNote = async () => {
-    if (!input.trim() && selectedImages.length === 0) return;
+    if (!input.trim() && selectedImages.length === 0) {
+      toast({ title: "提示", description: "请输入内容或上传图片", variant: "destructive" });
+      return;
+    }
     if (!conversationId) return;
+
+    setIsSubmitting(true);
 
     try {
       // Upload images first
@@ -159,93 +132,88 @@ export const ChatTemplate2: React.FC<ChatTemplate2Props> = ({ taskId }) => {
       setSelectedImages([]);
       if (fileInputRef.current) fileInputRef.current.value = '';
 
-      toast({ title: "成功", description: "笔记已保存" });
+      toast({ title: "成功", description: "回答已保存" });
     } catch (error) {
       console.error('Error saving note:', error);
-      toast({ title: "错误", description: "保存笔记失败", variant: "destructive" });
+      toast({ title: "错误", description: "保存失败", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
+  const removeImage = (index: number) => {
+    setSelectedImages(prev => prev.filter((_, i) => i !== index));
+  };
+
   return (
-    <Card className="w-full">
-      <CardContent className="p-4">
-        <div className="flex flex-col gap-4">
-          {/* Messages */}
-          <div className="h-96 overflow-y-auto space-y-4 p-4 border rounded-lg">
-            {messages.map((message) => (
-              <div key={message.id} className="border-b pb-4 last:border-b-0">
-                <div className="bg-secondary rounded-lg p-3">
-                  <p className="whitespace-pre-wrap text-sm">{message.content}</p>
-                  {message.image_urls && message.image_urls.length > 0 && (
-                    <div className="mt-2 grid grid-cols-2 gap-2">
-                      {message.image_urls.map((url, idx) => (
-                        <img key={idx} src={url} alt="" className="rounded" />
-                      ))}
-                    </div>
-                  )}
-                  <p className="text-xs text-muted-foreground mt-2">
-                    {new Date(message.created_at).toLocaleString('zh-CN')}
-                  </p>
-                </div>
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold text-primary">输入你的想法</h3>
+      
+      <div className="space-y-4">
+        {/* Selected images preview */}
+        {selectedImages.length > 0 && (
+          <div className="flex gap-3 flex-wrap">
+            {selectedImages.map((file, idx) => (
+              <div key={idx} className="relative group">
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt={`预览 ${idx + 1}`}
+                  className="w-24 h-24 object-cover rounded-lg border-2 border-border"
+                />
+                <button
+                  onClick={() => removeImage(idx)}
+                  className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground rounded-full w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                  type="button"
+                >
+                  ×
+                </button>
               </div>
             ))}
-            <div ref={messagesEndRef} />
           </div>
+        )}
 
-          {/* Selected images preview */}
-          {selectedImages.length > 0 && (
-            <div className="flex gap-2 flex-wrap">
-              {selectedImages.map((file, idx) => (
-                <div key={idx} className="relative">
-                  <img
-                    src={URL.createObjectURL(file)}
-                    alt=""
-                    className="w-20 h-20 object-cover rounded"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
+        {/* Input area */}
+        <Textarea
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="在这里输入你的想法和回答..."
+          className="min-h-[120px] resize-none"
+          disabled={isSubmitting}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              handleSaveNote();
+            }
+          }}
+        />
 
-          {/* Input */}
-          <div className="flex gap-2">
-            <input
-              ref={fileInputRef}
-              type="file"
-              multiple
-              accept="image/*"
-              onChange={handleImageSelect}
-              className="hidden"
-            />
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => fileInputRef.current?.click()}
-            >
-              <Upload className="h-4 w-4" />
-            </Button>
-            <Textarea
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="输入笔记..."
-              className="flex-1"
-              rows={2}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSaveNote();
-                }
-              }}
-            />
-            <Button
-              onClick={handleSaveNote}
-              disabled={!input.trim() && selectedImages.length === 0}
-            >
-              <Send className="h-4 w-4" />
-            </Button>
-          </div>
+        {/* Actions */}
+        <div className="flex gap-2 justify-end">
+          <input
+            ref={fileInputRef}
+            type="file"
+            multiple
+            accept="image/*"
+            onChange={handleImageSelect}
+            className="hidden"
+            disabled={isSubmitting}
+          />
+          <Button
+            variant="outline"
+            onClick={() => fileInputRef.current?.click()}
+            disabled={isSubmitting}
+          >
+            <Upload className="h-4 w-4 mr-2" />
+            上传图片
+          </Button>
+          <Button
+            onClick={handleSaveNote}
+            disabled={isSubmitting || (!input.trim() && selectedImages.length === 0)}
+          >
+            {isSubmitting ? '提交中...' : '提交回答'}
+          </Button>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };

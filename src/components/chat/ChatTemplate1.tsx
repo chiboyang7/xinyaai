@@ -19,13 +19,11 @@ interface ChatTemplate1Props {
 }
 
 export const ChatTemplate1: React.FC<ChatTemplate1Props> = ({ taskId }) => {
-  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
   // Initialize conversation
@@ -33,6 +31,22 @@ export const ChatTemplate1: React.FC<ChatTemplate1Props> = ({ taskId }) => {
     const initConversation = async () => {
       const { data: { user } } = await supabase.auth.getUser();
       
+      // Check if conversation already exists
+      const { data: existingConv } = await supabase
+        .from('conversations')
+        .select('id, title')
+        .eq('task_id', taskId)
+        .eq('user_id', user?.id || null)
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .single();
+
+      if (existingConv) {
+        setConversationId(existingConv.id);
+        return;
+      }
+
+      // Create new conversation
       const { data, error } = await supabase
         .from('conversations')
         .insert({
@@ -50,57 +64,10 @@ export const ChatTemplate1: React.FC<ChatTemplate1Props> = ({ taskId }) => {
       }
 
       setConversationId(data.id);
-      loadMessages(data.id);
     };
 
     initConversation();
   }, [taskId]);
-
-  // Load messages
-  const loadMessages = async (convId: string) => {
-    const { data, error } = await supabase
-      .from('messages')
-      .select('*')
-      .eq('conversation_id', convId)
-      .order('created_at', { ascending: true });
-
-    if (error) {
-      console.error('Error loading messages:', error);
-      return;
-    }
-
-    setMessages((data || []) as Message[]);
-  };
-
-  // Subscribe to realtime updates
-  useEffect(() => {
-    if (!conversationId) return;
-
-    const channel = supabase
-      .channel('messages-changes')
-      .on(
-        'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'messages',
-          filter: `conversation_id=eq.${conversationId}`
-        },
-        (payload) => {
-          setMessages((prev) => [...prev, payload.new as Message]);
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [conversationId]);
-
-  // Scroll to bottom
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
 
   // Handle image upload
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -136,7 +103,10 @@ export const ChatTemplate1: React.FC<ChatTemplate1Props> = ({ taskId }) => {
 
   // Send message
   const handleSendMessage = async () => {
-    if (!input.trim() && selectedImages.length === 0) return;
+    if (!input.trim() && selectedImages.length === 0) {
+      toast({ title: "提示", description: "请输入内容或上传图片", variant: "destructive" });
+      return;
+    }
     if (!conversationId) return;
 
     setIsLoading(true);
@@ -145,7 +115,14 @@ export const ChatTemplate1: React.FC<ChatTemplate1Props> = ({ taskId }) => {
       // Upload images first
       const imageUrls = await uploadImages();
 
-      // Save user message
+      // Get existing messages for context
+      const { data: existingMessages } = await supabase
+        .from('messages')
+        .select('role, content')
+        .eq('conversation_id', conversationId)
+        .order('created_at', { ascending: true });
+
+      // Save user message first
       const { error: insertError } = await supabase
         .from('messages')
         .insert({
@@ -158,16 +135,13 @@ export const ChatTemplate1: React.FC<ChatTemplate1Props> = ({ taskId }) => {
       if (insertError) throw insertError;
 
       // Prepare messages for LLM
-      const allMessages = [...messages, {
-        role: 'user',
-        content: input
-      }].map(m => ({
-        role: m.role,
-        content: m.content
-      }));
+      const allMessages = [
+        ...(existingMessages || []),
+        { role: 'user' as const, content: input }
+      ];
 
       // Call LLM via edge function
-      const { data, error } = await supabase.functions.invoke('doubao-chat', {
+      const { error } = await supabase.functions.invoke('doubao-chat', {
         body: {
           conversationId,
           messages: allMessages
@@ -181,103 +155,98 @@ export const ChatTemplate1: React.FC<ChatTemplate1Props> = ({ taskId }) => {
       setSelectedImages([]);
       if (fileInputRef.current) fileInputRef.current.value = '';
 
-      toast({ title: "成功", description: "消息已发送" });
+      toast({ title: "成功", description: "回答已提交，AI正在生成回复" });
     } catch (error) {
       console.error('Error sending message:', error);
-      toast({ title: "错误", description: "发送消息失败", variant: "destructive" });
+      toast({ title: "错误", description: "发送失败", variant: "destructive" });
     } finally {
       setIsLoading(false);
     }
   };
 
+  const removeImage = (index: number) => {
+    setSelectedImages(prev => prev.filter((_, i) => i !== index));
+  };
+
   return (
-    <Card className="w-full">
-      <CardContent className="p-4">
-        <div className="flex flex-col gap-4">
-          {/* Messages */}
-          <div className="h-96 overflow-y-auto space-y-4 p-4 border rounded-lg">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[80%] rounded-lg p-3 ${
-                    message.role === 'user'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-secondary text-secondary-foreground'
-                  }`}
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold text-primary">输入你的想法</h3>
+      
+      <div className="space-y-4">
+        {/* Selected images preview */}
+        {selectedImages.length > 0 && (
+          <div className="flex gap-3 flex-wrap">
+            {selectedImages.map((file, idx) => (
+              <div key={idx} className="relative group">
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt={`预览 ${idx + 1}`}
+                  className="w-24 h-24 object-cover rounded-lg border-2 border-border"
+                />
+                <button
+                  onClick={() => removeImage(idx)}
+                  className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground rounded-full w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                  type="button"
                 >
-                  <p className="whitespace-pre-wrap">{message.content}</p>
-                  {message.image_urls && message.image_urls.length > 0 && (
-                    <div className="mt-2 grid grid-cols-2 gap-2">
-                      {message.image_urls.map((url, idx) => (
-                        <img key={idx} src={url} alt="" className="rounded" />
-                      ))}
-                    </div>
-                  )}
-                </div>
+                  ×
+                </button>
               </div>
             ))}
-            <div ref={messagesEndRef} />
           </div>
+        )}
 
-          {/* Selected images preview */}
-          {selectedImages.length > 0 && (
-            <div className="flex gap-2 flex-wrap">
-              {selectedImages.map((file, idx) => (
-                <div key={idx} className="relative">
-                  <img
-                    src={URL.createObjectURL(file)}
-                    alt=""
-                    className="w-20 h-20 object-cover rounded"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
+        {/* Input area */}
+        <Textarea
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="在这里输入你的想法和问题，AI会帮你解答..."
+          className="min-h-[120px] resize-none"
+          disabled={isLoading}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              handleSendMessage();
+            }
+          }}
+        />
 
-          {/* Input */}
-          <div className="flex gap-2">
-            <input
-              ref={fileInputRef}
-              type="file"
-              multiple
-              accept="image/*"
-              onChange={handleImageSelect}
-              className="hidden"
-            />
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => fileInputRef.current?.click()}
-              disabled={isLoading}
-            >
-              <Upload className="h-4 w-4" />
-            </Button>
-            <Textarea
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="输入消息..."
-              className="flex-1"
-              rows={2}
-              disabled={isLoading}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSendMessage();
-                }
-              }}
-            />
-            <Button
-              onClick={handleSendMessage}
-              disabled={isLoading || (!input.trim() && selectedImages.length === 0)}
-            >
-              {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-            </Button>
-          </div>
+        {/* Actions */}
+        <div className="flex gap-2 justify-end">
+          <input
+            ref={fileInputRef}
+            type="file"
+            multiple
+            accept="image/*"
+            onChange={handleImageSelect}
+            className="hidden"
+            disabled={isLoading}
+          />
+          <Button
+            variant="outline"
+            onClick={() => fileInputRef.current?.click()}
+            disabled={isLoading}
+          >
+            <Upload className="h-4 w-4 mr-2" />
+            上传图片
+          </Button>
+          <Button
+            onClick={handleSendMessage}
+            disabled={isLoading || (!input.trim() && selectedImages.length === 0)}
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                发送中...
+              </>
+            ) : (
+              <>
+                <Send className="h-4 w-4 mr-2" />
+                发送消息
+              </>
+            )}
+          </Button>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };

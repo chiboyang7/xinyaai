@@ -30,9 +30,9 @@ const ThemeParkTask = () => {
     }
   }, [taskId]);
 
-  // Load user answers
+  // Load last answer
   useEffect(() => {
-    const loadUserAnswers = async () => {
+    const loadLastAnswer = async () => {
       const { data: conversations } = await supabase
         .from('conversations')
         .select('id')
@@ -45,20 +45,20 @@ const ThemeParkTask = () => {
           .from('messages')
           .select('*')
           .eq('conversation_id', conversations[0].id)
-          .eq('role', 'user')
-          .order('created_at', { ascending: true });
+          .order('created_at', { ascending: false })
+          .limit(1);
 
-        if (messages) {
-          setUserAnswers(messages as Message[]);
+        if (messages && messages.length > 0) {
+          setUserAnswers([messages[0] as Message]);
         }
       }
     };
 
-    loadUserAnswers();
+    loadLastAnswer();
 
     // Subscribe to realtime updates
     const channel = supabase
-      .channel('user-answers-changes')
+      .channel('last-answer-changes')
       .on(
         'postgres_changes',
         {
@@ -68,9 +68,8 @@ const ThemeParkTask = () => {
         },
         (payload) => {
           const newMessage = payload.new as Message;
-          if (newMessage.role === 'user') {
-            setUserAnswers((prev) => [...prev, newMessage]);
-          }
+          // Always show the latest message
+          setUserAnswers([newMessage]);
         }
       )
       .subscribe();
@@ -211,29 +210,21 @@ const ThemeParkTask = () => {
           <ChatTemplate2 taskId={taskId || ''} />
         </div>
 
-        {/* Part 5: User's Answers Display */}
+        {/* Part 5: Last Answer Display */}
         {userAnswers.length > 0 && (
-          <Card className="border-2">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-primary">
-                <FileText className="h-5 w-5" />
-                我的回答
-              </CardTitle>
-              <CardDescription>这里显示你提交的所有回答和笔记</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                {userAnswers.map((answer, index) => (
-                  <div key={answer.id} className="border-l-4 border-l-primary pl-4 py-2">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-sm font-semibold text-primary">回答 #{index + 1}</span>
-                      <span className="text-xs text-muted-foreground">
-                        {new Date(answer.created_at).toLocaleString('zh-CN')}
-                      </span>
-                    </div>
-                    <p className="text-foreground whitespace-pre-wrap mb-3">{answer.content}</p>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-primary">我的回答</h3>
+            {userAnswers.map((answer) => (
+              <Card key={answer.id} className="border-l-4 border-l-primary">
+                <CardContent className="pt-6">
+                  <div className="space-y-4">
+                    {answer.content && (
+                      <p className="text-foreground whitespace-pre-wrap leading-relaxed">
+                        {answer.content}
+                      </p>
+                    )}
                     {answer.image_urls && answer.image_urls.length > 0 && (
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                         {answer.image_urls.map((url, idx) => (
                           <img
                             key={idx}
@@ -244,11 +235,14 @@ const ThemeParkTask = () => {
                         ))}
                       </div>
                     )}
+                    <p className="text-sm text-muted-foreground">
+                      提交时间: {new Date(answer.created_at).toLocaleString('zh-CN')}
+                    </p>
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         )}
       </main>
 
