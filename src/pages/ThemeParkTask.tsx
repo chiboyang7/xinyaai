@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowLeft, Lightbulb, BookOpen, ListChecks, FileText, CheckCircle } from "lucide-react";
 import { themeParkTasks, Task } from "@/data/themeParkTasks";
 import { ChatTemplate2 } from "@/components/chat/ChatTemplate2";
+import { ChatTemplate3 } from "@/components/chat/ChatTemplate3";
 import { supabase } from "@/integrations/supabase/client";
 
 interface Message {
@@ -215,7 +216,11 @@ const ThemeParkTask = () => {
             完成上述步骤后，请在下方输入框中提交你的想法和创作。你可以添加文字描述和图片来展示你的作品。
           </p>
           
-          <ChatTemplate2 taskId={taskId || ''} />
+          {taskId === '1' ? (
+            <ChatTemplate3 taskId={taskId} />
+          ) : (
+            <ChatTemplate2 taskId={taskId} />
+          )}
         </div>
 
         {/* Part 5: Last Answer Display */}
