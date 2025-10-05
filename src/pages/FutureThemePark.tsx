@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Clock, ArrowRight } from "lucide-react";
 import { themeParkTasks, Task } from "@/data/themeParkTasks";
+import { supabase } from "@/integrations/supabase/client";
 
 const FutureThemePark = () => {
   const navigate = useNavigate();
@@ -14,15 +15,44 @@ const FutureThemePark = () => {
   const [completedCount, setCompletedCount] = useState(0);
 
   useEffect(() => {
-    // Load tasks from localStorage
-    const savedTasks = localStorage.getItem("themeParkTasks");
-    if (savedTasks) {
-      const parsedTasks = JSON.parse(savedTasks);
-      setTasks(parsedTasks);
-      setCompletedCount(parsedTasks.filter((t: Task) => t.completed).length);
-    } else {
-      setTasks(themeParkTasks);
-    }
+    const loadTasksWithCompletion = async () => {
+      // Get current user
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      // Get all conversations with their messages for the user
+      const { data: conversations } = await supabase
+        .from('conversations')
+        .select('id, task_id')
+        .eq('user_id', user?.id || null);
+
+      const completedTaskIds = new Set<string>();
+
+      if (conversations) {
+        // For each conversation, check if it has messages
+        for (const conv of conversations) {
+          const { data: messages } = await supabase
+            .from('messages')
+            .select('id')
+            .eq('conversation_id', conv.id)
+            .limit(1);
+
+          if (messages && messages.length > 0) {
+            completedTaskIds.add(conv.task_id);
+          }
+        }
+      }
+
+      // Update tasks with completion status
+      const updatedTasks = themeParkTasks.map(task => ({
+        ...task,
+        completed: completedTaskIds.has(task.id)
+      }));
+
+      setTasks(updatedTasks);
+      setCompletedCount(completedTaskIds.size);
+    };
+
+    loadTasksWithCompletion();
   }, []);
 
   const progress = (completedCount / 18) * 100;
