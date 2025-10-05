@@ -204,6 +204,7 @@ export const themeParkTasks: Task[] = [
         stepName: "拆解为小步骤",
         instruction: "将大问题拆解成具体的小问题，获得更有价值的帮助",
         prompt: "我想建一个未来主题乐园，第一步应该怎么做？",
+        image: "/task-images/theme-park-step2.png",
         thinking: "具体的小问题是不是更容易得到有用的答案？"
       },
       {
