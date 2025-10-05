@@ -80,9 +80,9 @@ export const themeParkTasks: Task[] = [
     difficulty: "beginner",
     learningObjectives: ["开始了解AI强大的创作能力"],
     knowledgePoints: [
-      "理解AI助手的基本工作原理",
-      "掌握与AI进行有效对话的技巧",
-      "了解主题乐园的基本构成要素"
+      "练习使用文生图功能",
+      "练习给AI加上限制条件",
+      "学会使用图片制作简单视频"
     ],
     steps: [
       {
@@ -130,6 +130,55 @@ export const themeParkTasks: Task[] = [
   },
   {
     id: "3",
+    title: "AI的核心技巧 - AI人设",
+    description: "AI人设为什么重要",
+    category: "基础技能",
+    estimatedTime: "30分钟",
+    difficulty: "intermediate",
+    learningObjectives: ["学会如何给AI人设"],
+    knowledgePoints: [
+      
+      "学习如何给AI设定一个人设",
+      "对比AI人设和没有人设的答案质量"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "提出一个问题",
+        instruction: "尝试通过不同的方式向AI提出问题，对比不同的答案质量",
+        prompts: [
+          "什么是主题乐园",
+          "我是一个10岁的小学生，告诉我什么是主题乐园",
+        ],
+        thinking: "AI给出的答案让你满意么？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "给AI一个人设",
+        instruction: "给AI不同的人设，AI会按照不同的风格回答问题",
+        prompts: [
+          "你是小学语文老师，我是一个10岁的小学生，告诉我什么是主题乐园",
+          "你是诗人李白，我是一个10岁的小学生，告诉我什么是主题乐园",
+          "你是主题乐园专家，我是一个10岁的小学生，告诉我什么是主题乐园",
+        ],
+        
+        thinking: "你最喜欢谁的回答？你还有其他人设的建议么？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "利用图片获得更好的回答",
+        instruction: "当遇到复杂的问题的时候，如果人设的回答依然难以理解，可以加上图片解释",
+        prompts: [
+          "你是小学语文老师，我是一个10岁的小学生，告诉我什么是主题乐园，最好是图文的方式",
+          "你是诗人李白，我是一个10岁的小学生，告诉我什么是主题乐园，最好是图文的方式",
+          "你是主题乐园专家，我是一个10岁的小学生，告诉我什么是主题乐园，最好是图文的方式",
+        ],
+        thinking: "这些答案你满意么？尝试利用这个方式问问你感兴趣的问题"
+      }
+    ]
+  },
+   {
+    id: "4",
     title: "拆解一个大问题",
     description: "学会和AI沟通，把大问题变成小问题",
     category: "基础技能",
@@ -139,21 +188,21 @@ export const themeParkTasks: Task[] = [
     knowledgePoints: [
       
       "掌握将复杂问题分解为简单步骤的方法",
-      "学会循序渐进地与AI协作"
+      "学会循序渐进地与AI沟通获得帮助"
     ],
     steps: [
       {
         stepNumber: 1,
         stepName: "提出大问题",
-        instruction: "先向AI提出一个复杂的大问题",
-        prompt: "我想建一个主题乐园，应该怎么做？",
+        instruction: "先向AI提出一个复杂的大问题，会发现回答的比较差，很难获得有效信息",
+        prompt: "我想建一个未来主题乐园，应该怎么做？",
         thinking: "AI给出的答案是不是太笼统了？"
       },
       {
         stepNumber: 2,
         stepName: "拆解为小步骤",
-        instruction: "将大问题拆解成具体的小问题",
-        prompt: "建设主题乐园的第一步是什么？需要考虑哪些因素？",
+        instruction: "将大问题拆解成具体的小问题，获得更有价值的帮助",
+        prompt: "我想建一个未来主题乐园，第一步应该怎么做？",
         thinking: "具体的小问题是不是更容易得到有用的答案？"
       },
       {
@@ -166,7 +215,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "4",
+    id: "5",
     title: "设计我的第一个乐园游乐设施",
     description: "利用想象力创作的第一个乐园作品",
     category: "创作应用",
@@ -202,7 +251,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "5",
+    id: "6",
     title: "认识谷歌PTFCR框架（上）",
     description: "学会P和T，2个最重要要素",
     category: "基础知识",
@@ -239,7 +288,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "6",
+    id: "7",
     title: "认识谷歌PTFCR框架（下）",
     description: "学会FCR这3个深度思考要素",
     category: "基础知识",
@@ -276,7 +325,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "7",
+    id: "8",
     title: "谷歌PTFCR进阶练习",
     description: "创作自己第一个完整的主题乐园",
     category: "创作应用",
@@ -311,7 +360,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "8",
+    id: "9",
     title: "把魔法图片变成魔法视频",
     description: "将现实中的作品用AI完成升级迭代",
     category: "基础技能",
@@ -346,7 +395,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "9",
+    id: "10",
     title: "票价策略",
     description: "制定门票价格和优惠政策",
     category: "商业策略",
@@ -382,7 +431,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "10",
+    id: "11",
     title: "营销推广计划",
     description: "设计开业前的营销和宣传策略",
     category: "市场营销",
@@ -418,7 +467,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "11",
+    id: "12",
     title: "员工培训方案",
     description: "规划员工招聘和培训计划",
     category: "人力资源",
@@ -454,7 +503,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "12",
+    id: "13",
     title: "科技应用",
     description: "整合VR、AR等现代科技到游乐体验中",
     category: "技术创新",
@@ -490,7 +539,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "13",
+    id: "14",
     title: "无障碍设计",
     description: "确保乐园对所有游客友好和无障碍",
     category: "包容性设计",
@@ -526,7 +575,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "14",
+    id: "15",
     title: "季节性活动策划",
     description: "设计全年的节日和特殊活动",
     category: "活动策划",
@@ -562,7 +611,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "15",
+    id: "16",
     title: "预算规划",
     description: "制定建设和运营的财务预算",
     category: "财务管理",
@@ -598,7 +647,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "16",
+    id: "17",
     title: "游客体验流程",
     description: "设计从入园到离园的完整游客旅程",
     category: "体验设计",
@@ -634,7 +683,7 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "17",
+    id: "18",
     title: "品牌形象设计",
     description: "创建乐园的视觉识别系统和吉祥物",
     category: "品牌设计",
@@ -670,7 +719,43 @@ export const themeParkTasks: Task[] = [
     ]
   },
   {
-    id: "18",
+    id: "19",
+    title: "最终方案展示",
+    description: "整合所有元素，制作完整的主题乐园方案展示",
+    category: "综合呈现",
+    estimatedTime: "40分钟",
+    difficulty: "advanced",
+    learningObjectives: ["整合所有元素，制作完整的主题乐园方案展示"],
+    knowledgePoints: [
+      "掌握方案整合的方法",
+      "学会制作专业的展示材料",
+      "理解如何有效呈现创意"
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: "整合前期成果",
+        instruction: "回顾并整理前面所有任务的成果",
+        prompt: "帮我设计一个主题乐园方案展示的框架，包含哪些关键部分？如何有逻辑地组织内容？",
+        thinking: "如何把分散的创意整合成完整的方案？"
+      },
+      {
+        stepNumber: 2,
+        stepName: "制作展示材料",
+        instruction: "创作吸引人的视觉展示内容",
+        prompt: "帮我制作主题乐园的展示PPT大纲，包括封面、核心亮点、分区规划、商业模式等",
+        thinking: "什么样的呈现方式最能打动观众？"
+      },
+      {
+        stepNumber: 3,
+        stepName: "准备演讲内容",
+        instruction: "撰写方案介绍和演讲稿",
+        thinking: "如何在有限时间内清晰地传达你的创意和价值？"
+      }
+    ]
+  },
+   {
+    id: "20",
     title: "最终方案展示",
     description: "整合所有元素，制作完整的主题乐园方案展示",
     category: "综合呈现",
