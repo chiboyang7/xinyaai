@@ -147,7 +147,10 @@ export const ChatTemplate2: React.FC<ChatTemplate2Props> = ({ taskId }) => {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-primary">输入你的想法</h3>
+      <div className="flex items-center gap-2 mb-2">
+        <Send className="h-5 w-5 text-primary" />
+        <h2 className="text-2xl font-semibold text-primary">输入你的想法</h2>
+      </div>
       
       <div className="space-y-4">
         {/* Selected images preview */}

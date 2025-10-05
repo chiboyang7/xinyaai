@@ -213,7 +213,10 @@ const ThemeParkTask = () => {
         {/* Part 5: Last Answer Display */}
         {userAnswers.length > 0 && (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-primary">我的回答</h3>
+            <div className="flex items-center gap-2 mb-2">
+              <FileText className="h-5 w-5 text-primary" />
+              <h2 className="text-2xl font-semibold text-primary">我的回答</h2>
+            </div>
             {userAnswers.map((answer) => (
               <Card key={answer.id} className="border-l-4 border-l-primary">
                 <CardContent className="pt-6">
